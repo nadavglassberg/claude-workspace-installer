@@ -55,7 +55,7 @@ Download `install.bat` and double-click it. It runs the same line as above.
 2. Click the Claude icon in the sidebar and sign in with the account from "Before you start".
 3. Type `/model` and check it says **Opus 5.5** with **high** effort. The installer sets this for you. If it shows something else, pick Opus 5.5 and high there.
 4. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
-5. Claude asks you a few questions (your name, your company, your vault name, which domains you want). Answer them in one message.
+5. Claude asks one question: your name. Everything else is already set for a PPC manager at PPG Digital (work domain only, replies in Hebrew, short).
 6. Claude builds everything and explains each part as it goes.
 7. At the end Claude re-reads the skill, compares it to what it built, and fixes any gap. Everyone ends with the same structure.
 
@@ -104,7 +104,7 @@ claude-workspace/               open THIS folder in VS Code
   <your vault>/                 open THIS folder in Obsidian
     _rules.md  _tasks.md  _active.md  _goals.md
     raw/                        drop files here
-    wiki/                       your knowledge, split by domain (work, personal)
+    wiki/                       your knowledge (work/ppg: clients, team, campaigns)
     calendar/                   one note per day
     components/                 skills, agent specs, templates
 ```
