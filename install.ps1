@@ -136,10 +136,9 @@ function Install-Starter {
     param([string]$CodeCmd)
 
     $repoRaw = 'https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter'
-    $files = @(
-        '.claude/settings.json',   # Opus 5.5 at high effort for this workspace
-        '.claude/skills/setup-vault/SKILL.md'
-    )
+    # files.txt lists every starter file (settings + all skills). Adding a skill = one new line there.
+    $files = (Invoke-WebRequest -Uri "$repoRaw/files.txt" -UseBasicParsing).Content -split "`r?`n" |
+        ForEach-Object { $_.Trim() } | Where-Object { $_ -and -not $_.StartsWith('#') }
     $dir = if ($env:WORKSPACE_DIR) { $env:WORKSPACE_DIR } else { Join-Path $env:USERPROFILE 'claude-workspace' }
 
     Write-Host ''
@@ -163,6 +162,7 @@ function Install-Starter {
     Write-Host 'Click "Yes, I trust the authors". Without it VS Code keeps Claude Code and the RTL extension disabled.' -ForegroundColor Yellow
     Write-Host ''
     Write-Host 'Then: open Claude Code in VS Code and type  /setup-vault'
+    Write-Host 'New skills are added over time. Run this same line again any day to get them. Your own files are never overwritten.'
 
     # Connectors need the person's own login, so the closest thing to automatic is opening the page.
     Write-Host 'Also opening claude.ai connectors in your browser: click Connect on Slack, Notion, Gmail and Google Drive.' -ForegroundColor Yellow

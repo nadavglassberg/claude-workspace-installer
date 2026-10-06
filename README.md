@@ -61,7 +61,7 @@ Download `install.bat` and double-click it. It runs the same line as above.
 7. Claude builds the structure, explains each part as it goes, then re-reads the skill and fixes any gap. Everyone ends with the same structure.
 8. Claude explores the company Notion and the client config sheet with YOUR access and fills the vault: a page for each of your clients, a page for each teammate, your open tasks, and the working processes it finds. No company data is stored in this repo, it is read live from your own accounts and stays on your computer.
 9. Claude gives you the list of Toffu connectors to add, one per client. You can do this later.
-10. A 10-minute guided tour on your own data: you tell Claude a fact, ask it a question, add a task, drop a file, and close the day.
+10. A 10-minute guided tour on your own data: you tell Claude a fact, ask it a question, add a task to Notion, catch up on Slack, drop a file, and close the day.
 
 ## Step 3. The vault opens in Obsidian
 
@@ -115,8 +115,29 @@ claude-workspace/               open THIS folder in VS Code
 
 The full structure and every rule is in the skill itself: [starter/.claude/skills/setup-vault/SKILL.md](starter/.claude/skills/setup-vault/SKILL.md).
 
+## Skills you get
+
+The installer downloads all of these. Type the name in Claude Code, or just say what you want in Hebrew or English.
+
+| Skill | What it does |
+|---|---|
+| `/start-day` | Morning brief: due today, overdue, who is waiting for you in Slack and email, today's meetings, a suggested order |
+| `/add-task` | Say what needs doing. It opens the task in Notion on the right client, assigned to you |
+| `/my-tasks` | Your open tasks from Notion, most urgent first. Close, postpone or mark stuck by saying so |
+| `/slack-catchup` | Reads your client channels, DMs and mentions since you last looked. One digest, with what needs your answer |
+| `/client-brief` | One client on one screen before a meeting: facts, open tasks, recent messages, last decisions, what to raise |
+| `/draft-update` | Drafts an email or Slack message to a client. Never sends, you do |
+| `/refresh-my-data` | Re-reads Notion and the config sheet and updates your vault. Tells you what changed |
+| `/setup-vault` | The one-time setup. Safe to run again, it continues where it stopped |
+| `/process-vault`, `/end-of-session` and 3 more | The vault's own upkeep. Built during setup |
+
+**New skills:** paste the installer line from Step 1 again. It downloads what you do not have yet and never overwrites your own files. Then type `/vault-skills-sync`.
+
+**Make one yours:** tell Claude what to change ("in /start-day, show meetings first"). It edits your copy.
+
 ## Daily loop
 
+0. Type `/start-day`.
 1. Tell Claude facts as they happen. It writes them into the right vault file.
 2. Drop files into `raw/inbox` and type `/process-vault`.
 3. Type `/end-of-session` before you close VS Code.
@@ -128,9 +149,10 @@ The button is Windows only. On a Mac, with [Homebrew](https://brew.sh) installed
 ```bash
 brew install --cask obsidian visual-studio-code claude \
   && code --install-extension anthropic.claude-code \
-  && mkdir -p ~/claude-workspace/.claude/skills/setup-vault \
-  && curl -fsSL https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter/.claude/skills/setup-vault/SKILL.md \
-       -o ~/claude-workspace/.claude/skills/setup-vault/SKILL.md \
+  && code --install-extension yechielby.claude-code-rtl \
+  && B=https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter \
+  && curl -fsSL $B/files.txt | grep -v '^#' | while read -r f; do [ -z "$f" ] && continue; \
+       t=~/claude-workspace/$f; mkdir -p "$(dirname "$t")"; [ -e "$t" ] || curl -fsSL "$B/$f" -o "$t"; done \
   && code ~/claude-workspace
 ```
 

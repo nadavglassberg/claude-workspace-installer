@@ -1,0 +1,10 @@
+# Every file the installer puts into the workspace. One path per line.
+.claude/settings.json
+.claude/skills/setup-vault/SKILL.md
+.claude/skills/add-task/SKILL.md
+.claude/skills/my-tasks/SKILL.md
+.claude/skills/slack-catchup/SKILL.md
+.claude/skills/start-day/SKILL.md
+.claude/skills/client-brief/SKILL.md
+.claude/skills/draft-update/SKILL.md
+.claude/skills/refresh-my-data/SKILL.md
