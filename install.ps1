@@ -20,7 +20,12 @@ function Install-Workspace {
         @{ Name = 'Visual Studio Code'; Id = 'Microsoft.VisualStudioCode' },
         @{ Name = 'Claude';             Id = 'Anthropic.Claude' }
     )
-    $extension = 'anthropic.claude-code'
+    # VS Code enables an extension as soon as it is installed. The RTL one also turns
+    # itself on in the Claude chat the first time VS Code starts after the install.
+    $extensions = @(
+        @{ Name = 'Claude Code extension';   Id = 'anthropic.claude-code' },
+        @{ Name = 'Claude Code RTL Support'; Id = 'yechielby.claude-code-rtl' }
+    )
 
     # winget exit code for "no newer version available"
     $noUpdate = -1978335189
@@ -72,9 +77,6 @@ function Install-Workspace {
         $results += [pscustomobject]@{ App = $app.Name; Result = $status }
     }
 
-    Write-Host ''
-    Write-Host '== Claude Code extension for VS Code ==' -ForegroundColor Cyan
-
     # A fresh VS Code install is not on PATH yet in this window, so look in the install folders too.
     $codeCmd = @(
         (Get-Command code.cmd -ErrorAction SilentlyContinue).Source,
@@ -82,33 +84,40 @@ function Install-Workspace {
         "$env:ProgramFiles\Microsoft VS Code\bin\code.cmd"
     ) | Where-Object { $_ -and (Test-Path $_) } | Select-Object -First 1
 
-    if (-not $codeCmd) {
-        $status = if ($dryRun) { 'VS Code not found, dry run' } else { 'SKIPPED (VS Code not found). Open VS Code, Extensions, search "Claude Code"' }
-    } else {
-        $hasExtension = (& $codeCmd --list-extensions) -contains $extension
-        if ($hasExtension) {
-            Write-Host 'Already installed. Checking for a newer version...'
-        } else {
-            Write-Host 'Not installed. Downloading the latest version...'
-        }
+    $installedExtensions = if ($codeCmd) { & $codeCmd --list-extensions } else { @() }
 
-        if ($dryRun) {
-            Write-Host "[dry run] code --install-extension $extension"
-            $before = if ($hasExtension) { 'already installed' } else { 'not installed' }
-            $status = "$before, dry run"
+    foreach ($ext in $extensions) {
+        Write-Host ''
+        Write-Host "== $($ext.Name) (VS Code) ==" -ForegroundColor Cyan
+
+        if (-not $codeCmd) {
+            $status = if ($dryRun) { 'VS Code not found, dry run' } else { "SKIPPED (VS Code not found). Open VS Code, Extensions, search `"$($ext.Name)`"" }
         } else {
-            # --force makes VS Code update the extension when it is already there
-            & $codeCmd --install-extension $extension --force
-            if ($LASTEXITCODE -ne 0) {
-                $status = "FAILED (exit code $LASTEXITCODE)"
-            } elseif ($hasExtension) {
-                $status = 'already installed, checked for update'
+            $hasExtension = $installedExtensions -contains $ext.Id
+            if ($hasExtension) {
+                Write-Host 'Already installed. Checking for a newer version...'
             } else {
-                $status = 'installed'
+                Write-Host 'Not installed. Downloading the latest version...'
+            }
+
+            if ($dryRun) {
+                Write-Host "[dry run] code --install-extension $($ext.Id)"
+                $before = if ($hasExtension) { 'already installed' } else { 'not installed' }
+                $status = "$before, dry run"
+            } else {
+                # --force makes VS Code update the extension when it is already there
+                & $codeCmd --install-extension $ext.Id --force
+                if ($LASTEXITCODE -ne 0) {
+                    $status = "FAILED (exit code $LASTEXITCODE)"
+                } elseif ($hasExtension) {
+                    $status = 'already installed, checked for update'
+                } else {
+                    $status = 'installed and enabled'
+                }
             }
         }
+        $results += [pscustomobject]@{ App = $ext.Name; Result = $status }
     }
-    $results += [pscustomobject]@{ App = 'Claude Code extension'; Result = $status }
 
     Write-Host ''
     Write-Host '== Summary ==' -ForegroundColor Green

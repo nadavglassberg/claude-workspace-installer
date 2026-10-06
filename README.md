@@ -29,7 +29,8 @@ What it does:
 | | |
 |---|---|
 | Obsidian, Visual Studio Code, Claude (desktop app) | Checks if each one is already installed. Missing: installs the latest version. Installed: updates it only if a newer version exists. |
-| Claude Code extension for VS Code | Same check, same rule. |
+| Claude Code extension for VS Code | Same check, same rule. Enabled as soon as it is installed. |
+| Claude Code RTL Support extension | Same check, same rule. Makes Hebrew read right-to-left in the Claude chat. It turns itself on the first time VS Code opens, nothing to click. |
 | Your workspace folder | Creates `C:\Users\<you>\claude-workspace` and downloads the `/setup-vault` skill into it. Files that already exist are never overwritten. |
 | Model | Sets Claude Code in that folder to **Opus 5.5** at **high effort** (`.claude/settings.json`). |
 | VS Code | Opens on that folder when everything is done. |
