@@ -1,6 +1,6 @@
 # Second brain starter: Obsidian + VS Code + Claude
 
-Everything you need to get an Obsidian vault that Claude Code writes for you. One button installs the apps and the setup skill, then Claude builds the vault with you.
+Everything you need to get an Obsidian vault that Claude Code writes for you. One line installs the apps and the setup skill, then Claude builds the vault with you.
 
 ## Before you start: a paid Claude plan
 
@@ -12,14 +12,17 @@ The apps install without an account, but Claude Code will not work until you sig
 
 Obsidian and VS Code are free and need no account.
 
-## Step 1. Press the button (5 minutes)
+## Step 1. Run the installer (5 minutes)
 
-[![Download the installer](https://img.shields.io/badge/Download_the_installer-Windows-2ea44f?style=for-the-badge&logo=windows)](https://github.com/nadavglassberg/claude-workspace-installer/releases/latest/download/install.bat)
+1. Copy this line (hover over it and click the copy button on the right):
 
-1. Click the green button. A file called `install.bat` downloads.
-2. Double-click it.
-3. If Windows shows "Windows protected your PC", click **More info**, then **Run anyway**.
-4. Wait until the window says **Done**.
+```powershell
+irm https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/install.ps1 | iex
+```
+
+2. Press the **Windows key**, type `powershell`, press **Enter**.
+3. Paste the line (right-click or Ctrl+V) and press **Enter**.
+4. Wait until it says **Done**.
 
 What it does:
 
@@ -30,11 +33,17 @@ What it does:
 | Your workspace folder | Creates `C:\Users\<you>\claude-workspace` and downloads the `/setup-vault` skill into it. Files that already exist are never overwritten. |
 | VS Code | Opens on that folder when everything is done. |
 
-Prefer the terminal? Paste this into PowerShell instead of using the button:
+<details>
+<summary>Alternative: download a file and double-click it</summary>
 
-```powershell
-irm https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/install.ps1 | iex
-```
+[![Download the installer](https://img.shields.io/badge/Download_the_installer-Windows-2ea44f?style=for-the-badge&logo=windows)](https://github.com/nadavglassberg/claude-workspace-installer/releases/latest/download/install.bat)
+
+Download `install.bat` and double-click it. It runs the same line as above.
+
+- "Windows protected your PC": click **More info**, then **Run anyway**.
+- "Smart App Control blocked a file": this cannot be bypassed on that computer. Use the copy-paste line above instead.
+
+</details>
 
 ## Step 2. Let Claude build the vault (20 to 30 minutes)
 
