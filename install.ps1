@@ -4,6 +4,9 @@
 # Each app is checked first: missing -> installed, already there -> updated only if a
 # newer version exists, already current -> left alone.
 #
+# Then it creates the workspace folder (%USERPROFILE%\claude-workspace, or $env:WORKSPACE_DIR),
+# downloads the /setup-vault skill into it and opens it in VS Code.
+#
 # Run it by double-clicking install.bat, or paste this into PowerShell:
 #   irm https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/install.ps1 | iex
 #
@@ -113,9 +116,41 @@ function Install-Workspace {
 
     if ($results.Result -match 'FAILED') {
         Write-Host 'Something failed. Run it again, and if it fails twice send a screenshot of this window.' -ForegroundColor Yellow
-    } elseif (-not $dryRun) {
-        Write-Host 'Done. Obsidian, VS Code and Claude are in your Start menu.' -ForegroundColor Green
     }
+
+    if (-not $dryRun) { Install-Starter -CodeCmd $codeCmd }
+}
+
+# Creates the workspace folder, downloads the starter files into it and opens it in VS Code.
+# Existing files are left alone, so running the installer twice never overwrites someone's work.
+function Install-Starter {
+    param([string]$CodeCmd)
+
+    $repoRaw = 'https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter'
+    $files = @(
+        '.claude/skills/setup-vault/SKILL.md'
+    )
+    $dir = if ($env:WORKSPACE_DIR) { $env:WORKSPACE_DIR } else { Join-Path $env:USERPROFILE 'claude-workspace' }
+
+    Write-Host ''
+    Write-Host '== Workspace folder ==' -ForegroundColor Cyan
+
+    foreach ($file in $files) {
+        $target = Join-Path $dir $file
+        if (Test-Path $target) {
+            Write-Host "Already there, kept: $target"
+            continue
+        }
+        New-Item -ItemType Directory -Force -Path (Split-Path $target) | Out-Null
+        Invoke-WebRequest -Uri "$repoRaw/$file" -OutFile $target -UseBasicParsing
+        Write-Host "Downloaded: $target"
+    }
+
+    Write-Host ''
+    Write-Host "Done. Your workspace is $dir" -ForegroundColor Green
+    Write-Host 'Next: in VS Code, open Claude Code and type  /setup-vault'
+
+    if ($CodeCmd) { & $CodeCmd $dir }
 }
 
 Install-Workspace
