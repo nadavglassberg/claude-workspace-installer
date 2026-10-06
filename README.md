@@ -2,13 +2,15 @@
 
 Everything you need to get an Obsidian vault that Claude Code writes for you. One line installs the apps, the skills and a guide. The guide then walks you through the rest, step by step, in Hebrew.
 
-## Before you start: a paid Claude plan
+## Before you start: join the team on Claude
 
-The apps install without an account, but Claude Code will not work until you sign in with a paid plan. Do this first:
+**You do not need to buy a subscription.** Do not sign up for Pro or Max.
 
-1. Go to [claude.ai](https://claude.ai) and create an account, or sign in.
-2. Subscribe to **Pro** or **Max** (or ask your company for a seat on its Team or Enterprise plan). The free plan does not include Claude Code.
-3. Remember which email you used.
+1. You will get an invitation from us by email to the team's Claude plan.
+2. Open it and join the team.
+3. Remember which email the invitation came to. You sign in to Claude Code with that account.
+
+The apps install without an account, but Claude Code only works once you have joined.
 
 Obsidian and VS Code are free and need no account.
 
