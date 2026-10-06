@@ -27,7 +27,7 @@ The only question: "What is your name?" (full name). Everywhere below, <me> mean
 Already known. Do not ask, do not offer alternatives:
 - Role: PPC Manager.
 - Company: PPG Digital. Its folder is wiki/work/ppg/ and its page is ppg-digital.md, filled from the facts below.
-- Vault folder name: <me>_vault. Everywhere below, <vault> means this name.
+- Vault folder name: vault. The installer already created this folder inside the project, with its Obsidian settings in it, and the guide (/introduction, topic 1) has me open it in Obsidian BEFORE I run this skill, so I can watch it fill. Use the folder as it is. If it is missing, create it. Everywhere below, <vault> means this folder.
 - Domains: Work only, for now. No Personal, Business or Academic folders, templates or task tables. When I ask for another domain later, add it with the same pattern (wiki/<domain>/ with _index.md and _rules.md, a routing row, a task table).
 - Routing signal words: do not ask for them. Start the routing table with: PPG, my job, at work, a client, a campaign. Every time a client name, a teammate or a recurring topic comes up while we work, add it to the routing table and to the entity registry yourself, in that same turn.
 - Computers: one. No sync setup (section 11).
@@ -171,11 +171,12 @@ While I am learning: whenever a subagent is a realistic option, say so before ac
 - In .claude/settings.local.json add a UserPromptSubmit hook of type "command" that prints this JSON to stdout on every prompt (use my OS's shell): {"hookSpecificOutput":{"hookEventName":"UserPromptSubmit","additionalContext":"VAULT-FIRST REMINDER: Before responding, if the request touches any vault domain (per CLAUDE.md), you MUST read <vault>/_rules.md and follow its shortest-path navigation to the target _index.md / _rules.md before answering or asking clarifying questions. The vault is the source of truth. Do not ask me questions whose answers live in the vault."}} Explain to me what a hook is and why this one exists.
 - Permission rules: never put a token or an absolute machine path into an allow rule, and never allowlist an interpreter or package runner.
 - .gitignore: visuals/, .claude/settings.local.json, .env, .env.local, .env.*.local, node_modules/, __pycache__/, *.pyc, <vault>/.obsidian/workspace.json, *Conflicted copy*
-- Obsidian settings, written by you BEFORE Obsidian first opens the vault, so every vault built from this skill is configured the same. Create <vault>/.obsidian/ with exactly these two files:
+- Obsidian settings, so every vault built from this skill is configured the same. The installer normally wrote these two files already: if both exist in <vault>/.obsidian/ with this content, leave them. If one is missing or different, ask me to close Obsidian first, then write it:
   - app.json: {"showUnsupportedFiles":true}
   - core-plugins.json: {"file-explorer":true,"global-search":true,"switcher":true,"graph":true,"backlink":true,"canvas":true,"outgoing-link":true,"tag-pane":true,"footnotes":false,"properties":true,"page-preview":true,"daily-notes":true,"templates":true,"note-composer":true,"command-palette":true,"slash-command":false,"editor-status":true,"bookmarks":true,"markdown-importer":false,"zk-prefixer":false,"random-note":false,"outline":true,"word-count":true,"slides":false,"audio-recorder":false,"workspaces":false,"file-recovery":true,"publish":false,"sync":false,"bases":true,"webviewer":false}
   No community plugins are needed.
 - Open the vault in Obsidian for me. This happens in section 14 step 1, after the vault is filled, not now. Obsidian only opens folders it has registered, so:
+  0. First look whether I already did it: the guide tells people to open the vault in Obsidian themselves before running this skill. Read the registry file from step 1. If it already has an entry whose path is <vault>, skip steps 2-4: just ask me to switch to the Obsidian window.
   1. Find Obsidian's registry file: %APPDATA%\obsidian\obsidian.json on Windows, ~/Library/Application Support/obsidian/obsidian.json on Mac. If it does not exist, Obsidian has never been started: start it once, close it, look again.
   2. If Obsidian is running, ask me to close it and wait for my answer. Never edit the registry while it is running.
   3. Copy the registry file to obsidian.json.bak next to it. Then add one entry under "vaults", keeping every existing entry untouched: key = 16 random lowercase hex characters, value = {"path":"<absolute path of <vault>>","ts":<current time in milliseconds>,"open":true}.
@@ -188,7 +189,7 @@ I work on one computer. Do not set up Obsidian Sync or a GitHub repo, and do not
 
 ## 12. Finish
 1. Run /sync-claude-md and /vault-skills-sync and show me that both copies match.
-2. Structure check. Everyone who runs this skill must end with the exact same structure. Re-read this whole skill from the top, then list what is actually on disk and compare it line by line against the tree in section 3 and the files named in sections 4-10 (every folder, every _index.md and _rules.md, every template, every skill in BOTH locations, the hook, .gitignore, the two .obsidian files). Create whatever is missing and fix whatever differs. Repeat until a full pass finds nothing. Then print the final tree with a one-line result: "matches the skill" or the list of differences. The only difference allowed between two people's builds is the vault name and the person page.
+2. Structure check. Everyone who runs this skill must end with the exact same structure. Re-read this whole skill from the top, then list what is actually on disk and compare it line by line against the tree in section 3 and the files named in sections 4-10 (every folder, every _index.md and _rules.md, every template, every skill in BOTH locations, the hook, .gitignore, the two .obsidian files). Create whatever is missing and fix whatever differs. Repeat until a full pass finds nothing. Then print the final tree with a one-line result: "matches the skill" or the list of differences. The only difference allowed between two people's builds is the person page and the data pulled in section 13.
 3. Write today's calendar note describing the build.
 4. Create my own person page (wiki/work/ppg/team/<me>.md: my name, PPC Manager at PPG Digital) and the company page ppg-digital.md from the company website (what the agency does, services, founders, as published there). Do not interview me. The rest gets filled as we work.
 5. Write an "UNFINISHED - RESUME HERE" block in _active.md that says: structure built, next is section 13. Update that block after every step of sections 13 and 14, so a second run of this skill knows where to continue. Delete the block when section 14 is done.
@@ -284,4 +285,5 @@ I learn this by doing it on my own data, not by reading about it. One step at a 
    - How to get new skills: paste the installer line again, then run /vault-skills-sync. How to change a skill to fit me: tell Claude what to change, it edits the vault copy and mirrors it.
    - The four layers (raw, wiki, calendar, components) and the two files in every folder (_index, _rules).
    - What to say to refresh my data: "refresh my clients from Notion and the config sheet".
+   - The guide: type /introduction to open the nine short presentations again.
 Then delete the resume block from _active.md, make a local git commit "setup complete", and tell me in one line that the system is ready.

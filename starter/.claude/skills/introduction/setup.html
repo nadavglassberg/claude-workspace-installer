@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>מקימים את ה-vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">מקימים את ה-<bdi dir="ltr">vault</bdi><small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">1</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1"><bdi dir="ltr">Obsidian</bdi></button>
+        <button data-part="2"><bdi dir="ltr">Claude Code</bdi></button>
+        <button data-part="3">החיבורים</button>
+        <button data-part="4"><bdi dir="ltr" class="cmd">/setup-vault</bdi></button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>מקימים את ה-<bdi dir="ltr">vault</bdi>: ארבעה צעדים, ואת השאר <bdi dir="ltr">Claude</bdi> בונה</h1>
+        <p class="lead" style="margin-top:14px">ההתקנה כבר שמה על המחשב את כל מה שצריך. עכשיו פותחים את <bdi dir="ltr">Obsidian</bdi> על התיקייה הנכונה, מוודאים ש-<bdi dir="ltr">Claude</bdi> פעיל, ומריצים סקיל אחד.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b><bdi dir="ltr">Obsidian</bdi></b>פותחים אותו על התיקייה של ה-<bdi dir="ltr">vault</bdi></li>
+          <li data-agenda="2"><b><bdi dir="ltr">Claude Code</bdi></b>מוודאים שהוא פעיל, ופותחים שיחה</li>
+          <li data-agenda="3"><b>החיבורים</b>ארבעה כלים, פעם אחת</li>
+          <li data-agenda="4"><b><bdi dir="ltr" class="cmd">/setup-vault</bdi></b>מריצים, ועונים על שאלה אחת</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ צעד 1 ═════════ -->
+    <section class="slide" id="s-obsidian" data-part="1" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">צעד <bdi dir="ltr">1</bdi> מתוך <bdi dir="ltr">4</bdi>: <bdi dir="ltr">Obsidian</bdi></div>
+        <h2>פותחים את <bdi dir="ltr">Obsidian</bdi>, ובוחרים את התיקייה של ה-<bdi dir="ltr">vault</bdi></h2>
+        <div class="cols even">
+          <div class="card">
+            <ol class="order">
+              <li><span>פותחים את <bdi dir="ltr">Obsidian</bdi> מתפריט התחל</span></li>
+              <li data-stage="1"><span>בשורה <bdi dir="ltr" class="ui">Open folder as vault</bdi> לוחצים <bdi dir="ltr" class="ui">Open</bdi></span></li>
+              <li data-stage="2"><span>מדביקים את הנתיב שמופיע כאן בשורת הכתובת שבראש החלון, ולוחצים <kbd>Enter</kbd></span></li>
+              <li data-stage="3"><span>לוחצים <bdi dir="ltr" class="ui">Select Folder</bdi></span></li>
+            </ol>
+          </div>
+          <div class="stack">
+            <div data-stage="2">
+              <div class="bar-label">הנתיב של ה-<bdi dir="ltr">vault</bdi> שלכם, במחשב הזה</div>
+              <div class="pathbox" style="margin-top:0"><bdi dir="ltr" id="vault-path"></bdi><button class="btn" type="button" id="vault-copy">העתקה</button></div>
+            </div>
+            <aside class="dyk" data-stage="3"><p>ה-<bdi dir="ltr">vault</bdi> ריק כרגע, וזה בסדר. <bdi dir="ltr">Claude</bdi> ימלא אותו בצעד האחרון, ותראו את הדפים מופיעים ב-<bdi dir="ltr">Obsidian</bdi> בזמן אמת.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ צעד 2 ═════════ -->
+    <section class="slide" id="s-ext" data-part="2" data-stages="2">
+      <div class="slide-inner">
+        <div class="kicker">צעד <bdi dir="ltr">2</bdi> מתוך <bdi dir="ltr">4</bdi>: <bdi dir="ltr">Claude Code</bdi></div>
+        <h2>מוודאים ש-<bdi dir="ltr">Claude Code</bdi> פעיל ב-<bdi dir="ltr">VS Code</bdi></h2>
+        <div class="cols even">
+          <div class="card">
+            <ol class="order">
+              <li><span>עוברים ל-<bdi dir="ltr">VS Code</bdi>. הוא נפתח בסוף ההתקנה, על התיקייה <bdi dir="ltr">claude-workspace</bdi></span></li>
+              <li data-stage="1"><span>לוחצים <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>X</kbd>. נפתחת רשימת התוספים</span></li>
+              <li data-stage="1"><span>מחפשים ברשימה את <bdi dir="ltr">Claude Code</bdi>, ולוחצים עליו</span></li>
+              <li data-stage="2"><span>מופיע כפתור <bdi dir="ltr" class="ui">Disable</bdi>? התוסף פעיל, והכל תקין. מופיע <bdi dir="ltr" class="ui">Enable</bdi>? לוחצים עליו</span></li>
+            </ol>
+          </div>
+          <div class="stack">
+            <div class="card red" data-stage="2">
+              <span class="stamp red">התוסף כבוי, ואי אפשר להפעיל אותו?</span>
+              <p style="margin-top:8px">התיקייה נפתחה במצב מוגבל. לוחצים על <bdi dir="ltr" class="ui">Restricted Mode</bdi> בפינה השמאלית התחתונה, ואז על <bdi dir="ltr" class="ui">Trust</bdi>.</p>
+            </div>
+            <aside class="dyk" data-stage="2"><p>באותה רשימה נמצא גם <bdi dir="ltr">Claude Code RTL Support</bdi>. הוא מיישר את העברית לימין, וגם הוא צריך להיות פעיל.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-chat" data-part="2" data-stages="2">
+      <div class="slide-inner">
+        <div class="kicker">צעד <bdi dir="ltr">2</bdi> מתוך <bdi dir="ltr">4</bdi>: <bdi dir="ltr">Claude Code</bdi></div>
+        <h2>פותחים שיחה חדשה עם <bdi dir="ltr">Claude</bdi></h2>
+        <div class="cols even">
+          <div class="card">
+            <ol class="order">
+              <li><span>לוחצים על הסמל של <bdi dir="ltr">Claude</bdi>, כוכב כתום, בסרגל שבצד החלון או בפינה העליונה שלו</span></li>
+              <li data-stage="1"><span>בפעם הראשונה <bdi dir="ltr">Claude</bdi> מבקש להתחבר. מתחברים עם החשבון שיש לו מנוי</span></li>
+              <li data-stage="2"><span>לשיחה חדשה ונקייה לוחצים על כפתור השיחה החדשה, בראש חלון השיחה</span></li>
+            </ol>
+          </div>
+          <div class="stack">
+            <div class="card" data-stage="1">
+              <span class="stamp">לא מוצאים את הסמל?</span>
+              <p style="margin-top:8px">לוחצים <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd>, מקלידים <bdi dir="ltr" class="ui">Claude Code: Open in New Tab</bdi>, ולוחצים <kbd>Enter</kbd>.</p>
+              <p style="margin-top:8px">לשיחה חדשה, באותה דרך: <bdi dir="ltr" class="ui">Claude Code: New Conversation</bdi></p>
+            </div>
+            <div class="rule" data-stage="2">כל משימה גדולה מתחילה בשיחה חדשה. שום דבר לא הולך לאיבוד: מה שחשוב כתוב ב-<bdi dir="ltr">vault</bdi>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ צעד 3 ═════════ -->
+    <section class="slide" id="s-connect" data-part="3" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">צעד <bdi dir="ltr">3</bdi> מתוך <bdi dir="ltr">4</bdi>: החיבורים</div>
+        <h2>מחברים את ארבעת הכלים, פעם אחת</h2>
+        <div class="cols even">
+          <div class="card">
+            <ol class="order">
+              <li><span>פותחים את עמוד החיבורים באתר של <bdi dir="ltr">Claude</bdi></span></li>
+              <li><span>ליד כל אחד מהארבעה לוחצים <bdi dir="ltr" class="ui">Connect</bdi>: <bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi> ו-<bdi dir="ltr">Google Drive</bdi></span></li>
+              <li><span>מתחברים עם חשבון העבודה, ומאשרים את הגישה</span></li>
+              <li data-stage="1"><span>חוזרים ל-<bdi dir="ltr">VS Code</bdi>, לוחצים <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd>, ובוחרים <bdi dir="ltr" class="ui">Developer: Reload Window</bdi></span></li>
+            </ol>
+          </div>
+          <div class="stack">
+            <div><a class="btn primary" href="https://claude.ai/settings/connectors" target="_blank" rel="noopener">פתיחת עמוד החיבורים<svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+            <div class="rule" data-stage="1">בלי החיבורים <bdi dir="ltr">Claude</bdi> בונה <bdi dir="ltr">vault</bdi> ריק. איתם הוא ממלא אותו בלקוחות, במשימות ובצוות שלכם.</div>
+            <aside class="dyk" data-stage="1"><p>שכחתם אחד? לא נורא. <bdi dir="ltr" class="cmd">/setup-vault</bdi> בודק מה מחובר, ואומר בדיוק מה חסר.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ צעד 4 ═════════ -->
+    <section class="slide" id="s-run" data-part="4" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">צעד <bdi dir="ltr">4</bdi> מתוך <bdi dir="ltr">4</bdi>: <bdi dir="ltr" class="cmd">/setup-vault</bdi></div>
+        <h2>מקלידים <bdi dir="ltr" class="cmd">/setup-vault</bdi>, עונים על שאלה אחת, ו-<bdi dir="ltr">Claude</bdi> בונה</h2>
+        <div class="cols even">
+          <div class="chat">
+            <div class="chat-bar">Claude Code</div>
+            <div class="chat-body">
+              <div class="me"><span class="who">אתם כותבים</span><p><bdi dir="ltr" class="cmd">/setup-vault</bdi></p></div>
+              <div class="cl" data-stage="1"><span class="who"><bdi dir="ltr">Claude</bdi> שואל</span><p>מה השם שלך?</p></div>
+              <div class="me" data-stage="2"><span class="who">אתם עונים</span><p>דנה לוי</p></div>
+              <div class="cl" data-stage="3"><span class="who"><bdi dir="ltr">Claude</bdi> עונה</span><p>בונה את ה-<bdi dir="ltr">vault</bdi>, ואז ממלא אותו מהכלים שחיברת.</p></div>
+            </div>
+          </div>
+          <div class="card" data-stage="3">
+            <h3>מה <bdi dir="ltr">Claude</bdi> עושה מכאן, בעצמו</h3>
+            <ol class="order">
+              <li><span>בודק שהמודל הנכון פועל, ושהחיבורים פעילים</span></li>
+              <li><span>בונה את המבנה: תיקיות, כללים, תבניות וסקילים</span></li>
+              <li><span>ממלא את ה-<bdi dir="ltr">vault</bdi>: דף לכל לקוח שלכם, המשימות, והצוות</span></li>
+              <li><span>מעביר אתכם סיור קצר, על הנתונים שלכם</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-while" data-part="4" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">בזמן שהוא עובד</div>
+        <h2>שלושה דברים שכדאי לדעת בזמן ש-<bdi dir="ltr">Claude</bdi> בונה</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">זמן</span>
+            <h3 style="margin-top:10px">זה לוקח עשרים עד שלושים דקות</h3>
+            <p>לא צריך לשבת מול המסך. <bdi dir="ltr">Claude</bdi> עוצר כשהוא צריך אתכם, ומחכה.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">אישורים</span>
+            <h3 style="margin-top:10px"><bdi dir="ltr">Claude</bdi> מבקש אישור לפעולות</h3>
+            <p>לפני שהוא יוצר קבצים או מריץ פקודה, הוא שואל. קוראים מה הוא רוצה לעשות, ומאשרים.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">עצירה</span>
+            <h3 style="margin-top:10px">נעצר באמצע? מריצים שוב</h3>
+            <p>מקלידים שוב <bdi dir="ltr" class="cmd">/setup-vault</bdi>. <bdi dir="ltr">Claude</bdi> ממשיך מהנקודה שבה עצר, ולא בונה מחדש.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="1">בסוף עוברים ל-<bdi dir="ltr">Obsidian</bdi>, ורואים שם את הלקוחות שלכם. משם ממשיכים לנושא <bdi dir="ltr">2</bdi>.</div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b><bdi dir="ltr">Obsidian</bdi></b></td><td>ב-<bdi dir="ltr">Obsidian</bdi> בוחרים לפתוח תיקייה כ-<bdi dir="ltr">vault</bdi>, ומדביקים את הנתיב שמופיע במצגת.</td></tr>
+            <tr><td><b><bdi dir="ltr">Claude Code</bdi></b></td><td>בודקים שהתוסף פעיל ושהתיקייה מהימנה, ופותחים שיחה חדשה עם <bdi dir="ltr">Claude</bdi>.</td></tr>
+            <tr><td><b>החיבורים</b></td><td>מחברים את <bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi> ו-<bdi dir="ltr">Google Drive</bdi> בעמוד החיבורים, וטוענים מחדש את החלון.</td></tr>
+            <tr><td><b><bdi dir="ltr" class="cmd">/setup-vault</bdi></b></td><td>מקלידים <bdi dir="ltr" class="cmd">/setup-vault</bdi>, עונים מה השם שלכם, ו-<bdi dir="ltr">Claude</bdi> בונה את ה-<bdi dir="ltr">vault</bdi> וממלא אותו.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="vault.html">למצגת הבאה: איך ה-<bdi dir="ltr">vault</bdi> עובד<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the guide sits inside the workspace, so the page's own address gives the real path on this computer */
+  's-obsidian'(s) {
+    if (s.dataset.wired) return;
+    s.dataset.wired = 1;
+    const p = decodeURIComponent(location.pathname), i = p.indexOf('/.claude/skills/introduction/');
+    let path = 'C:\\Users\\<שם המשתמש>\\claude-workspace\\vault';
+    if (i > 0) {
+      const ws = p.slice(0, i).replace(/^\/([A-Za-z]:)/, '$1');
+      path = /^[A-Za-z]:/.test(ws) ? ws.replace(/\//g, '\\') + '\\vault' : ws + '/vault';
+    }
+    const box = s.querySelector('#vault-path'), btn = s.querySelector('#vault-copy');
+    box.textContent = path;
+    btn.addEventListener('click', async () => {
+      let ok = false;
+      try { await navigator.clipboard.writeText(path); ok = true; } catch (e) {}
+      if (!ok) { const t = document.createElement('textarea'); t.value = path; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e) {} t.remove(); }
+      btn.textContent = ok ? 'הועתק' : 'סמנו והעתיקו ביד';
+      btn.classList.toggle('copied', ok);
+      setTimeout(() => { btn.textContent = 'העתקה'; btn.classList.remove('copied'); }, 2200);
+    });
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

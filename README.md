@@ -1,6 +1,6 @@
 # Second brain starter: Obsidian + VS Code + Claude
 
-Everything you need to get an Obsidian vault that Claude Code writes for you. One line installs the apps and the setup skill, then Claude builds the vault with you.
+Everything you need to get an Obsidian vault that Claude Code writes for you. One line installs the apps, the skills and a guide. The guide then walks you through the rest, step by step, in Hebrew.
 
 ## Before you start: a paid Claude plan
 
@@ -8,8 +8,7 @@ The apps install without an account, but Claude Code will not work until you sig
 
 1. Go to [claude.ai](https://claude.ai) and create an account, or sign in.
 2. Subscribe to **Pro** or **Max** (or ask your company for a seat on its Team or Enterprise plan). The free plan does not include Claude Code.
-3. Remember which email you used. You sign in with it in Step 2.
-4. Connect your work tools to Claude: open [claude.ai/settings/connectors](https://claude.ai/settings/connectors) and click **Connect** on **Slack**, **Notion**, **Gmail** and **Google Drive**. Log in to each with your PPG account. This is what lets Claude fill your vault with your real clients. (The installer opens this page for you at the end, and Claude checks them again and tells you which one is missing.)
+3. Remember which email you used.
 
 Obsidian and VS Code are free and need no account.
 
@@ -31,10 +30,10 @@ What it does:
 |---|---|
 | Obsidian, Visual Studio Code, Claude (desktop app) | Checks if each one is already installed. Missing: installs the latest version. Installed: updates it only if a newer version exists. |
 | Claude Code extension for VS Code | Same check, same rule. Enabled as soon as it is installed. |
-| Claude Code RTL Support extension | Same check, same rule. Makes Hebrew read right-to-left in the Claude chat. It turns itself on the first time VS Code opens, nothing to click. |
-| Your workspace folder | Creates `C:\Users\<you>\claude-workspace` and downloads the `/setup-vault` skill into it. Files that already exist are never overwritten. |
-| Model | Sets Claude Code in that folder to **Opus 5.5** at **high effort** (`.claude/settings.json`). |
-| VS Code | Opens on that folder when everything is done. |
+| Claude Code RTL Support extension | Same check, same rule. Makes Hebrew read right-to-left in the Claude chat. |
+| Your workspace folder | Creates `C:\Users\<you>\claude-workspace` with an empty `vault` folder, all the skills and the guide. Files that already exist are never overwritten. |
+| Model | Sets Claude Code in that folder to **Opus 5.5** at **high effort**. |
+| VS Code and the guide | Opens VS Code on the folder, and opens the guide in your browser. |
 
 <details>
 <summary>Alternative: download a file and double-click it</summary>
@@ -48,79 +47,43 @@ Download `install.bat` and double-click it. It runs the same line as above.
 
 </details>
 
-## Step 2. Let Claude build the vault (20 to 30 minutes)
+## Step 2. Follow the guide
 
-1. VS Code is open on `claude-workspace` and asks **"Do you trust the authors of the files in this folder?"** Click **Yes, I trust the authors**. Until you do, VS Code runs in Restricted Mode and keeps the Claude Code and RTL extensions disabled.
-   - Missed the question? Click **Restricted Mode** in the bottom-left corner of VS Code, then **Trust**.
-   - Extensions still look off? Press `Ctrl+Shift+P`, type `Reload Window`, press Enter.
-2. Click the Claude icon in the sidebar and sign in with the account from "Before you start".
-3. Type `/model` and check it says **Opus 5.5** with **high** effort. The installer sets this for you. If it shows something else, pick Opus 5.5 and high there.
-4. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
-5. Claude checks that Slack, Notion, Gmail and Google Drive are connected. If one is missing it tells you which, you connect it, reload VS Code and type `/setup-vault` again. It continues where it stopped.
-6. Claude asks one question: your name. Everything else is already set for a PPC manager at PPG Digital (work domain only, replies in Hebrew, short).
-7. Claude builds the structure, explains each part as it goes, then re-reads the skill and fixes any gap. Everyone ends with the same structure.
-8. Claude explores the company Notion and the client config sheet with YOUR access and fills the vault: a page for each of your clients, a page for each teammate, your open tasks, and the working processes it finds. No company data is stored in this repo, it is read live from your own accounts and stays on your computer.
-9. Claude gives you the list of Toffu connectors to add, one per client. You can do this later.
-10. A 10-minute guided tour on your own data: you tell Claude a fact, ask it a question, add a task to Notion, catch up on Slack, drop a file, and close the day.
+The guide opens in your browser when the installer finishes. It is nine short presentations. You move forward only when you click.
 
-## Step 3. The vault opens in Obsidian
+**Start with topic 1, "Setting up the vault".** It walks you through four steps:
 
-Claude opens the new vault in Obsidian, already configured and already filled, at the start of the tour. It may ask you to close Obsidian first.
+1. Open Obsidian on your vault folder. The guide shows the exact path on your computer, with a copy button.
+2. Make sure Claude Code is enabled in VS Code, and open a new chat.
+3. Connect Notion, Slack, Gmail and Google Drive.
+4. Type `/setup-vault`. Claude asks your name, builds the vault, fills it from your own Notion and client config sheet, and gives you a short tour.
 
-If it does not open by itself:
+No company data is stored in this repo. Claude reads it live from your own accounts, and it stays on your computer.
 
-1. Open Obsidian.
-2. Choose **Open folder as vault**.
-3. Pick the vault folder INSIDE the workspace: `C:\Users\<you>\claude-workspace\<your vault name>`. Not the `claude-workspace` folder itself.
+To open the guide again later, type `/introduction` in Claude Code, or open `claude-workspace\.claude\skills\introduction\index.html`.
 
-Two windows, same files: VS Code opens the workspace and Claude writes there. Obsidian opens only the vault subfolder, and you read and browse there.
+## The guide's topics
 
-## Step 4. Obsidian Sync (optional, for a second computer or your phone)
-
-Obsidian Sync is a paid add-on from Obsidian. It keeps the vault folder identical on all your devices.
-
-On the first computer:
-
-1. Create an account at [obsidian.md](https://obsidian.md) and buy Sync.
-2. In Obsidian: Settings, Core plugins, turn on **Sync**.
-3. Settings, Sync, **Log in**.
-4. Next to "Remote vault" click **Choose**, then **Create new vault**. Give it a name and set an encryption password. Save that password, it cannot be recovered.
-5. Click **Connect** and wait for the first upload to finish.
-6. In Settings, Sync, turn on syncing for **all other file types**, so HTML and other non-note files travel too.
-
-On every other device:
-
-1. Install Obsidian and create a new EMPTY vault (on a second computer: run Step 1 there first, then make the empty vault folder inside `claude-workspace`, with the same vault name).
-2. Settings, Core plugins, turn on **Sync**. Log in.
-3. **Choose**, pick the remote vault you created, enter the encryption password, **Connect**.
-
-Good to know:
-
-- Sync covers the vault folder only. The rest of the workspace (`CLAUDE.md`, `.claude/`, code) does not travel with it. For those, ask Claude to "set up the private GitHub sync" (it builds a `/sync-github` skill and a private repo for the whole workspace).
-- Do not also keep the vault inside OneDrive, Dropbox or Google Drive. Two sync tools on one folder create conflicted copies.
-
-## What you get
-
-```
-claude-workspace/               open THIS folder in VS Code
-  CLAUDE.md                     the rules Claude loads on every session
-  .claude/skills/               the skills you run with /name
-  <your vault>/                 open THIS folder in Obsidian
-    _rules.md  _tasks.md  _active.md  _goals.md
-    raw/                        drop files here
-    wiki/                       your knowledge (work/ppg: clients, team, campaigns)
-    calendar/                   one note per day
-    components/                 skills, agent specs, templates
-```
-
-The full structure and every rule is in the skill itself: [starter/.claude/skills/setup-vault/SKILL.md](starter/.claude/skills/setup-vault/SKILL.md).
+| | Topic |
+|---|---|
+| 1 | Setting up the vault |
+| 2 | How the vault works |
+| 3 | The connections |
+| 4 | What to check, and what to do when something does not work |
+| 5 | Working with it day to day |
+| 6 | All the skills |
+| 7 | Adding a task |
+| 8 | Adding a personal domain |
+| 9 | Sharing a skill with everyone |
 
 ## Skills you get
 
-The installer downloads all of these. Type the name in Claude Code, or just say what you want in Hebrew or English.
+Type the name in Claude Code, or just say what you want in Hebrew or English.
 
 | Skill | What it does |
 |---|---|
+| `/introduction` | Opens the guide |
+| `/setup-vault` | The one-time setup. Safe to run again, it continues where it stopped |
 | `/start-day` | Morning brief: due today, overdue, who is waiting for you in Slack and email, today's meetings, a suggested order |
 | `/add-task` | Say what needs doing. It opens the task in Notion on the right client, assigned to you |
 | `/my-tasks` | Your open tasks from Notion, most urgent first. Close, postpone or mark stuck by saying so |
@@ -128,23 +91,29 @@ The installer downloads all of these. Type the name in Claude Code, or just say 
 | `/client-brief` | One client on one screen before a meeting: facts, open tasks, recent messages, last decisions, what to raise |
 | `/draft-update` | Drafts an email or Slack message to a client. Never sends, you do |
 | `/refresh-my-data` | Re-reads Notion and the config sheet and updates your vault. Tells you what changed |
-| `/setup-vault` | The one-time setup. Safe to run again, it continues where it stopped |
 | `/process-vault`, `/end-of-session` and 3 more | The vault's own upkeep. Built during setup |
 
 **New skills:** paste the installer line from Step 1 again. It downloads what you do not have yet and never overwrites your own files. Then type `/vault-skills-sync`.
 
 **Make one yours:** tell Claude what to change ("in /start-day, show meetings first"). It edits your copy.
 
-## Daily loop
+## What you get
 
-0. Type `/start-day`.
-1. Tell Claude facts as they happen. It writes them into the right vault file.
-2. Drop files into `raw/inbox` and type `/process-vault`.
-3. Type `/end-of-session` before you close VS Code.
+```
+claude-workspace/               open THIS folder in VS Code
+  CLAUDE.md                     the rules Claude loads on every session
+  .claude/skills/               the skills you run with /name, and the guide
+  vault/                        open THIS folder in Obsidian
+    _rules.md  _tasks.md  _active.md  _goals.md
+    raw/                        drop files here
+    wiki/                       your knowledge (clients, team, tools, processes)
+    calendar/                   one note per day
+    components/                 skills, agent specs, templates
+```
 
 ## Mac
 
-The button is Windows only. On a Mac, with [Homebrew](https://brew.sh) installed, paste this into Terminal:
+The installer line is Windows only. On a Mac, with [Homebrew](https://brew.sh) installed, paste this into Terminal:
 
 ```bash
 brew install --cask obsidian visual-studio-code claude \
@@ -153,7 +122,8 @@ brew install --cask obsidian visual-studio-code claude \
   && B=https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter \
   && curl -fsSL $B/files.txt | grep -v '^#' | while read -r f; do [ -z "$f" ] && continue; \
        t=~/claude-workspace/$f; mkdir -p "$(dirname "$t")"; [ -e "$t" ] || curl -fsSL "$B/$f" -o "$t"; done \
-  && code ~/claude-workspace
+  && code ~/claude-workspace \
+  && open ~/claude-workspace/.claude/skills/introduction/index.html
 ```
 
 Then continue from Step 2.

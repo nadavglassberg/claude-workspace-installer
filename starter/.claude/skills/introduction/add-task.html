@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>מוסיפים משימה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">מוסיפים משימה<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">7</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מה זה עושה</button>
+        <button data-part="2">מה <bdi dir="ltr">Claude</bdi> ממלא</button>
+        <button data-part="3">מקרים מיוחדים</button>
+        <button data-part="4">אחרי שנפתחה</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <!-- ═════════ פתיחה ═════════ -->
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>איך פותחים משימה ב-<bdi dir="ltr">Notion</bdi> במשפט אחד</h1>
+        <p class="lead" style="margin-top:14px">במקום לפתוח את <bdi dir="ltr">Notion</bdi>, לחפש את הלקוח ולמלא שדות, כותבים ל-<bdi dir="ltr">Claude</bdi> מה צריך לעשות. הוא פותח את המשימה על הלקוח הנכון ורושם אותה על שמכם.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מה זה עושה</b>מה כותבים ל-<bdi dir="ltr">Claude</bdi>, ומה מקבלים בחזרה</li>
+          <li data-agenda="2"><b>מה <bdi dir="ltr">Claude</bdi> ממלא</b>איך משפט אחד הופך לשדות של משימה</li>
+          <li data-agenda="3"><b>מקרים מיוחדים</b>לקוח לא ברור, כמה משימות יחד, משימה לחבר צוות</li>
+          <li data-agenda="4"><b>אחרי שנפתחה</b>איך רואים, מעדכנים וסוגרים משימות</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-what" data-part="1" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">מה זה עושה</div>
+        <h2>כותבים מה צריך לעשות, ו-<bdi dir="ltr">Claude</bdi> פותח את המשימה ב-<bdi dir="ltr">Notion</bdi></h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>זה סקיל שנקרא <bdi dir="ltr" class="cmd">/add-task</bdi>. מפעילים אותו באחת משתי דרכים, ושתיהן עושות בדיוק אותו דבר:</p>
+            <div class="card">
+              <span class="stamp">דרך אחת</span>
+              <p style="margin-top:8px">מקלידים <bdi dir="ltr" class="cmd">/add-task</bdi> ואחריו את המשימה.</p>
+            </div>
+            <div class="card">
+              <span class="stamp">דרך שנייה</span>
+              <p style="margin-top:8px">פשוט כותבים בעברית, למשל:</p>
+              <div class="says" style="margin-top:.5rem"><span class="say">תוסיף משימה</span><span class="say">תפתח משימה ל</span><span class="say">צריך לעשות</span></div>
+            </div>
+            <div class="rule" data-stage="1">לא צריך לפתוח את <bdi dir="ltr">Notion</bdi>, ולא צריך לזכור איך קוראים לשדות.</div>
+          </div>
+          <div class="chat">
+            <div class="chat-bar">Claude Code</div>
+            <div class="chat-body">
+              <div class="me">
+                <span class="who">אתם כותבים</span>
+                <p><bdi dir="ltr" class="cmd">/add-task</bdi> להחליף קריאייטיב ברימרקטינג של אורבן בייק עד יום חמישי</p>
+              </div>
+              <div class="cl" data-stage="1">
+                <span class="who"><bdi dir="ltr">Claude</bdi> עונה</span>
+                <p>נפתחה משימה: <b>להחליף קריאייטיב בקמפיין הרימרקטינג</b></p>
+                <p>לקוח: אורבן בייק · תאריך יעד: יום חמישי</p>
+                <p><span class="fake-link">פתיחת המשימה ב-<bdi dir="ltr">Notion</bdi></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-steps" data-part="1" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">מה קורה בדרך</div>
+        <h2>מאחורי המשפט שלכם <bdi dir="ltr">Claude</bdi> עושה ארבעה דברים, בסדר הזה</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">💬</div><div class="t">מבין את המשימה</div><div class="s">כותרת קצרה שמתחילה בפועל</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🏷️</div><div class="t">מוצא את הלקוח</div><div class="s">לפי השם שאמרתם, או לפי השיחה</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">✅</div><div class="t">פותח ב-<bdi dir="ltr">Notion</bdi></div><div class="s">על הלקוח, על שמכם, בסטטוס פתוח</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">📒</div><div class="t">רושם ב-<bdi dir="ltr">vault</bdi></div><div class="s">ברשימת המשימות ובדף הלקוח</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="3">בסוף חוזרת אליכם שורה אחת: מה נפתח, לאיזה לקוח ועד מתי, עם קישור למשימה.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>בפעם הראשונה <bdi dir="ltr">Claude</bdi> קורא את מבנה מאגר המשימות ושומר לעצמו מפה של השדות. זה לוקח כדקה, וקורה פעם אחת בלבד.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-fields" data-part="2">
+      <div class="slide-inner">
+        <div class="kicker">מה <bdi dir="ltr">Claude</bdi> ממלא</div>
+        <h2><bdi dir="ltr">Claude</bdi> ממלא רק את מה שאמרתם, ולא ממציא את השאר</h2>
+        <div class="cols even">
+          <div class="stack">
+            <table class="data pick" id="fields-table" role="radiogroup" aria-label="המשפט שכתבתם">
+              <thead><tr><th>בחרו משפט, וראו איזו משימה נפתחת ממנו</th></tr></thead>
+              <tbody>
+                <tr data-k="a" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>להחליף קריאייטיב ברימרקטינג של אורבן בייק עד יום חמישי</td></tr>
+                <tr data-k="b" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>דחוף: לבדוק למה הפיקסל של אורבן בייק לא מדווח רכישות</td></tr>
+                <tr data-k="c" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>להכין את הדוח החודשי של אורבן בייק</td></tr>
+              </tbody>
+            </table>
+            <div class="verdict" id="fields-verdict"></div>
+            <div class="rule">פרטים נוספים שכתבתם נכנסים לגוף המשימה, ולא לכותרת.</div>
+          </div>
+          <div class="task">
+            <span class="stamp">המשימה שנפתחת ב-<bdi dir="ltr">Notion</bdi></span>
+            <div class="task-t" id="f-title"></div>
+            <dl>
+              <dt>לקוח</dt><dd>אורבן בייק</dd>
+              <dt>אחראי</dt><dd>אתם</dd>
+              <dt>סטטוס</dt><dd><span class="pill open">פתוח</span></dd>
+              <dt>תאריך יעד</dt><dd id="f-due"></dd>
+              <dt>עדיפות</dt><dd id="f-prio"></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-client" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">לקוח לא ברור</div>
+        <h2>כשלא ברור לאיזה לקוח המשימה שייכת, <bdi dir="ltr">Claude</bdi> שואל ולא מנחש</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>כתבתם משימה בלי שם של לקוח: <span class="say">תוסיף משימה לעדכן את התקציב</span></p>
+            <div class="predict" data-unlocks="client-rule">
+              <div class="q">מה <bdi dir="ltr">Claude</bdi> יעשה?</div>
+              <div class="choices">
+                <button>יבחר את הלקוח הכי סביר</button>
+                <button data-correct>ייקח את הלקוח שעליו מדברים בשיחה, ואם אין כזה, ישאל</button>
+                <button>יפתח את המשימה בלי לקוח</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: הלקוח מהשיחה, ואם אין כזה, שאלה קצרה.</span></p>
+                <p>אם כל השיחה עוסקת בלקוח אחד, ברור שהמשימה שלו. אם לא, <bdi dir="ltr">Claude</bdi> שואל שאלה אחת קצרה ומחכה לתשובה.</p>
+              </div>
+            </div>
+          </div>
+          <div id="client-rule" class="locked is-locked stack">
+            <div class="card mint">
+              <h3>משימה אף פעם לא נצמדת ללקוח מנוחש</h3>
+              <p>משימה על הלקוח הלא נכון גרועה ממשימה שלא נפתחה. היא מופיעה אצל מישהו אחר, ואצלכם היא חסרה.</p>
+            </div>
+            <div class="rule">הדרך הקצרה: אומרים את שם הלקוח כבר במשפט.</div>
+            <aside class="dyk"><p>גם משימה שלא שייכת לאף לקוח אפשרית. כותבים <span class="say">משימה פנימית</span> והיא נפתחת בלי לקוח.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-cases" data-part="3" data-stages="2">
+      <div class="slide-inner">
+        <div class="kicker">עוד שלושה מקרים</div>
+        <h2>שלושה מקרים ש-<bdi dir="ltr">Claude</bdi> מטפל בהם בעצמו</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">כמה דברים יחד</span>
+            <h3 style="margin-top:10px">שלושה דברים במשפט הם שלוש משימות</h3>
+            <p>כתבתם שלושה דברים שצריך לעשות? נפתחות שלוש משימות נפרדות, וחוזרים אליכם שלושה קישורים.</p>
+          </div>
+          <div class="card" data-stage="1">
+            <span class="stamp">משימה למישהו אחר</span>
+            <h3 style="margin-top:10px">אפשר לפתוח משימה לחבר צוות</h3>
+            <p>כותבים <span class="say">משימה לדנה: לאשר את התקציב</span> והמשימה נרשמת על שמה. אם לא ברור למי הכוונה, <bdi dir="ltr">Claude</bdi> שואל.</p>
+          </div>
+          <div class="card" data-stage="2">
+            <span class="stamp">כפילות</span>
+            <h3 style="margin-top:10px">משימה שכבר קיימת לא נפתחת שוב</h3>
+            <p>לפני הפתיחה <bdi dir="ltr">Claude</bdi> בודק את המשימות הפתוחות של אותו לקוח. אם המשימה כבר שם, חוזר אליכם קישור אליה.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-after" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">אחרי שנפתחה</div>
+        <h2>את המשימות רואים, מעדכנים וסוגרים באותה דרך, עם <bdi dir="ltr" class="cmd">/my-tasks</bdi></h2>
+        <div class="cols even">
+          <div class="stack">
+            <p><bdi dir="ltr" class="cmd">/my-tasks</bdi> מביא את המשימות הפתוחות שלכם מ-<bdi dir="ltr">Notion</bdi>. כדי לעדכן משימה, פשוט אומרים מה קרה:</p>
+            <table class="data">
+              <thead><tr><th>מה אומרים</th><th>מה קורה ב-<bdi dir="ltr">Notion</bdi></th></tr></thead>
+              <tbody>
+                <tr><td><span class="say">סיימתי את זה</span></td><td>המשימה נסגרת</td></tr>
+                <tr><td><span class="say">זה תקוע, מחכה לאישור מהלקוח</span></td><td>הסטטוס הופך לתקוע, והסיבה נרשמת</td></tr>
+                <tr><td><span class="say">תדחה ליום ראשון</span></td><td>תאריך היעד מתעדכן</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="stack">
+            <div class="card">
+              <h3>הסדר שבו המשימות מוצגות</h3>
+              <ol class="order">
+                <li>משימות באיחור</li>
+                <li>משימות להיום</li>
+                <li>משימות תקועות</li>
+                <li>משימות לשבוע הזה</li>
+                <li>כל השאר</li>
+              </ol>
+            </div>
+            <div class="rule"><bdi dir="ltr">Notion</bdi> הוא המקור. ה-<bdi dir="ltr">vault</bdi> שלכם מתעדכן לפיו, ואף פעם לא להפך.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-check" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">מה צריך לוודא</div>
+        <h2>שלושה דברים שכדאי לוודא כדי שזה יעבוד חלק</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">חיבור</span>
+            <h3 style="margin-top:10px"><bdi dir="ltr">Notion</bdi> מחובר</h3>
+            <p>אם החיבור לא פעיל, <bdi dir="ltr">Claude</bdi> אומר זאת, שומר את המשימה ב-<bdi dir="ltr">vault</bdi> בלבד, ומסמן שהיא עוד לא ב-<bdi dir="ltr">Notion</bdi>.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">ניסוח</span>
+            <h3 style="margin-top:10px">שם הלקוח נמצא במשפט</h3>
+            <p>זה חוסך שאלה חוזרת. מספיק השם שבו אתם קוראים ללקוח ביום יום.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">בדיקה</span>
+            <h3 style="margin-top:10px">מציצים בשורה שחוזרת</h3>
+            <p><bdi dir="ltr">Claude</bdi> עונה בשורה אחת עם הלקוח והתאריך. מבט של שנייה מספיק כדי לוודא שהוא הבין נכון.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מה זה עושה</b></td><td>כותבים מה צריך לעשות, ו-<bdi dir="ltr">Claude</bdi> פותח משימה ב-<bdi dir="ltr">Notion</bdi> על הלקוח הנכון ועל שמכם.</td></tr>
+            <tr><td><b>מה <bdi dir="ltr">Claude</bdi> ממלא</b></td><td>כותרת, לקוח, אחראי וסטטוס תמיד. תאריך ועדיפות רק אם אמרתם אותם.</td></tr>
+            <tr><td><b>מקרים מיוחדים</b></td><td>לקוח לא ברור מוביל לשאלה, לא לניחוש. כמה דברים הם כמה משימות. משימה קיימת לא נפתחת פעמיים.</td></tr>
+            <tr><td><b>אחרי שנפתחה</b></td><td><bdi dir="ltr" class="cmd">/my-tasks</bdi> מציג את המשימות הפתוחות, וסוגרים או דוחים אותן במשפט.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="personal.html">למצגת הבאה: מוסיפים תחום אישי<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the sentence is the control: pick one, the task beside it shows what was filled and what was left alone */
+  's-fields'(s) {
+    if (s.dataset.wired) return;
+    s.dataset.wired = 1;
+    const none = t => ({ html: t, none: true });
+    const D = {
+      a: { title: 'להחליף קריאייטיב בקמפיין הרימרקטינג', due: { html: '<span class="pill date">יום חמישי</span>' }, prio: none('ברירת המחדל'),
+           say: 'אמרתם תאריך, ולכן הוא נקבע. לא אמרתם עדיפות, ולכן היא נשארת ברירת המחדל.' },
+      b: { title: 'לבדוק למה הפיקסל לא מדווח רכישות', due: none('לא נקבע'), prio: { html: '<span class="pill high">גבוהה</span>' },
+           say: 'המילה דחוף קבעה עדיפות גבוהה. תאריך לא נאמר, ולכן אין תאריך.' },
+      c: { title: 'להכין את הדוח החודשי', due: none('לא נקבע'), prio: none('ברירת המחדל'),
+           say: 'לא נאמרו תאריך או עדיפות. המשימה נפתחת בלעדיהם, ואפשר להוסיף אותם אחר כך במשפט.' }
+    };
+    const $ = q => s.querySelector(q);
+    const longest = f => Object.values(D).map(f).sort((x, y) => y.length - x.length)[0];
+    $('#fields-verdict').dataset.longest = longest(d => d.say);
+    $('#f-title').dataset.longest = longest(d => d.title);
+    const put = (el, v) => {
+      if (el.innerHTML !== v.html) { el.classList.remove('changed'); void el.offsetWidth; el.classList.add('changed'); }
+      el.innerHTML = v.html; el.classList.toggle('none', !!v.none);
+    };
+    const pick = k => {
+      s.querySelectorAll('#fields-table tr[data-k]').forEach(r => { r.classList.toggle('sel', r.dataset.k === k); r.setAttribute('aria-checked', String(r.dataset.k === k)); });
+      const d = D[k];
+      put($('#f-title'), { html: d.title });
+      put($('#f-due'), d.due);
+      put($('#f-prio'), d.prio);
+      $('#fields-verdict').textContent = d.say;
+    };
+    s.querySelectorAll('#fields-table tr[data-k]').forEach(r => {
+      r.addEventListener('click', () => pick(r.dataset.k));
+      r.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); pick(r.dataset.k); } });
+    });
+    pick('a');
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

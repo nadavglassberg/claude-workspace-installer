@@ -1,5 +1,7 @@
 # Every file the installer puts into the workspace. One path per line.
 .claude/settings.json
+vault/.obsidian/app.json
+vault/.obsidian/core-plugins.json
 .claude/skills/setup-vault/SKILL.md
 .claude/skills/add-task/SKILL.md
 .claude/skills/my-tasks/SKILL.md
@@ -8,3 +10,18 @@
 .claude/skills/client-brief/SKILL.md
 .claude/skills/draft-update/SKILL.md
 .claude/skills/refresh-my-data/SKILL.md
+.claude/skills/introduction/SKILL.md
+.claude/skills/introduction/add-task.html
+.claude/skills/introduction/checklist.html
+.claude/skills/introduction/connections.html
+.claude/skills/introduction/daily.html
+.claude/skills/introduction/deck.js
+.claude/skills/introduction/index.html
+.claude/skills/introduction/intro.css
+.claude/skills/introduction/intro.js
+.claude/skills/introduction/personal.html
+.claude/skills/introduction/ppg-design-system.css
+.claude/skills/introduction/setup.html
+.claude/skills/introduction/share-skill.html
+.claude/skills/introduction/skills.html
+.claude/skills/introduction/vault.html

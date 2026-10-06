@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>כל הסקילים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">כל הסקילים<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">6</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מה זה סקיל</button>
+        <button data-part="2">סקילים לעבודה</button>
+        <button data-part="3">סקילים של ה-<bdi dir="ltr">vault</bdi></button>
+        <button data-part="4">לעבוד איתם נכון</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <!-- ═════════ פתיחה ═════════ -->
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>הסקילים שלכם, ומתי משתמשים בכל אחד</h1>
+        <p class="lead" style="margin-top:14px">סקיל הוא פעולה שלמה ש-<bdi dir="ltr">Claude</bdi> יודע לעשות בשבילכם, מההתחלה ועד הסוף. יש לכם שבעה סקילים לעבודה מול לקוחות, וחמישה שמתחזקים את ה-<bdi dir="ltr">vault</bdi>.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מה זה סקיל</b>ואיך מפעילים אותו, בשתי דרכים</li>
+          <li data-agenda="2"><b>סקילים לעבודה</b>שבעה, לאורך יום העבודה</li>
+          <li data-agenda="3"><b>סקילים של ה-<bdi dir="ltr">vault</bdi></b>חמישה, ששומרים על הסדר</li>
+          <li data-agenda="4"><b>לעבוד איתם נכון</b>מה הם עושים לבד, ומה אף פעם לא</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-what" data-part="1" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">מה זה סקיל</div>
+        <h2>סקיל הוא פעולה שלמה ש-<bdi dir="ltr">Claude</bdi> מבצע כשמבקשים אותה</h2>
+        <p class="lead">יש שתי דרכים לבקש, ושתיהן מפעילות את אותו סקיל:</p>
+        <div class="cols even">
+          <div class="card mint">
+            <span class="stamp">דרך אחת</span>
+            <h3 style="margin-top:10px">מקלידים את השם</h3>
+            <p>לוכסן, ואחריו שם הסקיל: <bdi dir="ltr" class="cmd">/start-day</bdi>. ברגע שמקלידים לוכסן נפתחת רשימה של כל הסקילים, ואפשר לבחור ממנה.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">דרך שנייה</span>
+            <h3 style="margin-top:10px">פשוט אומרים מה רוצים</h3>
+            <p>כותבים <span class="say">בוקר טוב</span> או <span class="say">מה יש לי היום</span> ו-<bdi dir="ltr">Claude</bdi> מזהה בעצמו שזה אותו סקיל. לא צריך לזכור שמות.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="1">בלי סקיל, <bdi dir="ltr">Claude</bdi> מאלתר בכל פעם מחדש. עם סקיל, הוא עושה את אותה פעולה באותה דרך, בכל פעם ואצל כולם.</div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-day" data-part="2">
+      <div class="slide-inner">
+        <div class="kicker">סקילים לעבודה</div>
+        <h2>שבעה סקילים מלווים את יום העבודה, מהבוקר ועד הסוף</h2>
+        <div class="cols">
+          <table class="data pick narrow" id="day-table" role="radiogroup" aria-label="בחירת סקיל">
+            <thead><tr><th>בחרו סקיל</th><th>מתי משתמשים בו</th></tr></thead>
+            <tbody>
+              <tr data-k="start-day" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/start-day</bdi></td><td>בבוקר, לפני הכל</td></tr>
+              <tr data-k="slack-catchup" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/slack-catchup</bdi></td><td>כשחוזרים למחשב</td></tr>
+              <tr data-k="add-task" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/add-task</bdi></td><td>כשעולה משהו שצריך לעשות</td></tr>
+              <tr data-k="my-tasks" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/my-tasks</bdi></td><td>כשרוצים לראות מה פתוח</td></tr>
+              <tr data-k="client-brief" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/client-brief</bdi></td><td>לפני פגישה עם לקוח</td></tr>
+              <tr data-k="draft-update" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/draft-update</bdi></td><td>כשצריך לכתוב ללקוח</td></tr>
+              <tr data-k="refresh-my-data" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr" class="cmd">/refresh-my-data</bdi></td><td>כשמשהו השתנה ב-<bdi dir="ltr">Notion</bdi></td></tr>
+            </tbody>
+          </table>
+          <div class="detail">
+            <bdi dir="ltr" class="cmd" id="day-cmd"></bdi>
+            <h3 id="day-title"></h3>
+            <div class="lbl">מה אומרים</div>
+            <div class="says" id="day-says"></div>
+            <div class="lbl">מה מקבלים</div>
+            <ul id="day-gets"></ul>
+            <div class="touch" id="day-touch"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-vault" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">סקילים של ה-<bdi dir="ltr">vault</bdi></div>
+        <h2>חמישה סקילים שומרים על ה-<bdi dir="ltr">vault</bdi> מסודר, ושניים מהם שלכם בכל יום</h2>
+        <div class="cols even">
+          <div class="stack">
+            <div class="card mint">
+              <span class="stamp">בסוף כל יום</span>
+              <h3 style="margin-top:10px"><bdi dir="ltr" class="cmd">/end-of-session</bdi></h3>
+              <p>כותב סיכום של מה שנעשה היום, מעדכן את המשימות, ושומר את מה שלימדתם את <bdi dir="ltr">Claude</bdi>.</p>
+            </div>
+            <div class="card mint">
+              <span class="stamp">כשיש קובץ חדש</span>
+              <h3 style="margin-top:10px"><bdi dir="ltr" class="cmd">/process-vault</bdi></h3>
+              <p>שמים קובץ בתיקייה <bdi dir="ltr">raw/inbox</bdi>, ו-<bdi dir="ltr">Claude</bdi> קורא אותו ומכניס כל פרט לדף הנכון.</p>
+            </div>
+          </div>
+          <div class="stack">
+            <table class="data">
+              <thead><tr><th>לעיתים רחוקות</th><th>מה הוא עושה, ומתי</th></tr></thead>
+              <tbody>
+                <tr><td><bdi dir="ltr" class="cmd">/deep-process-vault</bdi></td><td>בדיקת עומק: קישורים שבורים ודפים שנשכחו<span class="when">פעם בכמה שבועות</span></td></tr>
+                <tr><td><bdi dir="ltr" class="cmd">/vault-skills-sync</bdi></td><td>מכניס סקילים חדשים ל-<bdi dir="ltr">vault</bdi><span class="when">אחרי שהורדתם סקיל חדש</span></td></tr>
+                <tr><td><bdi dir="ltr" class="cmd">/sync-claude-md</bdi></td><td>מעדכן את קובץ ההוראות הראשי<span class="when"><bdi dir="ltr">Claude</bdi> מריץ אותו בעצמו</span></td></tr>
+              </tbody>
+            </table>
+            <aside class="dyk"><p><bdi dir="ltr" class="cmd">/setup-vault</bdi> הוא סקיל ההתקנה. מריצים אותו פעם אחת. אם הוא נעצר באמצע, מריצים אותו שוב והוא ממשיך מאותה נקודה.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-trust" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">מה סקיל עושה לבד</div>
+        <h2>סקילים קוראים לבד, כותבים רק במקום אחד, ואף פעם לא שולחים בשמכם</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>ביקשתם מ-<bdi dir="ltr">Claude</bdi> לענות ללקוח ב-<bdi dir="ltr">Slack</bdi>.</p>
+            <div class="predict" data-unlocks="trust-grid">
+              <div class="q">מה יקרה?</div>
+              <div class="choices">
+                <button>ההודעה תישלח מיד</button>
+                <button data-correct>תקבלו טיוטה, והיא תישלח רק אחרי שתאשרו</button>
+                <button><bdi dir="ltr">Claude</bdi> יסרב לכתוב אותה</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: טיוטה, ושליחה רק אחרי אישור.</span></p>
+                <p>כל הודעה שיוצאת בשמכם עוברת קודם דרך העיניים שלכם. במייל זו תמיד טיוטה ב-<bdi dir="ltr">Gmail</bdi>, ואתם לוחצים על שליחה.</p>
+              </div>
+            </div>
+          </div>
+          <div id="trust-grid" class="locked is-locked stack">
+            <div class="card">
+              <span class="stamp" style="background:var(--mint-dim);color:var(--mint)">קוראים</span>
+              <p style="margin-top:8px">מ-<bdi dir="ltr">Notion</bdi>, מ-<bdi dir="ltr">Slack</bdi>, מהמייל ומגיליון הלקוחות, בלי לבקש רשות בכל פעם.</p>
+            </div>
+            <div class="card">
+              <span class="stamp">כותבים</span>
+              <p style="margin-top:8px">ל-<bdi dir="ltr">vault</bdi> שלכם תמיד. ב-<bdi dir="ltr">Notion</bdi> רק משימות: פתיחה של משימה, ועדכון שלה כשביקשתם.</p>
+            </div>
+            <div class="card red">
+              <span class="stamp" style="background:var(--red-dim);color:var(--red)">אף פעם</span>
+              <p style="margin-top:8px">לא שולחים הודעה או מייל, לא מוחקים משימה, ולא מעתיקים סיסמאות.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-tips" data-part="4" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">לעבוד איתם נכון</div>
+        <h2>שלושה הרגלים שהופכים את הסקילים למדויקים יותר</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">הרגל <bdi dir="ltr">1</bdi></span>
+            <h3 style="margin-top:10px">אומרים את שם הלקוח</h3>
+            <p>רוב הסקילים עובדים על לקוח אחד. שם הלקוח במשפט חוסך שאלה חוזרת.</p>
+          </div>
+          <div class="card" data-stage="1">
+            <span class="stamp">הרגל <bdi dir="ltr">2</bdi></span>
+            <h3 style="margin-top:10px">מתקנים פעם אחת</h3>
+            <p>משהו לא יצא כמו שרציתם? אומרים ל-<bdi dir="ltr">Claude</bdi> מה לשנות מעכשיו. הוא רושם את זה בכללים, ולא צריך לחזור על כך.</p>
+          </div>
+          <div class="card" data-stage="2">
+            <span class="stamp">הרגל <bdi dir="ltr">3</bdi></span>
+            <h3 style="margin-top:10px">מתאימים סקיל לעצמכם</h3>
+            <p>אומרים <span class="say">ב-<bdi dir="ltr" class="cmd">/start-day</bdi> תראה קודם את הפגישות</span> ו-<bdi dir="ltr">Claude</bdi> משנה את העותק שלכם, ורק אותו.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="3">סקילים חדשים מגיעים כשמדביקים שוב את שורת ההתקנה. הקבצים שלכם לא נדרסים.</div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מה זה סקיל</b></td><td>פעולה שלמה ש-<bdi dir="ltr">Claude</bdi> מבצע באותה דרך בכל פעם. מקלידים לוכסן ושם, או פשוט אומרים מה רוצים.</td></tr>
+            <tr><td><b>סקילים לעבודה</b></td><td>שבעה: תדריך בוקר, <bdi dir="ltr">Slack</bdi>, פתיחת משימה, המשימות שלי, תדריך לקוח, טיוטה ללקוח, ורענון נתונים.</td></tr>
+            <tr><td><b>סקילים של ה-<bdi dir="ltr">vault</bdi></b></td><td><bdi dir="ltr" class="cmd">/end-of-session</bdi> בסוף כל יום, ו-<bdi dir="ltr" class="cmd">/process-vault</bdi> כשיש קובץ חדש. שלושת האחרים לעיתים רחוקות.</td></tr>
+            <tr><td><b>לעבוד איתם נכון</b></td><td>הם קוראים לבד ולא שולחים בשמכם. אומרים את שם הלקוח, מתקנים פעם אחת, ומתאימים סקיל לעצמכם.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="add-task.html">למצגת הבאה: מוסיפים משימה<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the explorer: the list of skills is the control, the card beside it shows the chosen one */
+  's-day'(s) {
+    const D = {
+      'start-day': {
+        title: 'תדריך בוקר במסך אחד',
+        say: ['בוקר טוב', 'מה יש לי היום'],
+        get: ['מה חייב לקרות היום, עד חמישה דברים', 'מי מחכה לתשובה מכם ב-<bdi dir="ltr">Slack</bdi> ובמייל', 'הפגישות של היום, והצעה לסדר היום'],
+        touch: 'קורא מ-<bdi dir="ltr">Notion</bdi>, מ-<bdi dir="ltr">Slack</bdi> ומהמייל. לא משנה בהם דבר.'
+      },
+      'slack-catchup': {
+        title: 'כל מה שקרה ב-<bdi dir="ltr">Slack</bdi> מאז הפעם האחרונה',
+        say: ['מה פספסתי', 'מי מחכה לי'],
+        get: ['מי שאל אתכם משהו, ועוד לא קיבל תשובה', 'סיכום קצר לכל לקוח שקרה אצלו משהו', 'החלטות ומספרים נשמרים בדף הלקוח'],
+        touch: 'קורא בלבד. לא שולח, לא מגיב, ולא מסמן הודעות כנקראו.'
+      },
+      'add-task': {
+        title: 'משימה חדשה ב-<bdi dir="ltr">Notion</bdi>, במשפט אחד',
+        say: ['תוסיף משימה ל', 'צריך לעשות'],
+        get: ['משימה על הלקוח הנכון, על שמכם', 'שורה אחת, עם קישור למשימה', 'העתק ברשימת המשימות שב-<bdi dir="ltr">vault</bdi>'],
+        touch: 'כותב משימה חדשה ב-<bdi dir="ltr">Notion</bdi>, ואת ההעתק שלה ב-<bdi dir="ltr">vault</bdi>.'
+      },
+      'my-tasks': {
+        title: 'המשימות הפתוחות שלכם, מהדחופה ביותר',
+        say: ['מה פתוח אצלי', 'סיימתי את זה'],
+        get: ['טבלה אחת: באיחור, להיום, תקועות, ואז השאר', 'סגירה, דחייה או סימון כתקועה, במשפט', 'ה-<bdi dir="ltr">vault</bdi> מתעדכן לפי <bdi dir="ltr">Notion</bdi>'],
+        touch: 'קורא מ-<bdi dir="ltr">Notion</bdi>, ומעדכן משימה רק כשביקשתם.'
+      },
+      'client-brief': {
+        title: 'לקוח אחד במסך אחד, לפני פגישה',
+        say: ['תכין אותי לפגישה עם', 'מה המצב עם'],
+        get: ['מה פתוח מול הלקוח, ומה הוא ביקש לאחרונה', 'מה הוחלט בפגישה הקודמת, והאם זה קרה', 'שלוש עד חמש נקודות להעלות בפגישה'],
+        touch: 'קורא מכל הכלים. שומר את התדריך ב-<bdi dir="ltr">vault</bdi>.'
+      },
+      'draft-update': {
+        title: 'טיוטה של מייל או של הודעה ללקוח',
+        say: ['תנסח עדכון ל', 'תענה להם'],
+        get: ['טיוטה בשפה ובטון שלכם', 'מספרים רק ממקור שנקרא, אף פעם לא מומצאים', 'במייל: הטיוטה נשמרת ב-<bdi dir="ltr">Gmail</bdi>'],
+        touch: 'אף פעם לא שולח. אתם קוראים, ואתם שולחים.'
+      },
+      'refresh-my-data': {
+        title: 'ה-<bdi dir="ltr">vault</bdi> מתעדכן לפי <bdi dir="ltr">Notion</bdi> וגיליון הלקוחות',
+        say: ['תרענן את הנתונים', 'קיבלתי לקוח חדש'],
+        get: ['לקוח חדש שלכם מקבל דף משלו', 'שינויים ביעדים, בתקציב ובאחראים מתעדכנים', 'רשימה קצרה של מה שהשתנה'],
+        touch: 'קורא מ-<bdi dir="ltr">Notion</bdi> ומהגיליון. כותב רק ל-<bdi dir="ltr">vault</bdi>.'
+      }
+    };
+    Intro.picker(s, '#day-table', D, {
+      '#day-cmd': (d, k) => '/' + k,
+      '#day-title': d => d.title,
+      '#day-says': d => Intro.says(d.say),
+      '#day-gets': d => Intro.li(d.get),
+      '#day-touch': d => d.touch
+    });
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

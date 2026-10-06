@@ -5,7 +5,8 @@
 # newer version exists, already current -> left alone.
 #
 # Then it creates the workspace folder (%USERPROFILE%\claude-workspace, or $env:WORKSPACE_DIR),
-# downloads the /setup-vault skill into it and opens it in VS Code.
+# puts an empty vault folder (with its Obsidian settings), the skills and the guide into it,
+# opens it in VS Code, and opens the guide in the browser.
 #
 # Run it by double-clicking install.bat, or paste this into PowerShell:
 #   irm https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/install.ps1 | iex
@@ -161,14 +162,14 @@ function Install-Starter {
     Write-Host 'IMPORTANT: VS Code will ask "Do you trust the authors of the files in this folder?"' -ForegroundColor Yellow
     Write-Host 'Click "Yes, I trust the authors". Without it VS Code keeps Claude Code and the RTL extension disabled.' -ForegroundColor Yellow
     Write-Host ''
-    Write-Host 'Then: open Claude Code in VS Code and type  /setup-vault'
+    Write-Host 'Then follow the guide that opens in your browser. Topic 1 walks you through the rest.'
     Write-Host 'New skills are added over time. Run this same line again any day to get them. Your own files are never overwritten.'
 
-    # Connectors need the person's own login, so the closest thing to automatic is opening the page.
-    Write-Host 'Also opening claude.ai connectors in your browser: click Connect on Slack, Notion, Gmail and Google Drive.' -ForegroundColor Yellow
-    Start-Process 'https://claude.ai/settings/connectors'
-
     if ($CodeCmd) { & $CodeCmd $dir }
+
+    # The guide teaches everything from here, including how to open a Claude chat, so it has to open without Claude.
+    $guide = Join-Path $dir '.claude\skills\introduction\index.html'
+    if (Test-Path $guide) { Start-Process $guide }
 }
 
 Install-Workspace

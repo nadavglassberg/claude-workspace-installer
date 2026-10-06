@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>החיבורים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">החיבורים<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">3</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מה זה חיבור</button>
+        <button data-part="2">חמשת הכלים</button>
+        <button data-part="3">איך מחברים</button>
+        <button data-part="4">מה חשוב לדעת</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>החיבורים: איך <bdi dir="ltr">Claude</bdi> מגיע ל-<bdi dir="ltr">Notion</bdi>, ל-<bdi dir="ltr">Slack</bdi> ולמייל שלכם</h1>
+        <p class="lead" style="margin-top:14px">חיבור נותן ל-<bdi dir="ltr">Claude</bdi> גישה לכלי שאתם כבר עובדים איתו, עם ההרשאות שלכם. בלי חיבורים, <bdi dir="ltr">Claude</bdi> רואה רק את ה-<bdi dir="ltr">vault</bdi>.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מה זה חיבור</b>כניסה לכלי, בשם שלכם</li>
+          <li data-agenda="2"><b>חמשת הכלים</b>מה <bdi dir="ltr">Claude</bdi> עושה בכל אחד</li>
+          <li data-agenda="3"><b>איך מחברים</b>פעם אחת, באתר של <bdi dir="ltr">Claude</bdi></li>
+          <li data-agenda="4"><b>מה חשוב לדעת</b>סיסמאות, ניתוקים ובדיקה</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-what" data-part="1" data-stages="2">
+      <div class="slide-inner">
+        <div class="kicker">מה זה חיבור</div>
+        <h2>חיבור הוא כניסה של <bdi dir="ltr">Claude</bdi> לכלי, בשם שלכם ועם ההרשאות שלכם</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🙋</div><div class="t">אתם</div><div class="s">מבקשים משהו בשיחה</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🤖</div><div class="t"><bdi dir="ltr">Claude</bdi></div><div class="s">מבין לאיזה כלי צריך לגשת</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🔌</div><div class="t">החיבור</div><div class="s">פותח את הכלי, עם ההרשאות שלכם</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">📋</div><div class="t">הכלי</div><div class="s">למשל <bdi dir="ltr">Notion</bdi>, עם המשימות שלכם</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="2"><bdi dir="ltr">Claude</bdi> רואה רק מה שאתם רואים. דף שאין לכם גישה אליו, גם לו אין.</div>
+          <aside class="dyk" data-stage="2" style="margin-top:0"><p>בשפה הטכנית חיבור כזה נקרא <bdi dir="ltr">MCP</bdi>. אם תיתקלו בשם הזה, זה אותו דבר.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-tools" data-part="2">
+      <div class="slide-inner">
+        <div class="kicker">חמשת הכלים</div>
+        <h2>חמישה חיבורים, ולכל אחד תפקיד ברור</h2>
+        <div class="cols">
+          <table class="data pick narrow" id="tools-table" role="radiogroup" aria-label="בחירת כלי">
+            <thead><tr><th>בחרו כלי</th><th>מה יש שם</th></tr></thead>
+            <tbody>
+              <tr data-k="Notion" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">Notion</bdi></td><td>משימות, לקוחות, צוות</td></tr>
+              <tr data-k="Slack" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">Slack</bdi></td><td>ערוצים והודעות</td></tr>
+              <tr data-k="Gmail" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">Gmail</bdi></td><td>מיילים מלקוחות</td></tr>
+              <tr data-k="Google Drive" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">Google Drive</bdi></td><td>גיליון הלקוחות</td></tr>
+              <tr data-k="Toffu" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">Toffu</bdi></td><td>מספרים חיים מהקמפיינים</td></tr>
+            </tbody>
+          </table>
+          <div class="detail">
+            <span class="stamp mint"><bdi dir="ltr" id="tl-name"></bdi></span>
+            <h3 id="tl-title"></h3>
+            <div class="lbl">מה <bdi dir="ltr">Claude</bdi> עושה שם</div>
+            <ul id="tl-does"></ul>
+            <div class="lbl">דוגמה לבקשה</div>
+            <div class="says" id="tl-says"></div>
+            <div class="touch" id="tl-touch"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-connect" data-part="3" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">איך מחברים</div>
+        <h2>מחברים פעם אחת באתר של <bdi dir="ltr">Claude</bdi>, ומשם זה עובד בעצמו</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🌐</div><div class="t">נכנסים לאתר</div><div class="s"><bdi dir="ltr">claude.ai</bdi>, ואז <bdi dir="ltr" class="ui">Settings</bdi> ו-<bdi dir="ltr" class="ui">Connectors</bdi></div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🔗</div><div class="t">לוחצים <bdi dir="ltr" class="ui">Connect</bdi></div><div class="s">ליד כל כלי שרוצים לחבר</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">🔑</div><div class="t">מתחברים</div><div class="s">עם חשבון העבודה, ומאשרים</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">🔄</div><div class="t">טוענים מחדש</div><div class="s">ב-<bdi dir="ltr">VS Code</bdi>: <bdi dir="ltr" class="ui">Reload Window</bdi></div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="3">את ההתחברות עושים רק אתם. אף אדם אחר ואף תוכנה לא יכולים להתחבר במקומכם.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>כדי לטעון מחדש את החלון לוחצים <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd>, ומקלידים <bdi dir="ltr">Reload Window</bdi>.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-toffu" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker"><bdi dir="ltr">Toffu</bdi></div>
+        <h2>ל-<bdi dir="ltr">Toffu</bdi> מחברים חיבור נפרד לכל לקוח</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>לכל לקוח יש ב-<bdi dir="ltr">Toffu</bdi> סביבת עבודה משלו, ולכן לכל לקוח יש חיבור משלו.</p>
+            <div class="card">
+              <ol class="order">
+                <li><span><bdi dir="ltr" class="cmd">/setup-vault</bdi> נותן לכם טבלה: שם וכתובת לכל לקוח</span></li>
+                <li><span>בעמוד החיבורים לוחצים <bdi dir="ltr" class="ui">Add custom connector</bdi></span></li>
+                <li><span>מדביקים את השם ואת הכתובת מהטבלה</span></li>
+                <li><span>מתחברים ל-<bdi dir="ltr">Toffu</bdi> כשהדפדפן מבקש</span></li>
+              </ol>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="card mint">
+              <h3>איך יודעים שזה עבד</h3>
+              <p><bdi dir="ltr">Claude</bdi> שואל כל חיבור לאיזה לקוח הוא שייך, ורושם בדף הלקוח: מחובר, עוד לא, או שם שגוי.</p>
+            </div>
+            <aside class="dyk"><p>אפשר לדחות את זה. <bdi dir="ltr">Claude</bdi> רושם משימה עם הטבלה, וכל השאר עובד גם בלי <bdi dir="ltr">Toffu</bdi>.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-safe" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">סיסמאות</div>
+        <h2><bdi dir="ltr">Claude</bdi> אף פעם לא צריך מכם סיסמה, קוד או מפתח</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>ביקשתם את המשימות שלכם, ו-<bdi dir="ltr">Claude</bdi> ענה ש-<bdi dir="ltr">Notion</bdi> לא מחובר.</p>
+            <div class="predict" data-unlocks="safe-rule">
+              <div class="q">מה עושים?</div>
+              <div class="choices">
+                <button>מתקינים הכל מחדש</button>
+                <button data-correct>מחברים את <bdi dir="ltr">Notion</bdi> בעמוד החיבורים, וטוענים מחדש את החלון</button>
+                <button>כותבים ל-<bdi dir="ltr">Claude</bdi> את הסיסמה</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: מחברים בעמוד החיבורים, וטוענים מחדש.</span></p>
+                <p>חיבור יכול להתנתק מדי פעם. מחברים אותו שוב באותו עמוד, וזה לוקח דקה.</p>
+              </div>
+            </div>
+          </div>
+          <div id="safe-rule" class="locked is-locked stack">
+            <div class="card red">
+              <span class="stamp red">כלל ברזל</span>
+              <h3 style="margin-top:10px">לא מדביקים סיסמה בשיחה</h3>
+              <p>ההתחברות נעשית בדפדפן, מול הכלי עצמו. אם משהו מבקש מכם להדביק סיסמה או קוד בשיחה, לא עושים את זה.</p>
+            </div>
+            <div class="rule">כדי לבדוק מה מחובר, שואלים את <bdi dir="ltr">Claude</bdi>: <span class="say">אילו חיבורים פעילים</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-know" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">מה חשוב לדעת</div>
+        <h2>החיבור שלכם, ההרשאות שלכם, והנתונים נשארים אצלכם</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">ניתוק</span>
+            <h3 style="margin-top:10px">אפשר לנתק בכל רגע</h3>
+            <p>באותו עמוד שבו חיברתם. אחרי ניתוק, <bdi dir="ltr">Claude</bdi> לא רואה את הכלי יותר.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">הרשאות</span>
+            <h3 style="margin-top:10px">ההרשאות הן שלכם</h3>
+            <p><bdi dir="ltr">Claude</bdi> לא מקבל גישה שאין לכם. מה שלא פתוח בפניכם, לא פתוח בפניו.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">פרטיות</span>
+            <h3 style="margin-top:10px">מה שנקרא נשאר אצלכם</h3>
+            <p>הנתונים שנמשכים נכתבים ל-<bdi dir="ltr">vault</bdi> שעל המחשב שלכם, ולא לשום מקום משותף.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מה זה חיבור</b></td><td>חיבור הוא כניסה של <bdi dir="ltr">Claude</bdi> לכלי, עם ההרשאות שלכם. מה שאתם לא רואים, גם הוא לא רואה.</td></tr>
+            <tr><td><b>חמשת הכלים</b></td><td><bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi>, <bdi dir="ltr">Google Drive</bdi> ו-<bdi dir="ltr">Toffu</bdi>. ברובם <bdi dir="ltr">Claude</bdi> רק קורא, וב-<bdi dir="ltr">Notion</bdi> הוא גם פותח משימות.</td></tr>
+            <tr><td><b>איך מחברים</b></td><td>מחברים בעמוד החיבורים באתר של <bdi dir="ltr">Claude</bdi>, מתחברים עם חשבון העבודה, וטוענים מחדש את <bdi dir="ltr">VS Code</bdi>.</td></tr>
+            <tr><td><b>מה חשוב לדעת</b></td><td><bdi dir="ltr">Claude</bdi> אף פעם לא צריך סיסמה. חיבור שהתנתק מחברים שוב, ושואלים את <bdi dir="ltr">Claude</bdi> אילו חיבורים פעילים.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="checklist.html">למצגת הבאה: מה צריך לוודא<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the explorer: the list of tools is the control, the card beside it shows the chosen one */
+  's-tools'(s) {
+    const D = {
+      'Notion': { title: 'מערכת העבודה של החברה',
+        does: ['קורא את הלקוחות שלכם, המשימות והפגישות', 'פותח משימה חדשה כשאתם מבקשים', 'מעדכן משימה: סגירה, דחייה, או סימון כתקועה'],
+        say: ['מה פתוח אצלי', 'תוסיף משימה ל'], touch: 'קורא וכותב. כותב רק משימות.' },
+      'Slack': { title: 'השיחות עם הצוות ועם הלקוחות',
+        does: ['קורא את ערוצי הלקוחות שלכם', 'קורא הודעות ישירות, ואזכורים שלכם', 'מנסח תשובה, ושולח רק אחרי שאישרתם'],
+        say: ['מה פספסתי', 'מי מחכה לי'], touch: 'קורא. לא שולח בלי אישור שלכם.' },
+      'Gmail': { title: 'המייל של העבודה',
+        does: ['קורא מיילים מאנשי הקשר של הלקוחות', 'מנסח תשובה, ושומר אותה כטיוטה', 'לא שולח מייל, אף פעם'],
+        say: ['תנסח תשובה ל', 'מה הלקוח כתב השבוע'], touch: 'קורא, ויוצר טיוטות בלבד.' },
+      'Google Drive': { title: 'הקבצים והגיליונות',
+        does: ['קורא את גיליון הלקוחות: חשבונות, יעדים, תקציבים', 'קורא קובץ שביקשתם ממנו לפתוח', 'לא משנה קבצים, ולא מוחק אותם'],
+        say: ['תרענן את הנתונים', 'מה היעד של הלקוח החודש'], touch: 'קורא בלבד.' },
+      'Toffu': { title: 'סוכן שיווק שמחובר לחשבונות הפרסום',
+        does: ['מביא מספרים חיים: הוצאה, הכנסה, יחס החזר', 'חיבור נפרד לכל לקוח', 'אפשר לחבר אותו גם מאוחר יותר'],
+        say: ['מה המצב עם הלקוח החודש', 'תשווה את השבוע לשבוע שעבר'], touch: 'קורא נתונים. הסקילים לא משנים קמפיינים.' }
+    };
+    Intro.picker(s, '#tools-table', D, {
+      '#tl-name': (d, k) => k,
+      '#tl-title': d => d.title,
+      '#tl-does': d => Intro.li(d.does),
+      '#tl-says': d => Intro.says(d.say),
+      '#tl-touch': d => d.touch
+    });
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

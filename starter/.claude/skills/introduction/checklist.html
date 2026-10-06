@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>מה צריך לוודא</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">מה צריך לוודא<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">4</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">פעם אחת</button>
+        <button data-part="2">המודל</button>
+        <button data-part="3">בכל יום</button>
+        <button data-part="4">כשמשהו לא עובד</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>מה צריך לוודא כדי שהכל יעבוד, ומה עושים כשמשהו לא עובד</h1>
+        <p class="lead" style="margin-top:14px">רוב התקלות נובעות מארבעה או חמישה דברים קטנים. כאן הם מרוכזים, עם הדרך לבדוק כל אחד ולתקן אותו בדקה.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>פעם אחת</b>ארבעה דברים, לפני שמתחילים</li>
+          <li data-agenda="2"><b>המודל</b>איזה <bdi dir="ltr">Claude</bdi> עובד בשבילכם</li>
+          <li data-agenda="3"><b>בכל יום</b>שלושה דברים קטנים</li>
+          <li data-agenda="4"><b>כשמשהו לא עובד</b>תקלות נפוצות, ותיקונים של דקה</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-once" data-part="1">
+      <div class="slide-inner">
+        <div class="kicker">פעם אחת</div>
+        <h2>ארבעה דברים מוודאים פעם אחת, לפני שמתחילים</h2>
+        <div class="grid2">
+          <div class="card">
+            <span class="stamp">מנוי</span>
+            <h3 style="margin-top:10px">יש מנוי בתשלום ל-<bdi dir="ltr">Claude</bdi></h3>
+            <p><bdi dir="ltr">Pro</bdi>, <bdi dir="ltr">Max</bdi>, או מקום במנוי של החברה. בלי מנוי, <bdi dir="ltr">Claude Code</bdi> לא עובד.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">חיבורים</span>
+            <h3 style="margin-top:10px">ארבעה חיבורים פעילים</h3>
+            <p><bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi> ו-<bdi dir="ltr">Google Drive</bdi>. כדי לבדוק, שואלים את <bdi dir="ltr">Claude</bdi> אילו חיבורים פעילים.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">אמון</span>
+            <h3 style="margin-top:10px">התיקייה סומנה כמהימנה</h3>
+            <p>בפתיחה הראשונה <bdi dir="ltr">VS Code</bdi> שואל אם לסמוך על התיקייה. עונים <bdi dir="ltr" class="ui">Yes, I trust the authors</bdi>.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">התקנה</span>
+            <h3 style="margin-top:10px"><bdi dir="ltr" class="cmd">/setup-vault</bdi> רץ עד הסוף</h3>
+            <p>בסוף רואים ב-<bdi dir="ltr">Obsidian</bdi> את הלקוחות שלכם. אם הוא נעצר באמצע, מריצים אותו שוב.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-model" data-part="2" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">המודל</div>
+        <h2><bdi dir="ltr">Claude</bdi> צריך לעבוד על <bdi dir="ltr">Opus 5.5</bdi>, ברמת מאמץ גבוהה</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>ל-<bdi dir="ltr">Claude</bdi> יש כמה מודלים. המערכת הזאת נבנתה ונבדקה על החזק שבהם, וכך היא עובדת הכי טוב.</p>
+            <div class="card">
+              <span class="stamp">איך בודקים</span>
+              <p style="margin-top:8px">מקלידים <bdi dir="ltr" class="cmd">/model</bdi>. צריך להופיע <bdi dir="ltr">Opus 5.5</bdi>, עם רמת מאמץ <bdi dir="ltr">high</bdi>.</p>
+            </div>
+            <div class="rule" data-stage="1">ההתקנה קובעת את זה בשבילכם. אם מופיע משהו אחר, בוחרים באותו מסך <bdi dir="ltr">Opus 5.5</bdi> ו-<bdi dir="ltr">high</bdi>.</div>
+          </div>
+          <div class="chat">
+            <div class="chat-bar">Claude Code</div>
+            <div class="chat-body">
+              <div class="me"><span class="who">אתם כותבים</span><p><bdi dir="ltr" class="cmd">/model</bdi></p></div>
+              <div class="cl" data-stage="1">
+                <span class="who">מה צריך להופיע</span>
+                <p>מודל: <b><bdi dir="ltr">Opus 5.5</bdi></b></p>
+                <p>רמת מאמץ: <b><bdi dir="ltr">high</bdi></b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-daily" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">בכל יום</div>
+        <h2>שלושה דברים קטנים, בכל יום עבודה</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">פתיחה</span>
+            <h3 style="margin-top:10px">התיקייה הנכונה פתוחה</h3>
+            <p>ב-<bdi dir="ltr">VS Code</bdi> צריכה להיות פתוחה <bdi dir="ltr">claude-workspace</bdi>. בתיקייה אחרת <bdi dir="ltr">Claude</bdi> לא רואה את ה-<bdi dir="ltr">vault</bdi> ואת הסקילים.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">בוקר</span>
+            <h3 style="margin-top:10px">מתחילים עם <bdi dir="ltr" class="cmd">/start-day</bdi></h3>
+            <p>מקבלים במסך אחד מה דחוף, מי מחכה לתשובה, ואילו פגישות יש היום.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">ערב</span>
+            <h3 style="margin-top:10px">מסיימים עם <bdi dir="ltr" class="cmd">/end-of-session</bdi></h3>
+            <p>בלי זה היום לא נרשם ביומן, ומה שלימדתם את <bdi dir="ltr">Claude</bdi> עלול להישאר רק בשיחה.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-restricted" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">תקלה נפוצה</div>
+        <h2>כשהסמל של <bdi dir="ltr">Claude</bdi> נעלם, התיקייה נפתחה במצב מוגבל</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>פתחתם את <bdi dir="ltr">VS Code</bdi>, והסמל של <bdi dir="ltr">Claude</bdi> לא מופיע.</p>
+            <div class="predict" data-unlocks="restricted-fix">
+              <div class="q">מה הסיבה הסבירה ביותר?</div>
+              <div class="choices">
+                <button><bdi dir="ltr">Claude</bdi> נמחק מהמחשב</button>
+                <button data-correct>התיקייה נפתחה במצב מוגבל, והתוספים כבויים</button>
+                <button>המנוי נגמר</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: מצב מוגבל, שבו התוספים כבויים.</span></p>
+                <p><bdi dir="ltr">VS Code</bdi> מכבה תוספים בתיקייה שעוד לא אמרתם לו לסמוך עליה. זה קורה בעיקר בפתיחה הראשונה.</p>
+              </div>
+            </div>
+          </div>
+          <div id="restricted-fix" class="locked is-locked stack">
+            <div class="card mint">
+              <h3>התיקון, בשני צעדים</h3>
+              <ol class="order">
+                <li><span>לוחצים על <bdi dir="ltr" class="ui">Restricted Mode</bdi>, בפינה השמאלית התחתונה</span></li>
+                <li><span>לוחצים <bdi dir="ltr" class="ui">Trust</bdi></span></li>
+              </ol>
+            </div>
+            <aside class="dyk"><p>התוספים עדיין כבויים? לוחצים <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd>, מקלידים <bdi dir="ltr">Reload Window</bdi>, ולוחצים <kbd>Enter</kbd>.</p></aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-fix" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">כשמשהו לא עובד</div>
+        <h2>חמש תקלות נפוצות, וכל אחת נפתרת בדקה</h2>
+        <table class="data" style="margin-top:1.4rem">
+          <thead><tr><th>מה רואים</th><th>מה עושים</th></tr></thead>
+          <tbody>
+            <tr><td>מקלידים לוכסן, והסקיל לא מופיע ברשימה</td><td>טוענים מחדש את החלון: <bdi dir="ltr" class="ui">Reload Window</bdi></td></tr>
+            <tr><td><bdi dir="ltr">Claude</bdi> אומר שכלי לא מחובר</td><td>מחברים אותו בעמוד החיבורים, וטוענים מחדש את החלון</td></tr>
+            <tr><td>העברית מיושרת לשמאל</td><td>לוחצים על <bdi dir="ltr" class="ui">RTL</bdi> בשורה התחתונה, ובוחרים <bdi dir="ltr" class="ui">Activate RTL (Auto)</bdi></td></tr>
+            <tr><td><bdi dir="ltr">Claude</bdi> עונה ארוך מדי, או באנגלית</td><td>אומרים לו פעם אחת. הוא רושם את זה בכללים</td></tr>
+            <tr><td><bdi dir="ltr" class="cmd">/setup-vault</bdi> נעצר באמצע</td><td>מריצים אותו שוב. הוא ממשיך מאותה נקודה</td></tr>
+          </tbody>
+        </table>
+        <div class="rule" style="margin-top:1.4rem">לא עזר? שולחים צילום מסך של החלון. צילום אחד חוסך עשר הודעות.</div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>פעם אחת</b></td><td>מנוי בתשלום, ארבעה חיבורים, תיקייה מהימנה, ו-<bdi dir="ltr" class="cmd">/setup-vault</bdi> שרץ עד הסוף.</td></tr>
+            <tr><td><b>המודל</b></td><td><bdi dir="ltr">Opus 5.5</bdi>, ברמת מאמץ <bdi dir="ltr">high</bdi>. בודקים עם <bdi dir="ltr" class="cmd">/model</bdi>.</td></tr>
+            <tr><td><b>בכל יום</b></td><td>התיקייה הנכונה פתוחה, מתחילים עם <bdi dir="ltr" class="cmd">/start-day</bdi>, ומסיימים עם <bdi dir="ltr" class="cmd">/end-of-session</bdi>.</td></tr>
+            <tr><td><b>כשמשהו לא עובד</b></td><td>רוב התקלות נפתרות בטעינה מחדש של החלון, או בחיבור מחדש של כלי.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="daily.html">למצגת הבאה: עובדים עם זה ביום יום<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>

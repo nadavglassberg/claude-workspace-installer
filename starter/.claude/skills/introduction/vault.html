@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>איך ה-vault עובד</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">איך ה-<bdi dir="ltr">vault</bdi> עובד<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">2</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מה זה ה-<bdi dir="ltr">vault</bdi></button>
+        <button data-part="2">ארבע השכבות</button>
+        <button data-part="3">איך <bdi dir="ltr">Claude</bdi> מוצא</button>
+        <button data-part="4">מה אתם עושים</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>איך ה-<bdi dir="ltr">vault</bdi> עובד, ולמה <bdi dir="ltr">Claude</bdi> זוכר מה שאמרתם לו</h1>
+        <p class="lead" style="margin-top:14px">ה-<bdi dir="ltr">vault</bdi> הוא תיקייה של דפי טקסט על המחשב שלכם. <bdi dir="ltr">Claude</bdi> כותב בה כל מה שחשוב, ואתם קוראים אותה ב-<bdi dir="ltr">Obsidian</bdi>. בזכותה <bdi dir="ltr">Claude</bdi> יודע מחר מה סיכמתם היום.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מה זה ה-<bdi dir="ltr">vault</bdi></b>זיכרון שנשאר גם כשהשיחה נסגרת</li>
+          <li data-agenda="2"><b>ארבע השכבות</b>מה נמצא איפה, ולמה</li>
+          <li data-agenda="3"><b>איך <bdi dir="ltr">Claude</bdi> מוצא</b>מפות וכללים, במקום חיפוש בכל הדפים</li>
+          <li data-agenda="4"><b>מה אתם עושים</b>שלושה הרגלים, וזה הכל</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-why" data-part="1">
+      <div class="slide-inner">
+        <div class="kicker">מה זה ה-<bdi dir="ltr">vault</bdi></div>
+        <h2>שיחה חדשה עם <bdi dir="ltr">Claude</bdi> מתחילה מאפס, וה-<bdi dir="ltr">vault</bdi> הוא מה שנשאר</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>סיכמתם אתמול עם <bdi dir="ltr">Claude</bdi> תוכנית לחודש הבא של לקוח. הבוקר פתחתם שיחה חדשה.</p>
+            <div class="predict" data-unlocks="why-rule">
+              <div class="q">מה <bdi dir="ltr">Claude</bdi> זוכר מהשיחה של אתמול?</div>
+              <div class="choices">
+                <button>את כל השיחה</button>
+                <button data-correct>רק את מה שנכתב ב-<bdi dir="ltr">vault</bdi></button>
+                <button>רק את הדברים החשובים</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: רק את מה שנכתב ב-<bdi dir="ltr">vault</bdi>.</span></p>
+                <p>שיחה חדשה מתחילה מדף ריק. מה שנכתב ב-<bdi dir="ltr">vault</bdi> נשאר, כי <bdi dir="ltr">Claude</bdi> קורא אותו בתחילת כל משימה.</p>
+              </div>
+            </div>
+          </div>
+          <div id="why-rule" class="locked is-locked stack">
+            <div class="card mint">
+              <h3>השיחה היא לא הזיכרון. ה-<bdi dir="ltr">vault</bdi> הוא הזיכרון.</h3>
+              <p>לכן כל עובדה שאתם אומרים נכתבת לדף הנכון באותו רגע, ולא נשארת רק בשיחה.</p>
+            </div>
+            <div class="rule">החלטה חשובה שנשארה רק בשיחה היא החלטה ש-<bdi dir="ltr">Claude</bdi> ישכח.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-two" data-part="1" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">שני חלונות</div>
+        <h2>אותה תיקייה נפתחת בשני חלונות: <bdi dir="ltr">Claude</bdi> כותב באחד, ואתם קוראים בשני</h2>
+        <div class="cols even">
+          <div class="stack">
+            <div class="card">
+              <span class="stamp"><bdi dir="ltr">VS Code</bdi></span>
+              <p style="margin-top:8px">כאן מדברים עם <bdi dir="ltr">Claude</bdi>. הוא כותב את הדפים, ומעדכן אותם.</p>
+            </div>
+            <div class="card" data-stage="1">
+              <span class="stamp"><bdi dir="ltr">Obsidian</bdi></span>
+              <p style="margin-top:8px">כאן קוראים ומדפדפים: כל דף, כל קישור בין דפים, ותצוגת גרף של הכל.</p>
+            </div>
+            <div class="rule" data-stage="1">אתם לא צריכים לכתוב דפים בעצמכם. אומרים ל-<bdi dir="ltr">Claude</bdi>, והוא כותב במקום הנכון.</div>
+          </div>
+          <div>
+            <div class="lvl l1">
+              <b><bdi dir="ltr">claude-workspace</bdi></b><span class="d">התיקייה שנפתחת ב-<bdi dir="ltr">VS Code</bdi></span>
+              <div class="lvl mini"><b><bdi dir="ltr">CLAUDE.md</bdi></b><span class="d">ההוראות ש-<bdi dir="ltr">Claude</bdi> טוען בכל שיחה</span></div>
+              <div class="lvl mini"><b><bdi dir="ltr">.claude</bdi></b><span class="d">הסקילים וההגדרות</span></div>
+              <div class="lvl l2" data-stage="1"><b><bdi dir="ltr">vault</bdi></b><span class="d">התיקייה שנפתחת ב-<bdi dir="ltr">Obsidian</bdi></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-layers" data-part="2">
+      <div class="slide-inner">
+        <div class="kicker">ארבע השכבות</div>
+        <h2>ב-<bdi dir="ltr">vault</bdi> יש ארבע שכבות, ולכל אחת תפקיד אחד</h2>
+        <div class="cols">
+          <table class="data pick narrow" id="layers-table" role="radiogroup" aria-label="בחירת שכבה">
+            <thead><tr><th>בחרו שכבה</th><th>במילים פשוטות</th></tr></thead>
+            <tbody>
+              <tr data-k="raw" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">raw</bdi></td><td>מה שנכנס</td></tr>
+              <tr data-k="wiki" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">wiki</bdi></td><td>מה שיודעים</td></tr>
+              <tr data-k="calendar" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">calendar</bdi></td><td>מה שקרה</td></tr>
+              <tr data-k="components" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">components</bdi></td><td>איך זה עובד</td></tr>
+            </tbody>
+          </table>
+          <div class="detail">
+            <bdi dir="ltr" class="cmd" id="ly-name"></bdi>
+            <h3 id="ly-title"></h3>
+            <div class="lbl">מה יש בה</div>
+            <ul id="ly-has"></ul>
+            <div class="lbl">מי כותב אליה</div>
+            <div class="touch" id="ly-who" style="margin-top:0"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-find" data-part="3" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">איך <bdi dir="ltr">Claude</bdi> מוצא</div>
+        <h2><bdi dir="ltr">Claude</bdi> מגיע לדף הנכון דרך מפות, ולא סורק את כל ה-<bdi dir="ltr">vault</bdi></h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🧭</div><div class="t"><bdi dir="ltr">CLAUDE.md</bdi></div><div class="s">קובע לאיזה תחום הבקשה שייכת</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🗺️</div><div class="t"><bdi dir="ltr">_index.md</bdi></div><div class="s">המפה של התיקייה: מה יש בה</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">📏</div><div class="t"><bdi dir="ltr">_rules.md</bdi></div><div class="s">הכללים: איך עובדים בתיקייה הזאת</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">📄</div><div class="t">הדף עצמו</div><div class="s"><bdi dir="ltr">Claude</bdi> קורא, ורק אז עונה</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="3">בכל תיקייה יש שני קבצים קבועים: מפה וכללים. כך <bdi dir="ltr">Claude</bdi> יודע מה יש שם, ואיך נכון לכתוב שם.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>לפני כל תשובה <bdi dir="ltr">Claude</bdi> מקבל תזכורת אוטומטית לקרוא קודם את ה-<bdi dir="ltr">vault</bdi>. לכן הוא לא שואל אתכם שאלות שהתשובה עליהן כבר כתובה.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-files" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">קבצים שכדאי להכיר</div>
+        <h2>ארבעה קבצים בראש ה-<bdi dir="ltr">vault</bdi> מחזיקים את כל התמונה</h2>
+        <table class="data" style="margin-top:1.6rem">
+          <thead><tr><th>הקובץ</th><th>מה יש בו</th><th>מתי פותחים אותו</th></tr></thead>
+          <tbody>
+            <tr><td><bdi dir="ltr">_tasks.md</bdi></td><td>כל המשימות הפתוחות, בטבלה אחת</td><td>כשרוצים לראות מה פתוח</td></tr>
+            <tr><td><bdi dir="ltr">_active.md</bdi></td><td>מה נעצר באמצע בפעם הקודמת</td><td><bdi dir="ltr">Claude</bdi> קורא אותו בתחילת היום</td></tr>
+            <tr><td><bdi dir="ltr">_rules.md</bdi></td><td>כללי העבודה, כולל כל תיקון שנתתם ל-<bdi dir="ltr">Claude</bdi></td><td>כשרוצים לראות מה <bdi dir="ltr">Claude</bdi> למד מכם</td></tr>
+            <tr><td><bdi dir="ltr">_goals.md</bdi></td><td>בשביל מה ה-<bdi dir="ltr">vault</bdi> קיים, ומה חשוב בו</td><td>כמעט אף פעם</td></tr>
+          </tbody>
+        </table>
+        <div class="rule" style="margin-top:1.6rem">קו תחתון בתחילת השם מסמן קובץ של המערכת. הדפים הרגילים, כמו דף של לקוח, נמצאים בתוך <bdi dir="ltr">wiki</bdi>.</div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-you" data-part="4" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">מה אתם עושים</div>
+        <h2>שלושה הרגלים שומרים על ה-<bdi dir="ltr">vault</bdi> מעודכן</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">כל הזמן</span>
+            <h3 style="margin-top:10px">אומרים עובדות</h3>
+            <p>החלטה, שינוי בתקציב, משהו שהלקוח אמר. כותבים את זה ל-<bdi dir="ltr">Claude</bdi> במשפט, והוא מכניס את זה לדף הלקוח.</p>
+          </div>
+          <div class="card" data-stage="1">
+            <span class="stamp">כשמגיע קובץ</span>
+            <h3 style="margin-top:10px">שמים אותו ב-<bdi dir="ltr">raw/inbox</bdi></h3>
+            <p>ואז מקלידים <bdi dir="ltr" class="cmd">/process-vault</bdi>. <bdi dir="ltr">Claude</bdi> קורא את הקובץ, ומכניס כל פרט לדף הנכון.</p>
+          </div>
+          <div class="card" data-stage="2">
+            <span class="stamp">בסוף היום</span>
+            <h3 style="margin-top:10px">מקלידים <bdi dir="ltr" class="cmd">/end-of-session</bdi></h3>
+            <p><bdi dir="ltr">Claude</bdi> מסכם את היום ביומן, מעדכן את המשימות, ושומר את מה שלמד.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="3">אפשר לתקן דף ביד ב-<bdi dir="ltr">Obsidian</bdi>. את <bdi dir="ltr">CLAUDE.md</bdi> ואת קבצי המפות עדיף לשנות דרך <bdi dir="ltr">Claude</bdi>.</div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-local" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">איפה זה נשמר</div>
+        <h2>ה-<bdi dir="ltr">vault</bdi> נשמר רק על המחשב שלכם, ולכל שינוי יש היסטוריה</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp mint">מקומי</span>
+            <h3 style="margin-top:10px">הקבצים אצלכם</h3>
+            <p>ה-<bdi dir="ltr">vault</bdi> הוא תיקייה רגילה על המחשב. הוא לא עולה לשום מקום בעצמו.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">היסטוריה</span>
+            <h3 style="margin-top:10px">אפשר לחזור אחורה</h3>
+            <p><bdi dir="ltr">Claude</bdi> שומר גרסה אחרי כל שלב. נמחק משהו בטעות? מבקשים ממנו לשחזר.</p>
+          </div>
+          <div class="card red">
+            <span class="stamp red">זהירות</span>
+            <h3 style="margin-top:10px">לא מעלים למקום ציבורי</h3>
+            <p>יש ב-<bdi dir="ltr">vault</bdi> פרטים של לקוחות. התיקייה נשארת על המחשב, ולא עולה לאתר או לשיתוף פתוח.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מה זה ה-<bdi dir="ltr">vault</bdi></b></td><td>שיחה חדשה מתחילה מאפס. מה שנכתב ב-<bdi dir="ltr">vault</bdi> נשאר, ולכן כל עובדה נכתבת לדף הנכון באותו רגע.</td></tr>
+            <tr><td><b>ארבע השכבות</b></td><td><bdi dir="ltr">raw</bdi> לקבצים נכנסים, <bdi dir="ltr">wiki</bdi> לידע, <bdi dir="ltr">calendar</bdi> למה שקרה בכל יום, ו-<bdi dir="ltr">components</bdi> למנגנון.</td></tr>
+            <tr><td><b>איך <bdi dir="ltr">Claude</bdi> מוצא</b></td><td>בכל תיקייה יש מפה וכללים. <bdi dir="ltr">Claude</bdi> קופץ ממפה למפה עד הדף הנכון, ולא סורק את הכל.</td></tr>
+            <tr><td><b>מה אתם עושים</b></td><td>אומרים עובדות, שמים קבצים ב-<bdi dir="ltr">raw/inbox</bdi>, וסוגרים את היום. ה-<bdi dir="ltr">vault</bdi> נשמר רק על המחשב שלכם.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="connections.html">למצגת הבאה: החיבורים<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the explorer: the list of layers is the control, the card beside it shows the chosen one */
+  's-layers'(s) {
+    const D = {
+      raw: { title: 'המגירה הנכנסת: קבצים שעוד לא עובדו',
+             has: ['התיקייה <bdi dir="ltr">inbox</bdi>: כאן שמים קבצים חדשים', 'בריף מלקוח, דוח, מצגת, צילום מסך', 'אחרי העיבוד, המקור עובר לתיקייה <bdi dir="ltr">processed</bdi>'],
+             who: 'אתם שמים קבצים. <bdi dir="ltr" class="cmd">/process-vault</bdi> מעבד אותם.' },
+      wiki: { title: 'הידע: דף לכל דבר שחשוב לעבודה',
+              has: ['דף לכל לקוח שלכם', 'דף לכל חבר צוות, ולכל כלי', 'התהליכים של החברה, כפי שהם כתובים'],
+              who: '<bdi dir="ltr">Claude</bdi>, בכל פעם שאתם אומרים לו עובדה.' },
+      calendar: { title: 'היומן: דף אחד לכל יום',
+                  has: ['מה נעשה באותו יום', 'מה לימדתם את <bdi dir="ltr">Claude</bdi>', 'מה נשאר פתוח למחר'],
+                  who: '<bdi dir="ltr" class="cmd">/end-of-session</bdi>, בסוף כל יום.' },
+      components: { title: 'המנגנון: מה שמפעיל את ה-<bdi dir="ltr">vault</bdi>',
+                    has: ['הסקילים', 'תבניות לדפים חדשים', 'הוראות למשימות מיוחדות'],
+                    who: '<bdi dir="ltr">Claude</bdi> מתחזק אותה. אתם כמעט לא נוגעים בה.' }
+    };
+    Intro.picker(s, '#layers-table', D, {
+      '#ly-name': (d, k) => k,
+      '#ly-title': d => d.title,
+      '#ly-has': d => Intro.li(d.has),
+      '#ly-who': d => d.who
+    });
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

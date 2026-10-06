@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>משתפים סקיל עם כולם</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">משתפים סקיל עם כולם<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">9</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מתי שווה סקיל</button>
+        <button data-part="2">איך יוצרים</button>
+        <button data-part="3">איך משתפים</button>
+        <button data-part="4">לפני ששולחים</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>איך הופכים משהו שעובד לכם לסקיל, ואיך כל הצוות מקבל אותו</h1>
+        <p class="lead" style="margin-top:14px">כל אחד יכול ליצור סקיל משלו, בשיחה עם <bdi dir="ltr">Claude</bdi>. סקיל טוב אפשר לשתף, וכל הצוות מקבל אותו דרך אותה שורת התקנה.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מתי שווה סקיל</b>סימן אחד פשוט</li>
+          <li data-agenda="2"><b>איך יוצרים</b>בשיחה, בלי קוד</li>
+          <li data-agenda="3"><b>איך משתפים</b>מהמחשב שלכם לכל הצוות</li>
+          <li data-agenda="4"><b>לפני ששולחים</b>מה לא נכנס לסקיל משותף</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-when" data-part="1">
+      <div class="slide-inner">
+        <div class="kicker">מתי שווה סקיל</div>
+        <h2>כל דבר שביקשתם מ-<bdi dir="ltr">Claude</bdi> יותר מפעמיים שווה סקיל</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>אם אתם מוצאים את עצמכם מסבירים ל-<bdi dir="ltr">Claude</bdi> את אותו דבר שוב ושוב, זה הסימן.</p>
+            <div class="card">
+              <span class="stamp">דוגמאות</span>
+              <ul class="checks">
+                <li>דוח שבועי ללקוח, תמיד באותו מבנה</li>
+                <li>בדיקה קבועה של חשבון לפני פגישה</li>
+                <li>סיכום של שיחה עם לקוח, תמיד באותם סעיפים</li>
+              </ul>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="card mint">
+              <h3>מה מרוויחים</h3>
+              <p>מפסיקים להסביר. מקלידים שם אחד, ו-<bdi dir="ltr">Claude</bdi> עושה את אותה פעולה באותה דרך.</p>
+            </div>
+            <div class="rule">סקיל הוא קובץ טקסט עם הוראות בשפה רגילה. אין בו קוד.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-make" data-part="2" data-stages="2">
+      <div class="slide-inner">
+        <div class="kicker">איך יוצרים</div>
+        <h2>יוצרים סקיל בשיחה: מסבירים מה לעשות, ו-<bdi dir="ltr">Claude</bdi> כותב אותו</h2>
+        <div class="cols even">
+          <div class="stack">
+            <div class="chat">
+              <div class="chat-bar">Claude Code</div>
+              <div class="chat-body">
+                <div class="me"><span class="who">אתם כותבים</span><p>תהפוך את מה שעשינו עכשיו לסקיל בשם <bdi dir="ltr" class="cmd">/weekly-report</bdi></p></div>
+                <div class="cl" data-stage="1"><span class="who"><bdi dir="ltr">Claude</bdi> עונה</span><p>נוצר הסקיל <bdi dir="ltr" class="cmd">/weekly-report</bdi>. אפשר להקליד את השם שלו כבר עכשיו.</p></div>
+              </div>
+            </div>
+            <div class="rule" data-stage="2">הסקיל לא יצא מדויק? אומרים ל-<bdi dir="ltr">Claude</bdi> מה לשנות בו, והוא מעדכן.</div>
+          </div>
+          <div class="card" data-stage="1">
+            <h3>מה <bdi dir="ltr">Claude</bdi> עושה מאחורי הקלעים</h3>
+            <ol class="order">
+              <li><span>כותב את ההוראות של הסקיל בתוך ה-<bdi dir="ltr">vault</bdi></span></li>
+              <li><span>רושם את הסקיל ברשימת הסקילים</span></li>
+              <li><span>מעתיק אותו לתיקייה שממנה הסקילים פועלים</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-share" data-part="3" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">איך משתפים</div>
+        <h2>סקיל מגיע לכל הצוות בארבעה צעדים</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🧹</div><div class="t">מנקים</div><div class="s">מבקשים מ-<bdi dir="ltr">Claude</bdi> להכין את הסקיל לשיתוף</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">📤</div><div class="t">שולחים</div><div class="s">את תיקיית הסקיל, לנדב ב-<bdi dir="ltr">Slack</bdi></div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">✅</div><div class="t">נבדק ונוסף</div><div class="s">הסקיל נכנס לרשימת ההתקנה</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">📥</div><div class="t">כולם מקבלים</div><div class="s">מדביקים שוב את שורת ההתקנה</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="3">אחרי ההדבקה מקלידים <bdi dir="ltr" class="cmd">/vault-skills-sync</bdi>, כדי שהסקיל החדש ייכנס גם ל-<bdi dir="ltr">vault</bdi>.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>ההתקנה מוסיפה רק מה שחסר. סקילים ששיניתם לעצמכם לא נדרסים.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-direct" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">דרך קצרה</div>
+        <h2>אפשר גם להעביר סקיל ישירות לחבר צוות אחד</h2>
+        <div class="cols even">
+          <div class="card">
+            <ol class="order">
+              <li><span>שולחים את תיקיית הסקיל</span></li>
+              <li><span>בצד השני שמים אותה בתוך <bdi dir="ltr">.claude/skills</bdi></span></li>
+              <li><span>מקלידים שם <bdi dir="ltr" class="cmd">/vault-skills-sync</bdi></span></li>
+              <li><span>טוענים מחדש את החלון, והסקיל מופיע ברשימה</span></li>
+            </ol>
+          </div>
+          <div class="stack">
+            <div class="card mint">
+              <h3>מתי זה מתאים</h3>
+              <p>כשהסקיל שימושי לאדם אחד או שניים, או כשרוצים שמישהו ינסה אותו לפני שכולם מקבלים.</p>
+            </div>
+            <div class="rule">אותם כללי ניקיון חלים גם כאן: בלי נתוני לקוחות בתוך הסקיל.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-clean" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">לפני ששולחים</div>
+        <h2>סקיל משותף מסביר איך למצוא נתונים, ולא מכיל אותם</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>בסקיל שלכם יש דוגמה עם שם של לקוח, ועם התקציב האמיתי שלו.</p>
+            <div class="predict" data-unlocks="clean-rule">
+              <div class="q">מה עושים לפני השיתוף?</div>
+              <div class="choices">
+                <button>משתפים כמו שהוא, זו רק דוגמה</button>
+                <button data-correct>מחליפים את הדוגמה בדוגמה בדויה</button>
+                <button>מוחקים את כל הדוגמאות</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: מחליפים בדוגמה בדויה.</span></p>
+                <p>דוגמה עוזרת ל-<bdi dir="ltr">Claude</bdi> להבין מה רוצים, ולכן שווה להשאיר אותה. היא רק צריכה להיות בדויה.</p>
+              </div>
+            </div>
+          </div>
+          <div id="clean-rule" class="locked is-locked stack">
+            <div class="card red">
+              <span class="stamp red">לא נכנס לסקיל משותף</span>
+              <ul class="crosses">
+                <li>שמות של לקוחות, ושל אנשי קשר</li>
+                <li>תקציבים, יעדים ומספרים אמיתיים</li>
+                <li>מזהי חשבונות, קישורים פנימיים, סיסמאות</li>
+              </ul>
+            </div>
+            <div class="rule">ההתקנה פתוחה לכולם באינטרנט. מה שנכנס לסקיל משותף, כל אחד יכול לקרוא.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מתי שווה סקיל</b></td><td>כל דבר שביקשתם מ-<bdi dir="ltr">Claude</bdi> יותר מפעמיים, באותה דרך, שווה סקיל.</td></tr>
+            <tr><td><b>איך יוצרים</b></td><td>מסבירים ל-<bdi dir="ltr">Claude</bdi> מה לעשות, והוא כותב את הסקיל, רושם אותו ומפעיל אותו.</td></tr>
+            <tr><td><b>איך משתפים</b></td><td>שולחים את תיקיית הסקיל, היא נבדקת ונוספת להתקנה, וכולם מקבלים אותה בהדבקה אחת.</td></tr>
+            <tr><td><b>לפני ששולחים</b></td><td>בלי שמות של לקוחות, בלי מספרים אמיתיים, ובלי סיסמאות. הסקיל מסביר איך למצוא נתונים, ולא מכיל אותם.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>
