@@ -9,6 +9,8 @@ Run this once, in a new empty project folder opened in VS Code. It asks the user
 
 This skill is resumable. If the folder already holds a vault (a CLAUDE.md at the root plus a folder containing _rules.md and wiki/), do NOT rebuild it and do not ask my name again: read <vault>/_active.md, then continue from the first step of sections 12-14 that is not done yet. Never overwrite a vault file that already has content.
 
+An older version of this skill may have built the vault under ANOTHER folder name (for example <name>_vault), and with small differences: a personal domain, a company folder with another name. If a folder that is not `vault` holds _rules.md and wiki/, that folder is my vault: use it as <vault> everywhere below, and do not move, rename or rebuild anything in it. The empty `vault` folder the installer created beside it is not used: tell me in one line that it can be deleted, and tell me the real path of my vault, because the guide shows the other one. Then go straight to section 13 (connect the tools and fill the vault) and section 14, writing the new data into the work folder that already exists.
+
 You are building my "second brain": an Obsidian vault that lives inside this VS Code project, with you (Claude Code) as its main writer. Build the structure literally. Do not simplify it and do not skip a file because it looks small.
 
 ## 0. How to work on this build

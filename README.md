@@ -33,7 +33,7 @@ What it does:
 | Obsidian, Visual Studio Code, Claude (desktop app) | Checks if each one is already installed. Missing: installs the latest version. Installed: updates it only if a newer version exists. |
 | Claude Code extension for VS Code | Same check, same rule. Enabled as soon as it is installed. |
 | Claude Code RTL Support extension | Same check, same rule. Makes Hebrew read right-to-left in the Claude chat. |
-| Your workspace folder | Creates `C:\Users\<you>\claude-workspace` with an empty `vault` folder, all the skills and the guide. Files that already exist are never overwritten. |
+| Your workspace folder | Creates `C:\Users\<you>\claude-workspace` with an empty `vault` folder, all the skills and the guide. Run it again any time: it adds what is missing, brings the setup skill and the guide up to date, and keeps any file you edited. |
 | Model | Sets Claude Code in that folder to **Opus 5.5** at **high effort**. |
 | VS Code and the guide | Opens VS Code on the folder, and opens the guide in your browser. |
 
@@ -98,7 +98,7 @@ Type the name in Claude Code, or just say what you want in Hebrew or English.
 | `/refresh-my-data` | Re-reads Notion and the config sheet and updates your vault. Tells you what changed |
 | `/process-vault`, `/end-of-session` and 3 more | The vault's own upkeep. Built during setup |
 
-**New skills:** paste the installer line from Step 1 again. It downloads what you do not have yet and never overwrites your own files. Then type `/vault-skills-sync`.
+**New skills and updates:** paste the installer line from Step 1 again. It downloads what you do not have yet, updates the setup skill and the guide, and keeps any file you edited. Then type `/vault-skills-sync`.
 
 **Make one yours:** tell Claude what to change ("in /start-day, show meetings first"). It edits your copy.
 
@@ -125,7 +125,7 @@ brew install --cask obsidian visual-studio-code claude \
   && code --install-extension anthropic.claude-code \
   && code --install-extension yechielby.claude-code-rtl \
   && B=https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter \
-  && curl -fsSL $B/files.txt | grep -v '^#' | while read -r f; do [ -z "$f" ] && continue; \
+  && curl -fsSL $B/files.txt | grep -v '^#' | while read -r f; do f="${f#!}"; [ -z "$f" ] && continue; \
        t=~/claude-workspace/$f; mkdir -p "$(dirname "$t")"; [ -e "$t" ] || curl -fsSL "$B/$f" -o "$t"; done \
   && code ~/claude-workspace \
   && open ~/claude-workspace/.claude/skills/introduction/index.html

@@ -137,7 +137,7 @@ function Install-Starter {
     param([string]$CodeCmd)
 
     $repoRaw = 'https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter'
-    # files.txt lists every starter file (settings + all skills). Adding a skill = one new line there.
+    # files.txt lists every starter file (settings, skills, the guide). Adding a skill = one new line there.
     $files = (Invoke-WebRequest -Uri "$repoRaw/files.txt" -UseBasicParsing).Content -split "`r?`n" |
         ForEach-Object { $_.Trim() } | Where-Object { $_ -and -not $_.StartsWith('#') }
     $dir = if ($env:WORKSPACE_DIR) { $env:WORKSPACE_DIR } else { Join-Path $env:USERPROFILE 'claude-workspace' }
@@ -145,16 +145,59 @@ function Install-Starter {
     Write-Host ''
     Write-Host '== Workspace folder ==' -ForegroundColor Cyan
 
-    foreach ($file in $files) {
+    # What this run installed is remembered (a hash per file), so the next run can tell a file the person
+    # edited from one that is simply out of date:
+    #   missing                        -> downloaded
+    #   same as the current version    -> left alone
+    #   untouched since it was installed, and a newer version exists -> updated
+    #   edited by the person           -> kept
+    # Lines in files.txt that start with "!" are ours alone (the setup skill, the guide): they always move
+    # to the current version, and an old .md is kept beside the new one as .bak.
+    $manifestPath = Join-Path $dir '.claude\installer-manifest.json'
+    $manifest = @{}
+    if (Test-Path $manifestPath) {
+        try { (Get-Content $manifestPath -Raw | ConvertFrom-Json).PSObject.Properties | ForEach-Object { $manifest[$_.Name] = $_.Value } } catch {}
+    }
+    $tmp = Join-Path ([IO.Path]::GetTempPath()) ('ws-installer-' + [guid]::NewGuid().ToString('N'))
+    New-Item -ItemType Directory -Force -Path $tmp | Out-Null
+    $count = @{ Downloaded = 0; Updated = 0; Kept = 0; Current = 0 }
+
+    foreach ($entry in $files) {
+        $always = $entry.StartsWith('!')
+        $file = $entry.TrimStart('!')
         $target = Join-Path $dir $file
-        if (Test-Path $target) {
-            Write-Host "Already there, kept: $target"
+        $fresh = Join-Path $tmp ($file -replace '[\\/]', '_')
+        Invoke-WebRequest -Uri "$repoRaw/$file" -OutFile $fresh -UseBasicParsing
+        $new = (Get-FileHash -LiteralPath $fresh -Algorithm SHA256).Hash
+
+        if (-not (Test-Path -LiteralPath $target)) {
+            New-Item -ItemType Directory -Force -Path (Split-Path $target) | Out-Null
+            Copy-Item -LiteralPath $fresh -Destination $target -Force
+            $manifest[$file] = $new
+            $count.Downloaded++
+            Write-Host "Downloaded: $file"
             continue
         }
-        New-Item -ItemType Directory -Force -Path (Split-Path $target) | Out-Null
-        Invoke-WebRequest -Uri "$repoRaw/$file" -OutFile $target -UseBasicParsing
-        Write-Host "Downloaded: $target"
+
+        $current = (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash
+        if ($current -eq $new) { $manifest[$file] = $new; $count.Current++; continue }
+
+        $untouched = $manifest.ContainsKey($file) -and ($manifest[$file] -eq $current)
+        if ($always -or $untouched) {
+            if (-not $untouched -and $file.EndsWith('.md')) { Copy-Item -LiteralPath $target -Destination "$target.bak" -Force }
+            Copy-Item -LiteralPath $fresh -Destination $target -Force
+            $manifest[$file] = $new
+            $count.Updated++
+            Write-Host "Updated:    $file"
+        } else {
+            $count.Kept++
+            Write-Host "Kept yours: $file"
+        }
     }
+
+    ($manifest | ConvertTo-Json) | Set-Content -LiteralPath $manifestPath -Encoding utf8
+    Remove-Item -LiteralPath $tmp -Recurse -Force -ErrorAction SilentlyContinue
+    Write-Host ("{0} downloaded, {1} updated, {2} already current, {3} kept as you edited them" -f $count.Downloaded, $count.Updated, $count.Current, $count.Kept)
 
     Write-Host ''
     Write-Host "Done. Your workspace is $dir" -ForegroundColor Green
@@ -163,7 +206,7 @@ function Install-Starter {
     Write-Host 'Click "Yes, I trust the authors". Without it VS Code keeps Claude Code and the RTL extension disabled.' -ForegroundColor Yellow
     Write-Host ''
     Write-Host 'Then follow the guide that opens in your browser. Topic 1 walks you through the rest.'
-    Write-Host 'New skills are added over time. Run this same line again any day to get them. Your own files are never overwritten.'
+    Write-Host 'New skills and fixes are added over time. Run this same line again any day to get them. Files you edited are kept.'
 
     if ($CodeCmd) { & $CodeCmd $dir }
 
