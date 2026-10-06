@@ -128,6 +128,7 @@ function Install-Starter {
 
     $repoRaw = 'https://raw.githubusercontent.com/nadavglassberg/claude-workspace-installer/main/starter'
     $files = @(
+        '.claude/settings.json',   # Opus 5.5 at high effort for this workspace
         '.claude/skills/setup-vault/SKILL.md'
     )
     $dir = if ($env:WORKSPACE_DIR) { $env:WORKSPACE_DIR } else { Join-Path $env:USERPROFILE 'claude-workspace' }

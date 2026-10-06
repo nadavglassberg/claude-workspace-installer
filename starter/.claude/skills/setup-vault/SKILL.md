@@ -13,6 +13,7 @@ You are building my "second brain": an Obsidian vault that lives inside this VS 
 
 ## 0. How to work on this build
 - Open with a numbered checkbox list of the sections below and tick each one as it completes.
+- First, do the model and effort check from section 10.
 - Ask me the questions in section 1 in ONE message and wait for my answers before creating anything.
 - After each section, tell me in 2-3 lines what you built and why it exists. I am learning the system, not only receiving it.
 - Never invent facts about me, my clients or my team. An empty section is fine, a made-up one is not.
@@ -163,6 +164,7 @@ No subagent without a spec. Before any Agent call that introduces a new agent ty
 While I am learning: whenever a subagent is a realistic option, say so before acting, name the model you would use (Haiku for mechanical work, Sonnet for reasoning) and why in one sentence, then proceed.
 
 ## 10. Hook, settings, Obsidian
+- Model and effort: this system is built to run on Claude Opus 5.5 at high effort. The project file .claude/settings.json must contain "model": "claude-opus-5-5" and "effortLevel": "high" (the installer puts it there; create it if it is missing, and keep any other keys it has). This file is NOT gitignored, so the setting travels with the project. Before anything else in this build, tell me which model and effort level you are running right now. If it is not Opus 5.5 at high effort, stop and ask me to type /model and pick Opus 5.5 with high effort, then continue.
 - In .claude/settings.local.json add a UserPromptSubmit hook of type "command" that prints this JSON to stdout on every prompt (use my OS's shell): {"hookSpecificOutput":{"hookEventName":"UserPromptSubmit","additionalContext":"VAULT-FIRST REMINDER: Before responding, if the request touches any vault domain (per CLAUDE.md), you MUST read <vault>/_rules.md and follow its shortest-path navigation to the target _index.md / _rules.md before answering or asking clarifying questions. The vault is the source of truth. Do not ask me questions whose answers live in the vault."}} Explain to me what a hook is and why this one exists.
 - Permission rules: never put a token or an absolute machine path into an allow rule, and never allowlist an interpreter or package runner.
 - .gitignore: visuals/, .claude/settings.local.json, .env, .env.local, .env.*.local, node_modules/, __pycache__/, *.pyc, <vault>/.obsidian/workspace.json, *Conflicted copy*

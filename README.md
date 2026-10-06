@@ -31,6 +31,7 @@ What it does:
 | Obsidian, Visual Studio Code, Claude (desktop app) | Checks if each one is already installed. Missing: installs the latest version. Installed: updates it only if a newer version exists. |
 | Claude Code extension for VS Code | Same check, same rule. |
 | Your workspace folder | Creates `C:\Users\<you>\claude-workspace` and downloads the `/setup-vault` skill into it. Files that already exist are never overwritten. |
+| Model | Sets Claude Code in that folder to **Opus 5.5** at **high effort** (`.claude/settings.json`). |
 | VS Code | Opens on that folder when everything is done. |
 
 <details>
@@ -48,10 +49,11 @@ Download `install.bat` and double-click it. It runs the same line as above.
 ## Step 2. Let Claude build the vault (20 to 30 minutes)
 
 1. VS Code is open on `claude-workspace`. Click the Claude icon in the sidebar and sign in with the account from "Before you start".
-2. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
-3. Claude asks you a few questions (your name, your company, your vault name, which domains you want). Answer them in one message.
-4. Claude builds everything and explains each part as it goes.
-5. At the end Claude re-reads the skill, compares it to what it built, and fixes any gap. Everyone ends with the same structure.
+2. Type `/model` and check it says **Opus 5.5** with **high** effort. The installer sets this for you. If it shows something else, pick Opus 5.5 and high there.
+3. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
+4. Claude asks you a few questions (your name, your company, your vault name, which domains you want). Answer them in one message.
+5. Claude builds everything and explains each part as it goes.
+6. At the end Claude re-reads the skill, compares it to what it built, and fixes any gap. Everyone ends with the same structure.
 
 ## Step 3. The vault opens in Obsidian
 
