@@ -151,6 +151,7 @@ function Install-Starter {
     #   same as the current version    -> left alone
     #   untouched since it was installed, and a newer version exists -> updated
     #   edited by the person           -> kept
+    #   a skill from before this record existed -> updated, the old one kept beside it as .bak
     # Lines in files.txt that start with "!" are ours alone (the setup skill, the guide): they always move
     # to the current version, and an old .md is kept beside the new one as .bak.
     $manifestPath = Join-Path $dir '.claude\installer-manifest.json'
@@ -183,7 +184,9 @@ function Install-Starter {
         if ($current -eq $new) { $manifest[$file] = $new; $count.Current++; continue }
 
         $untouched = $manifest.ContainsKey($file) -and ($manifest[$file] -eq $current)
-        if ($always -or $untouched) {
+        # a skill installed before this record existed: we cannot tell if it was edited, so it is updated and the old one is kept as .bak
+        $unknown = (-not $manifest.ContainsKey($file)) -and $file.StartsWith('.claude/skills/')
+        if ($always -or $untouched -or $unknown) {
             if (-not $untouched -and $file.EndsWith('.md')) { Copy-Item -LiteralPath $target -Destination "$target.bak" -Force }
             Copy-Item -LiteralPath $fresh -Destination $target -Force
             $manifest[$file] = $new

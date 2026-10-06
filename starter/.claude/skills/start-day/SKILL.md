@@ -28,3 +28,4 @@ Then ask one question: which of these should I start for you now.
 - If a tool is not connected, skip its part and say which part is missing, in one line at the end.
 - The first working day after a weekend looks back to the last working day, not 24 hours. The weekend is Friday and Saturday.
 - Do not pad. An empty section is left out.
+- If the calendar shows that the last /refresh-my-data ran more than 7 days ago, or never, add one line at the end: the date of the last refresh, and an offer to run it now. Clients and team leads change, and the vault only knows it after a refresh.
