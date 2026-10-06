@@ -285,5 +285,5 @@ I learn this by doing it on my own data, not by reading about it. One step at a 
    - How to get new skills: paste the installer line again, then run /vault-skills-sync. How to change a skill to fit me: tell Claude what to change, it edits the vault copy and mirrors it.
    - The four layers (raw, wiki, calendar, components) and the two files in every folder (_index, _rules).
    - What to say to refresh my data: "refresh my clients from Notion and the config sheet".
-   - The guide: type /introduction to open the nine short presentations again.
+   - The guide: type /introduction to open the short presentations again.
 Then delete the resume block from _active.md, make a local git commit "setup complete", and tell me in one line that the system is ready.

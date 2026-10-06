@@ -1,6 +1,6 @@
 ---
 name: introduction
-description: Opens the workspace guide, nine short presentations in Hebrew that explain this whole system to someone who is not technical (setting up the vault, how the vault works, the connections, what to check, daily work, all the skills, adding a task, adding a personal domain, sharing a skill). Use when I ask for the guide, ask how something here works, or need help getting started. Triggers on "/introduction", "open the guide", "show me the guide", "how does this work", "explain the skills", "מדריך", "תפתח את המדריך", "איך זה עובד", "תסביר לי", "איך מתחילים".
+description: Opens the workspace guide, twelve short presentations in Hebrew that explain this whole system to someone who is not technical (setting up the vault, how the vault works, the connections, what to check, daily work, all the skills, adding a task, adding a personal domain, sharing a skill, what MCP is, what agents are, MCP versus CLI versus API). Use when I ask for the guide, ask how something here works, or need help getting started. Triggers on "/introduction", "open the guide", "show me the guide", "how does this work", "explain the skills", "מדריך", "תפתח את המדריך", "איך זה עובד", "תסביר לי", "איך מתחילים".
 ---
 
 # /introduction
@@ -23,6 +23,9 @@ The guide is a set of finished pages inside this skill's folder. Do not rebuild 
 | `add-task.html` | Adding a task to Notion in one sentence |
 | `personal.html` | Adding a personal domain next to work |
 | `share-skill.html` | Making my own skill and sharing it with the team |
+| `mcp.html` | What MCP is: the idea behind a connection, how it works, its limits |
+| `agents.html` | What an agent and a subagent are, when splitting work between agents pays off, how to ask |
+| `mcp-cli-api.html` | MCP, CLI and API compared, and the difference between a skill and a connection |
 
 ## The guide is also your reference
 When I ask how something in this workspace works and the vault does not answer it, read the matching page here before you answer, so that what you tell me matches what the guide shows.

@@ -25,3 +25,6 @@ vault/.obsidian/core-plugins.json
 .claude/skills/introduction/share-skill.html
 .claude/skills/introduction/skills.html
 .claude/skills/introduction/vault.html
+.claude/skills/introduction/mcp.html
+.claude/skills/introduction/agents.html
+.claude/skills/introduction/mcp-cli-api.html

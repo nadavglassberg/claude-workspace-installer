@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>מה זה סוכן</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">מה זה סוכן<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">11</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מה זה סוכן</button>
+        <button data-part="2">סוכני משנה</button>
+        <button data-part="3">מתי להשתמש</button>
+        <button data-part="4">איך מבקשים</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>סוכנים: איך <bdi dir="ltr">Claude</bdi> מחלק עבודה, ומתי כדאי לבקש את זה</h1>
+        <p class="lead" style="margin-top:14px">סוכן לא עונה על הודעה אחת. הוא מקבל מטרה ועובד עד שהעבודה גמורה. וכשיש כמה עבודות נפרדות, אפשר להפעיל כמה סוכנים באותו זמן.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מה זה סוכן</b>מטרה, כלים ולולאה</li>
+          <li data-agenda="2"><b>סוכני משנה</b>עוזרים שעובדים במקביל</li>
+          <li data-agenda="3"><b>מתי להשתמש</b>מתי כן, ומתי עדיף בלי</li>
+          <li data-agenda="4"><b>איך מבקשים</b>משפט אחד, וכלל המפרט</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-agent" data-part="1" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">מה זה סוכן</div>
+        <h2>צ'אטבוט עונה על הודעה אחת, וסוכן עובד עד שהעבודה גמורה</h2>
+        <div class="cols even">
+          <div class="card">
+            <span class="stamp">צ'אטבוט</span>
+            <h3 style="margin-top:10px">עונה על הודעה אחת</h3>
+            <p>שולחים הודעה, מקבלים תשובה, וזה הכל.</p>
+          </div>
+          <div class="card mint" data-stage="1">
+            <span class="stamp mint">סוכן</span>
+            <h3 style="margin-top:10px">מקבל מטרה, ומסיים את העבודה</h3>
+            <p>אתם אומרים מה רוצים להשיג, והוא עובד צעד אחרי צעד עד שהעבודה גמורה.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.4rem" data-stage="1"><bdi dir="ltr">Claude Code</bdi> הוא סוכן. לכן אפשר לתת לו מטרה, ולא רק שאלה.</div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-loop" data-part="1" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">הלולאה</div>
+        <h2>סוכן עובד בלולאה: מתכנן, פועל, בודק וממשיך</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🎯</div><div class="t">מטרה</div><div class="s">אתם נותנים מטרה, ולא רק שאלה</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🧭</div><div class="t">מתכנן</div><div class="s">מחליט מה לעשות קודם</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">🛠️</div><div class="t">משתמש בכלים</div><div class="s">קורא קבצים, מחפש, ופונה לחיבורים</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">🔁</div><div class="t">בודק וממשיך</div><div class="s">בודק את התוצאה, וחוזר על זה עד שהעבודה גמורה</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="3">הלולאה הזאת היא ההבדל בין צ'אטבוט לסוכן.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>החיבורים שלמדתם עליהם הם חלק מארגז הכלים של הסוכן.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-sub" data-part="2" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">סוכני משנה</div>
+        <h2>סוכן משנה הוא <bdi dir="ltr">Claude</bdi> עוזר שיוצא למשימת צד, ומחזיר סיכום קצר</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🤖</div><div class="t"><bdi dir="ltr">Claude</bdi> הראשי</div><div class="s">מחליט שיש משימת צד, וכותב לה הוראות</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">📄</div><div class="t">דף ריק</div><div class="s">סוכן המשנה מכיר רק מה שכתוב בהוראות</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">👥</div><div class="t">במקביל</div><div class="s">כמה סוכני משנה עובדים באותו זמן</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">📬</div><div class="t">סיכום קצר</div><div class="s">חוזר אל <bdi dir="ltr">Claude</bdi> הראשי</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="3">סוכן משנה לא מכיר את השיחה שלכם. מה שלא כתוב בהוראות, הוא לא יודע.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>באנגלית: <bdi dir="ltr">subagent</bdi>. אם תיתקלו בשם הזה, זה אותו דבר.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-when" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">מתי להשתמש</div>
+        <h2>סוכנים מתאימים כשיש כמה עבודות עצמאיות מאותו סוג, כמו שלוש מצגות</h2>
+        <div class="cols">
+          <table class="data pick" id="when-table" role="radiogroup" aria-label="בחירת משימה">
+            <thead><tr><th>בחרו משימה</th><th>מה מיוחד בה</th></tr></thead>
+            <tbody>
+              <tr data-k="decks" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>שלוש מצגות לבנות עכשיו</td><td>שלוש עבודות נפרדות</td></tr>
+              <tr data-k="briefs" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>תדריך לכל אחד מחמישה לקוחות</td><td>חמש עבודות נפרדות</td></tr>
+              <tr data-k="typo" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>תיקון של משפט אחד בדף</td><td>קטנה ומהירה</td></tr>
+              <tr data-k="talk" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span>משימה שתלויה בכל השיחה</td><td>צריכה את כל מה שנאמר</td></tr>
+            </tbody>
+          </table>
+          <div class="detail">
+            <div id="wh-verdict"></div>
+            <h3 id="wh-title"></h3>
+            <div class="lbl">למה</div>
+            <ul id="wh-why"></ul>
+            <div class="touch" id="wh-touch"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-not" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">מתי לא</div>
+        <h2>לא כל משימה מתאימה לסוכן, וכל סוכן עולה משהו</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>צריך לתקן שגיאת כתיב בדף אחד.</p>
+            <div class="predict" data-unlocks="not-rule">
+              <div class="q">שווה להפעיל סוכן?</div>
+              <div class="choices">
+                <button>כן, תמיד</button>
+                <button data-correct>לא, לעשות את זה ישירות קצר יותר</button>
+                <button>כן, שלושה סוכנים</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: לא, עושים את זה ישירות.</span></p>
+                <p>הפעלת סוכן עולה יותר מהתיקון עצמו. למשימות קטנות לא מפעילים סוכנים.</p>
+              </div>
+            </div>
+          </div>
+          <div id="not-rule" class="locked is-locked stack">
+            <div class="card red">
+              <span class="stamp red">מתי לא</span>
+              <ul class="crosses">
+                <li>משימה קטנה ומהירה</li>
+                <li>משימה שצריכה את כל מה שנאמר בשיחה</li>
+                <li>שלבים שתלויים זה בזה, אחד אחרי השני</li>
+              </ul>
+            </div>
+            <div class="rule">כל סוכן מוציא עוד מהמכסה של התוכנית שלכם. הוראות מעורפלות מחזירות תשובה בטוחה בעצמה ושגויה, ולכן תמיד בודקים את התוצאה.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-ask" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">איך מבקשים</div>
+        <h2>מבקשים סוכנים במשפט רגיל, ואין סוכן בלי מפרט כתוב</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">מבקשים</span>
+            <h3 style="margin-top:10px">אומרים את זה במילים רגילות</h3>
+            <div class="says" style="margin-top:.6rem">
+              <span class="say">תפצל את זה לסוכנים</span>
+              <span class="say">תריץ סוכן לכל לקוח</span>
+              <span class="say">אפשר לעשות את זה במקביל</span>
+            </div>
+          </div>
+          <div class="card">
+            <span class="stamp mint">מפרט</span>
+            <h3 style="margin-top:10px">אין סוכן בלי מפרט</h3>
+            <p>מפרט הוא דף קצר ב-<bdi dir="ltr">vault</bdi>: למה הסוכן קיים, מה הוא צריך לקרוא, ולאן הפלט שלו הולך.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">מודל</span>
+            <h3 style="margin-top:10px"><bdi dir="ltr">Claude</bdi> אומר מתי סוכן אפשרי</h3>
+            <p>הוא מציין באיזה מודל ישתמש ולמה, וממשיך. מודל קל ומהיר לעבודה מכנית, ומודל חזק לעבודה שדורשת חשיבה.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.4rem">סוכנים עובדים לפי אותם כללים כמו <bdi dir="ltr">Claude</bdi>: הם אף פעם לא שולחים הודעה בשמכם.</div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מה זה סוכן</b></td><td>צ'אטבוט עונה על הודעה אחת. סוכן מקבל מטרה, מתכנן, משתמש בכלים, בודק וממשיך עד שהעבודה גמורה. <bdi dir="ltr">Claude Code</bdi> הוא סוכן.</td></tr>
+            <tr><td><b>סוכני משנה</b></td><td><bdi dir="ltr">Claude</bdi> עוזר שמתחיל מדף ריק ומכיר רק את ההוראות. כמה כאלה עובדים במקביל, וכל אחד מחזיר סיכום קצר.</td></tr>
+            <tr><td><b>מתי להשתמש</b></td><td>כשיש כמה עבודות עצמאיות מאותו סוג, כמו שלוש מצגות. לא למשימה קטנה, לא כשצריך את כל השיחה, ולא לשלבים שתלויים זה בזה.</td></tr>
+            <tr><td><b>איך מבקשים</b></td><td>במשפט רגיל, ואין סוכן בלי מפרט. כל סוכן עולה מהמכסה של התוכנית, ותמיד בודקים את התוצאה.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="mcp-cli-api.html">למצגת הבאה: <bdi dir="ltr">MCP</bdi>, <bdi dir="ltr">CLI</bdi> ו-<bdi dir="ltr">API</bdi><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the explorer: the task is the control, the card beside it shows the verdict and why */
+  's-when'(s) {
+    const D = {
+      decks: { ok: true, title: 'שלוש מצגות שצריך לבנות עכשיו',
+        why: ['שלוש עבודות עצמאיות מאותו סוג', 'סוכן אחד לכל מצגת', 'כולם עובדים באותו זמן'],
+        touch: 'כל העבודה לוקחת בערך כמו מצגת אחת. שלושת הנושאים האחרונים של המדריך הזה נבנו בדיוק כך.' },
+      briefs: { ok: true, title: 'תדריך לכל אחד מחמישה לקוחות',
+        why: ['סוכן אחד לכל לקוח', 'חמש עבודות עצמאיות מאותו סוג', 'הכל מוכן לפני הפגישה השבועית'],
+        touch: 'כל סוכן מחזיר סיכום קצר, ואתם קוראים חמישה תדריכים.' },
+      typo: { ok: false, title: 'תיקון של משפט אחד בדף',
+        why: ['משימה קטנה ומהירה', 'הפעלת סוכן עולה יותר מהתיקון עצמו'],
+        touch: 'קצר יותר לעשות את זה ישירות.' },
+      talk: { ok: false, title: 'משימה שתלויה בכל מה שדיברנו עליו בשיחה',
+        why: ['סוכן מתחיל מדף ריק', 'הוא לא מכיר את השיחה, רק את ההוראות שקיבל'],
+        touch: 'משימה כזאת נשארת בשיחה עצמה, ולא יוצאת לסוכן.' }
+    };
+    Intro.picker(s, '#when-table', D, {
+      '#wh-verdict': d => d.ok ? '<span class="stamp mint">מתאים לסוכנים</span>' : '<span class="stamp red">לא מתאים לסוכנים</span>',
+      '#wh-title': d => d.title,
+      '#wh-why': d => Intro.li(d.why),
+      '#wh-touch': d => d.touch
+    });
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

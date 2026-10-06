@@ -51,7 +51,7 @@ Download `install.bat` and double-click it. It runs the same line as above.
 
 ## Step 2. Follow the guide
 
-The guide opens in your browser when the installer finishes. It is nine short presentations. You move forward only when you click.
+The guide opens in your browser when the installer finishes. It is twelve short presentations. You move forward only when you click.
 
 **Start with topic 1, "Setting up the vault".** It walks you through four steps:
 
@@ -77,6 +77,9 @@ To open the guide again later, type `/introduction` in Claude Code, or open `cla
 | 7 | Adding a task |
 | 8 | Adding a personal domain |
 | 9 | Sharing a skill with everyone |
+| 10 | What MCP is |
+| 11 | What an agent is, and when to split work between agents |
+| 12 | MCP, CLI and API: the difference, and skill versus connection |
 
 ## Skills you get
 

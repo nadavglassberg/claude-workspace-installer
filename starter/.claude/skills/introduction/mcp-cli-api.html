@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MCP, CLI ו-API: מה ההבדל</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title"><bdi dir="ltr">MCP</bdi>, <bdi dir="ltr">CLI</bdi> ו-<bdi dir="ltr">API</bdi>: מה ההבדל<small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">12</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">שלוש דלתות</button>
+        <button data-part="2">ההבדלים</button>
+        <button data-part="3">מה משמש כאן</button>
+        <button data-part="4">סקיל מול חיבור</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1><bdi dir="ltr">MCP</bdi>, <bdi dir="ltr">CLI</bdi> ו-<bdi dir="ltr">API</bdi>: שלוש דלתות לאותו כלי, ומתי משתמשים בכל אחת</h1>
+        <p class="lead" style="margin-top:14px">אלה שלוש דרכים שבהן תוכנה, או <bdi dir="ltr">Claude</bdi>, מגיעה לכלי. לא צריך לדעת קוד כדי להבין את ההבדל.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>שלוש דלתות</b>שלוש דרכים להגיע לאותו כלי</li>
+          <li data-agenda="2"><b>ההבדלים</b>למי כל דלת מתאימה, ובמה להיזהר</li>
+          <li data-agenda="3"><b>מה משמש כאן</b>באיזו דלת השתמשתם בהתקנה</li>
+          <li data-agenda="4"><b>סקיל מול חיבור</b>גישה מול הוראות עבודה</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-doors" data-part="1" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">שלוש דלתות</div>
+        <h2>יש שלוש דרכים להגיע לאותו כלי, כמו שלוש דלתות לאותו בניין</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp"><bdi dir="ltr">API</bdi></span>
+            <h3 style="margin-top:10px">דלת השירות, בשביל תוכנות</h3>
+            <p>בקשות מדויקות בפורמט קבוע. צריך מפתח, ומישהו שכותב קוד.</p>
+          </div>
+          <div class="card" data-stage="1">
+            <span class="stamp"><bdi dir="ltr">CLI</bdi></span>
+            <h3 style="margin-top:10px">דלת ההקלדה</h3>
+            <p>תוכנה שמפעילים בהקלדת פקודות בחלון טרמינל. ב-<bdi dir="ltr">Windows</bdi> החלון הזה הוא <bdi dir="ltr">PowerShell</bdi>.</p>
+          </div>
+          <div class="card mint" data-stage="2">
+            <span class="stamp mint"><bdi dir="ltr">MCP</bdi></span>
+            <h3 style="margin-top:10px">הדלת המוכנה, שנבנתה בשביל <bdi dir="ltr">AI</bdi></h3>
+            <p>מחבר שאומר ל-<bdi dir="ltr">Claude</bdi> מה הוא יכול לעשות. מתחברים פעם אחת בדפדפן, בלי קוד.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="3">אותו בניין, שלוש דלתות. ההבדל הוא למי כל דלת מתאימה, וכמה עבודה צריך כדי לפתוח אותה.</div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-compare" data-part="2">
+      <div class="slide-inner">
+        <div class="kicker">ההבדלים</div>
+        <h2>שלוש הדלתות שונות בשלושה דברים: מי משתמש בהן, איך מתחברים, ובמה להיזהר</h2>
+        <div class="cols">
+          <table class="data pick narrow" id="door-table" role="radiogroup" aria-label="בחירת דלת">
+            <thead><tr><th>בחרו דלת</th><th>במילה אחת</th></tr></thead>
+            <tbody>
+              <tr data-k="API" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">API</bdi></td><td>תוכנות</td></tr>
+              <tr data-k="CLI" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">CLI</bdi></td><td>הקלדה</td></tr>
+              <tr data-k="MCP" role="radio" tabindex="0"><td><span class="radio" aria-hidden="true"></span><bdi dir="ltr">MCP</bdi></td><td>חיבור מוכן</td></tr>
+            </tbody>
+          </table>
+          <div class="detail">
+            <span class="stamp mint"><bdi dir="ltr" id="dr-name"></bdi></span>
+            <h3 id="dr-title"></h3>
+            <div class="lbl">למי זה מתאים</div>
+            <p id="dr-who"></p>
+            <div class="lbl">איך מתחברים</div>
+            <p id="dr-how"></p>
+            <div class="lbl">דוגמה בסביבה הזו</div>
+            <p id="dr-here"></p>
+            <div class="lbl">במה להיזהר</div>
+            <div class="touch" id="dr-watch"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-wrap" data-part="2" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">מה מחבר ביניהן</div>
+        <h2>חיבור <bdi dir="ltr">MCP</bdi> הוא בדרך כלל ה-<bdi dir="ltr">API</bdi> של הכלי, עטוף בצורה ש-<bdi dir="ltr">AI</bdi> מבין</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🤖</div><div class="t"><bdi dir="ltr">Claude</bdi></div><div class="s">צריך להגיע לכלי</div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🔌</div><div class="t">חיבור <bdi dir="ltr">MCP</bdi></div><div class="s">הצורה ש-<bdi dir="ltr">AI</bdi> מבין, ואומרת מה אפשר לעשות</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">⚙️</div><div class="t">ה-<bdi dir="ltr">API</bdi> של הכלי</div><div class="s">דלת התוכנות, מאחורי הקלעים</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">📋</div><div class="t">הכלי</div><div class="s">למשל <bdi dir="ltr">Notion</bdi></div></div>
+        </div>
+        <div class="card mint" data-stage="3" style="margin-top:1.4rem">
+          <span class="stamp mint">כלל אצבע</span>
+          <ol class="order">
+            <li><span>יש חיבור: משתמשים בו</span></li>
+            <li><span>קבצים ותוכנות במחשב שלכם: <bdi dir="ltr">CLI</bdi>, עם <bdi dir="ltr">Claude</bdi></span></li>
+            <li><span>משהו מותאם שאין לו חיבור: עבודה של מפתח, עם <bdi dir="ltr">API</bdi></span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-here" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">מה משמש כאן</div>
+        <h2>בסביבה הזו כבר פתחתם שתי דלתות, ויש עוד אחת שעובדת מאחורי הקלעים</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>בהתקנה של הסביבה פתחתם דלת, אולי בלי לשים לב.</p>
+            <div class="predict" data-unlocks="here-rule">
+              <div class="q">ההתקנה ביקשה מכם להדביק שורה ב-<bdi dir="ltr">PowerShell</bdi>. באיזו דלת השתמשתם?</div>
+              <div class="choices">
+                <button><bdi dir="ltr">MCP</bdi></button>
+                <button data-correct><bdi dir="ltr">CLI</bdi></button>
+                <button><bdi dir="ltr">API</bdi></button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: <bdi dir="ltr">CLI</bdi>.</span></p>
+                <p>שורה שמדביקים בחלון טרמינל ומריצים היא <bdi dir="ltr">CLI</bdi>. ב-<bdi dir="ltr">Windows</bdi> החלון הזה הוא <bdi dir="ltr">PowerShell</bdi>.</p>
+              </div>
+            </div>
+          </div>
+          <div id="here-rule" class="locked is-locked stack">
+            <div class="card mint">
+              <span class="stamp mint"><bdi dir="ltr">CLI</bdi></span>
+              <h3 style="margin-top:10px">שורת ההתקנה וההיסטוריה של ה-<bdi dir="ltr">vault</bdi></h3>
+              <p><bdi dir="ltr">Claude</bdi> מריץ פקודות במחשב שלכם, ומבקש אישור לפני כל פקודה.</p>
+            </div>
+            <div class="card">
+              <span class="stamp"><bdi dir="ltr">MCP</bdi></span>
+              <h3 style="margin-top:10px">חמשת החיבורים</h3>
+              <p><bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi>, <bdi dir="ltr">Google Drive</bdi> ו-<bdi dir="ltr">Toffu</bdi>.</p>
+            </div>
+            <div class="rule"><bdi dir="ltr">API</bdi>: אתם לא נוגעים בו. החיבורים משתמשים בו מאחורי הקלעים.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-skill" data-part="4" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">סקיל מול חיבור</div>
+        <h2>חיבור נותן ל-<bdi dir="ltr">Claude</bdi> גישה, וסקיל אומר לו איך לעשות את העבודה</h2>
+        <div class="cols even">
+          <div class="card mint">
+            <span class="stamp mint">חיבור</span>
+            <h3 style="margin-top:10px">נותן גישה לכלי</h3>
+            <p>למשל ל-<bdi dir="ltr">Notion</bdi>. בלי סקיל יש ל-<bdi dir="ltr">Claude</bdi> גישה, אבל הוא מאלתר בכל פעם.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">סקיל</span>
+            <h3 style="margin-top:10px">אומר איך לעשות עבודה</h3>
+            <p>הוראות לעבודה אחת, למשל איך לפתוח משימה. בלי חיבור אין לסקיל לאן לכתוב.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="1"><bdi dir="ltr" class="cmd">/add-task</bdi> הוא סקיל, והוא משתמש בחיבור ל-<bdi dir="ltr">Notion</bdi></div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>שלוש דלתות</b></td><td><bdi dir="ltr">API</bdi> בשביל תוכנות ומפתחים, <bdi dir="ltr">CLI</bdi> להקלדת פקודות במחשב, ו-<bdi dir="ltr">MCP</bdi> לחיבורים שנבנו בשביל <bdi dir="ltr">AI</bdi>.</td></tr>
+            <tr><td><b>ההבדלים</b></td><td>אם יש חיבור, משתמשים בו. קבצים ותוכנות במחשב שלכם הם <bdi dir="ltr">CLI</bdi> עם <bdi dir="ltr">Claude</bdi>. משהו מותאם בלי חיבור הוא עבודה של מפתח, עם <bdi dir="ltr">API</bdi>.</td></tr>
+            <tr><td><b>מה משמש כאן</b></td><td>שורת ההתקנה היא <bdi dir="ltr">CLI</bdi>. החיבורים ל-<bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi>, <bdi dir="ltr">Google Drive</bdi> ול-<bdi dir="ltr">Toffu</bdi> הם <bdi dir="ltr">MCP</bdi>.</td></tr>
+            <tr><td><b>סקיל מול חיבור</b></td><td>חיבור נותן ל-<bdi dir="ltr">Claude</bdi> גישה לכלי, וסקיל אומר לו איך לעשות את העבודה. הם עובדים ביחד.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script>
+window.DeckHooks = {
+  /* the explorer: the list of doors is the control, the card beside it shows the four fields of the chosen one */
+  's-compare'(s) {
+    const D = {
+      'API': { title: 'בקשות מדויקות בפורמט קבוע',
+        who: 'מפתחים',
+        how: 'מפתח, וקוד שכותבים',
+        here: 'אתם לא נוגעים בו. החיבורים משתמשים בו מאחורי הקלעים.',
+        watch: 'מפתח שדלף' },
+      'CLI': { title: 'פקודות שמקלידים בחלון טרמינל',
+        who: 'מי שנוח לו עם טרמינל, ו-<bdi dir="ltr">Claude</bdi> אצלכם במחשב',
+        how: 'מתקינים את התוכנה, ומקלידים פקודות',
+        here: 'שורת ההתקנה שהדבקתם ב-<bdi dir="ltr">PowerShell</bdi>, וההיסטוריה של ה-<bdi dir="ltr">vault</bdi>',
+        watch: 'פקודה לא נכונה משנה קבצים, ולכן קוראים מה <bdi dir="ltr">Claude</bdi> מבקש להריץ' },
+      'MCP': { title: 'מחבר מוכן שנבנה בשביל <bdi dir="ltr">AI</bdi>',
+        who: 'כולם',
+        how: 'לוחצים <bdi dir="ltr" class="ui">Connect</bdi> ומתחברים',
+        here: '<bdi dir="ltr">Notion</bdi>, <bdi dir="ltr">Slack</bdi>, <bdi dir="ltr">Gmail</bdi>, <bdi dir="ltr">Google Drive</bdi> ו-<bdi dir="ltr">Toffu</bdi>',
+        watch: 'הוא עושה רק מה שהחיבור מאפשר' }
+    };
+    Intro.picker(s, '#door-table', D, {
+      '#dr-name': (d, k) => k,
+      '#dr-title': d => d.title,
+      '#dr-who': d => d.who,
+      '#dr-how': d => d.how,
+      '#dr-here': d => d.here,
+      '#dr-watch': d => d.watch
+    });
+  }
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>מה זה MCP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Miriam+Libre:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ppg-design-system.css">
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<div class="deck">
+
+  <header>
+    <div class="topbar">
+      <a class="home" href="index.html" aria-label="חזרה לתפריט"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>תפריט</span></a>
+      <div class="title">מה זה <bdi dir="ltr">MCP</bdi><small data-ui>המדריך לסביבת העבודה · נושא <bdi dir="ltr">10</bdi></small></div>
+      <nav class="parts" aria-label="חלקי המצגת">
+        <button data-part="1">מה זה <bdi dir="ltr">MCP</bdi></button>
+        <button data-part="2">איך זה עובד</button>
+        <button data-part="3">מה זה נותן לכם</button>
+        <button data-part="4">הגבולות</button>
+      </nav>
+    </div>
+    <div class="progress"><i></i></div>
+  </header>
+
+  <main class="stage" aria-live="polite">
+   <div class="canvas">
+
+    <section class="slide" id="s-cover" data-part="0">
+      <div class="slide-inner cover">
+        <div class="kicker">נושא המצגת</div>
+        <h1>מה זה <bdi dir="ltr">MCP</bdi>: תקע אחד שמחבר את <bdi dir="ltr">Claude</bdi> לכל כלי</h1>
+        <p class="lead" style="margin-top:14px"><bdi dir="ltr">MCP</bdi> היא שפה משותפת שמאפשרת לעוזר בינה מלאכותית לדבר עם כלים חיצוניים. כך <bdi dir="ltr">Claude</bdi> מגיע ל-<bdi dir="ltr">Notion</bdi>, ל-<bdi dir="ltr">Slack</bdi> ול-<bdi dir="ltr">Gmail</bdi> שלכם.</p>
+        <div class="agenda-title">בסוף המצגת תדעו:</div>
+        <ol class="agenda">
+          <li data-agenda="1"><b>מה זה <bdi dir="ltr">MCP</bdi></b>שפה משותפת, כמו תקע אחד</li>
+          <li data-agenda="2"><b>איך זה עובד</b>רשימת פעולות, ומה קורה בכל בקשה</li>
+          <li data-agenda="3"><b>מה זה נותן לכם</b>נתונים חיים ופעולות בכלי</li>
+          <li data-agenda="4"><b>הגבולות</b>מה לא אפשרי, ומה בטוח</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 1 ═════════ -->
+    <section class="slide" id="s-what" data-part="1" data-stages="2">
+      <div class="slide-inner">
+        <div class="kicker">מה זה <bdi dir="ltr">MCP</bdi></div>
+        <h2><bdi dir="ltr">MCP</bdi> הוא תקע אחד: כלי בונה מחבר פעם אחת, וכל בינה מלאכותית יכולה להשתמש בו</h2>
+        <div class="cols even">
+          <div class="card red">
+            <span class="stamp red">לפני</span>
+            <h3 style="margin-top:10px">חיבור מיוחד לכל כלי ולכל עוזר</h3>
+            <p>כל כלי היה צריך לבנות חיבור משלו מול כל בינה מלאכותית.</p>
+          </div>
+          <div class="card mint" data-stage="1">
+            <span class="stamp mint">עם <bdi dir="ltr">MCP</bdi></span>
+            <h3 style="margin-top:10px">מחבר אחד, ולכולם</h3>
+            <p>הכלי בונה מחבר אחד. כל בינה מלאכותית שמדברת <bdi dir="ltr">MCP</bdi> יכולה להשתמש בו.</p>
+          </div>
+        </div>
+        <div class="rule" style="margin-top:1.6rem" data-stage="2"><bdi dir="ltr">MCP</bdi> הם ראשי התיבות של <bdi dir="ltr">Model Context Protocol</bdi>. זה תקן פתוח ש-<bdi dir="ltr">Anthropic</bdi> פרסמה בסוף 2024.</div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 2 ═════════ -->
+    <section class="slide" id="s-sides" data-part="2" data-stages="1">
+      <div class="slide-inner">
+        <div class="kicker">איך זה עובד</div>
+        <h2>לכל כלי יש מחבר שמפרסם רשימת פעולות, ו-<bdi dir="ltr">Claude</bdi> בוחר ממנה</h2>
+        <div class="cols even">
+          <div class="stack">
+            <div class="card">
+              <span class="stamp">צד אחד</span>
+              <h3 style="margin-top:10px">הכלי</h3>
+              <p>מציע מחבר. בשפה הטכנית קוראים לו <bdi dir="ltr">MCP server</bdi>, והוא מפרסם רשימה של פעולות שהוא יודע לעשות.</p>
+            </div>
+            <div class="card">
+              <span class="stamp">צד שני</span>
+              <h3 style="margin-top:10px"><bdi dir="ltr">Claude</bdi></h3>
+              <p>קורא את הרשימה, ומחליט מתי צריך פעולה ממנה בשביל מה שביקשתם.</p>
+            </div>
+          </div>
+          <div class="detail" data-stage="1">
+            <span class="stamp mint">מחבר לדוגמה</span>
+            <h3>הפעולות שהוא מפרסם</h3>
+            <div class="lbl">הרשימה</div>
+            <ul>
+              <li>חיפוש הודעות</li>
+              <li>קריאת דף</li>
+              <li>יצירת משימה</li>
+            </ul>
+            <div class="touch"><bdi dir="ltr">Claude</bdi> קורא את הרשימה, ובוחר פעולה שמתאימה למה שביקשתם.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-flow" data-part="2" data-stages="3">
+      <div class="slide-inner">
+        <div class="kicker">מה קורה בכל בקשה</div>
+        <h2>בכל בקשה <bdi dir="ltr">Claude</bdi> בוחר פעולה, והמחבר מבצע אותה בתוך הכלי</h2>
+        <div class="journey">
+          <div class="node"><div class="ico" aria-hidden="true">🙋</div><div class="t">אתם שואלים</div><div class="s">למשל, לפתוח משימה ב-<bdi dir="ltr">Notion</bdi></div></div>
+          <div class="node" data-stage="1"><div class="ico" aria-hidden="true">🤖</div><div class="t"><bdi dir="ltr">Claude</bdi> בוחר</div><div class="s">פעולה אחת מהרשימה של המחבר</div></div>
+          <div class="node" data-stage="2"><div class="ico" aria-hidden="true">🔌</div><div class="t">המחבר מבצע</div><div class="s">בתוך הכלי, עם ההרשאות שלכם</div></div>
+          <div class="node" data-stage="3"><div class="ico" aria-hidden="true">✅</div><div class="t">התוצאה חוזרת</div><div class="s"><bdi dir="ltr">Claude</bdi> עונה לכם</div></div>
+        </div>
+        <div class="cols even">
+          <div class="rule" data-stage="2">הפעולה מתבצעת עם ההרשאות שלכם, ולא עם הרשאות מיוחדות של <bdi dir="ltr">Claude</bdi>.</div>
+          <aside class="dyk" data-stage="3" style="margin-top:0"><p>מתחברים פעם אחת, בדפדפן, עם החשבון שלכם. מאותו רגע <bdi dir="ltr">Claude</bdi> רואה רק מה שאתם רואים.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 3 ═════════ -->
+    <section class="slide" id="s-gives" data-part="3">
+      <div class="slide-inner">
+        <div class="kicker">מה זה נותן לכם</div>
+        <h2><bdi dir="ltr">MCP</bdi> חוסך מעבר בין כלים, ונותן ל-<bdi dir="ltr">Claude</bdi> מידע חי ופעולות בכלי</h2>
+        <div class="grid3">
+          <div class="card">
+            <span class="stamp">בלי העתק והדבק</span>
+            <h3 style="margin-top:10px">לא מעבירים טקסט בין כלים</h3>
+            <p><bdi dir="ltr">Claude</bdi> קורא ישר מהכלי, ואתם לא מעתיקים מחלון לחלון.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">נתונים חיים</span>
+            <h3 style="margin-top:10px">תשובה ממה שיש בכלי עכשיו</h3>
+            <p><bdi dir="ltr">Claude</bdi> שואל את הכלי ברגע הבקשה, והתשובה באה מהמידע שיש שם כרגע.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">פעולות</span>
+            <h3 style="margin-top:10px">משפט אחד, ופעולה בכלי</h3>
+            <p>אתם מבקשים, ו-<bdi dir="ltr">Claude</bdi> פותח משימה ב-<bdi dir="ltr">Notion</bdi> בלי שתיכנסו אליו.</p>
+          </div>
+        </div>
+        <div class="cols even" style="margin-top:1.4rem">
+          <div class="rule">בסביבת העבודה הזו, החיבורים ל-<bdi dir="ltr">Notion</bdi>, ל-<bdi dir="ltr">Slack</bdi>, ל-<bdi dir="ltr">Gmail</bdi>, ל-<bdi dir="ltr">Google Drive</bdi> ול-<bdi dir="ltr">Toffu</bdi> הם כולם <bdi dir="ltr">MCP</bdi>.</div>
+          <aside class="dyk" style="margin-top:0"><p><bdi dir="ltr" class="ui">Custom connector</bdi> פירושו להדביק את הכתובת של מחבר כזה. כך מוסיפים את <bdi dir="ltr">Toffu</bdi>.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ חלק 4 ═════════ -->
+    <section class="slide" id="s-limits" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">הגבולות</div>
+        <h2>מחבר עושה רק את הפעולות שנבנו בו, ולא יותר</h2>
+        <div class="cols even">
+          <div class="stack">
+            <p>ביקשתם מ-<bdi dir="ltr">Claude</bdi> למחוק משימה ב-<bdi dir="ltr">Notion</bdi>, ובחיבור אין פעולה של מחיקה.</p>
+            <div class="predict" data-unlocks="limits-rule">
+              <div class="q">מה יקרה?</div>
+              <div class="choices">
+                <button><bdi dir="ltr">Claude</bdi> ימחק אותה בכל זאת</button>
+                <button data-correct><bdi dir="ltr">Claude</bdi> יגיד שהוא לא יכול, כי הפעולה לא קיימת במחבר</button>
+                <button><bdi dir="ltr">Claude</bdi> יבקש מכם סיסמה</button>
+              </div>
+              <div class="feedback">
+                <p class="fb-right" hidden><span class="hl">נכון.</span></p>
+                <p class="fb-wrong" hidden><span class="hl-r">התשובה: <bdi dir="ltr">Claude</bdi> אומר שהוא לא יכול, כי הפעולה לא קיימת במחבר.</span></p>
+                <p>מחבר יכול לעשות רק את הפעולות שמי שבנה אותו הכניס אליו. אין פעולת מחיקה, ולכן <bdi dir="ltr">Claude</bdi> לא יכול למחוק.</p>
+              </div>
+            </div>
+          </div>
+          <div id="limits-rule" class="locked is-locked stack">
+            <div class="card mint">
+              <h3>שלושה גבולות לזכור</h3>
+              <ol class="order">
+                <li><span>מחבר עושה רק את הפעולות שנבנו בו</span></li>
+                <li><span>מחבר יכול להתנתק, ואז מחברים אותו שוב</span></li>
+                <li><span><bdi dir="ltr">Claude</bdi> משתמש רק בחיבורים שמחוברים בחשבון שלכם</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-safe" data-part="4">
+      <div class="slide-inner">
+        <div class="kicker">בטיחות</div>
+        <h2>אף פעם לא מדביקים סיסמה בשיחה, והסקילים לא שולחים הודעה בשמכם</h2>
+        <div class="grid3">
+          <div class="card red">
+            <span class="stamp red">כלל ברזל</span>
+            <h3 style="margin-top:10px">לא מדביקים סיסמה או מפתח</h3>
+            <p>ההתחברות נעשית פעם אחת, בדפדפן, עם החשבון שלכם. בשיחה לא כותבים סיסמה ולא קוד.</p>
+          </div>
+          <div class="card">
+            <span class="stamp">הרשאות</span>
+            <h3 style="margin-top:10px"><bdi dir="ltr">Claude</bdi> רואה רק מה שאתם רואים</h3>
+            <p>מה שסגור בפניכם בכלי, סגור גם בפני <bdi dir="ltr">Claude</bdi>.</p>
+          </div>
+          <div class="card mint">
+            <span class="stamp mint">שליחה</span>
+            <h3 style="margin-top:10px">הסקילים לא שולחים הודעה בשמכם</h3>
+            <p>זה נכון לכל הסקילים בסביבת העבודה הזו.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s-end" data-part="4">
+      <div class="slide-inner cover">
+        <div class="kicker">סיכום</div>
+        <h2>מה חשוב לזכור</h2>
+        <table class="data" style="margin-top:1.2rem">
+          <tbody>
+            <tr><td><b>מה זה <bdi dir="ltr">MCP</bdi></b></td><td>שפה משותפת שמאפשרת לעוזר בינה מלאכותית לדבר עם כלים. כלי בונה מחבר אחד, וכל מי שמדבר <bdi dir="ltr">MCP</bdi> משתמש בו.</td></tr>
+            <tr><td><b>איך זה עובד</b></td><td>המחבר מפרסם רשימת פעולות. <bdi dir="ltr">Claude</bdi> בוחר פעולה, המחבר מבצע אותה בכלי עם ההרשאות שלכם, והתוצאה חוזרת.</td></tr>
+            <tr><td><b>מה זה נותן לכם</b></td><td>בלי העתק והדבק בין כלים, תשובות מנתונים חיים, ופעולות בכלי ממשפט אחד.</td></tr>
+            <tr><td><b>הגבולות</b></td><td>מחבר עושה רק את הפעולות שנבנו בו, ויכול להתנתק. אף פעם לא מדביקים סיסמה בשיחה.</td></tr>
+          </tbody>
+        </table>
+        <div class="end-actions">
+          <a class="btn primary" href="agents.html">למצגת הבאה: מה זה סוכן<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn" href="index.html">חזרה לתפריט</a>
+        </div>
+      </div>
+    </section>
+
+   </div>
+  </main>
+
+  <footer class="navbar">
+    <button class="btn navbtn" id="prev" aria-keyshortcuts="ArrowRight"><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">הקודם</span></button>
+    <span class="count" id="count" data-ui></span>
+    <button class="btn primary navbtn" id="next" aria-keyshortcuts="ArrowLeft"><span class="lbl">המשך</span><span class="key"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+  </footer>
+</div>
+
+<script src="intro.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>
