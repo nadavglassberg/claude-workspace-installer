@@ -158,7 +158,11 @@ function Install-Starter {
 
     Write-Host ''
     Write-Host "Done. Your workspace is $dir" -ForegroundColor Green
-    Write-Host 'Next: in VS Code, open Claude Code and type  /setup-vault'
+    Write-Host ''
+    Write-Host 'IMPORTANT: VS Code will ask "Do you trust the authors of the files in this folder?"' -ForegroundColor Yellow
+    Write-Host 'Click "Yes, I trust the authors". Without it VS Code keeps Claude Code and the RTL extension disabled.' -ForegroundColor Yellow
+    Write-Host ''
+    Write-Host 'Then: open Claude Code in VS Code and type  /setup-vault'
 
     if ($CodeCmd) { & $CodeCmd $dir }
 }

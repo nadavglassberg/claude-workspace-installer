@@ -49,12 +49,15 @@ Download `install.bat` and double-click it. It runs the same line as above.
 
 ## Step 2. Let Claude build the vault (20 to 30 minutes)
 
-1. VS Code is open on `claude-workspace`. Click the Claude icon in the sidebar and sign in with the account from "Before you start".
-2. Type `/model` and check it says **Opus 5.5** with **high** effort. The installer sets this for you. If it shows something else, pick Opus 5.5 and high there.
-3. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
-4. Claude asks you a few questions (your name, your company, your vault name, which domains you want). Answer them in one message.
-5. Claude builds everything and explains each part as it goes.
-6. At the end Claude re-reads the skill, compares it to what it built, and fixes any gap. Everyone ends with the same structure.
+1. VS Code is open on `claude-workspace` and asks **"Do you trust the authors of the files in this folder?"** Click **Yes, I trust the authors**. Until you do, VS Code runs in Restricted Mode and keeps the Claude Code and RTL extensions disabled.
+   - Missed the question? Click **Restricted Mode** in the bottom-left corner of VS Code, then **Trust**.
+   - Extensions still look off? Press `Ctrl+Shift+P`, type `Reload Window`, press Enter.
+2. Click the Claude icon in the sidebar and sign in with the account from "Before you start".
+3. Type `/model` and check it says **Opus 5.5** with **high** effort. The installer sets this for you. If it shows something else, pick Opus 5.5 and high there.
+4. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
+5. Claude asks you a few questions (your name, your company, your vault name, which domains you want). Answer them in one message.
+6. Claude builds everything and explains each part as it goes.
+7. At the end Claude re-reads the skill, compares it to what it built, and fixes any gap. Everyone ends with the same structure.
 
 ## Step 3. The vault opens in Obsidian
 
