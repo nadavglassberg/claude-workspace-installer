@@ -254,6 +254,7 @@ Then run the wiki-link pass over every new file and make a local git commit: "va
 
 Rules for this step:
 - Write only what the sources say. A missing value stays out. Never fill a field with a guess.
+- Teammates' pages hold work facts only: role, work email, manager, clients. Never copy a teammate's private details (birth date, private phone, home address, photo), even when the team database shows them.
 - Everything pulled here is internal company data. It stays inside this vault on this computer. Never paste it into a public place, and never push this project to a public repository.
 - If a source has more than you can read in one run, read my own clients fully first, the rest second, and write the remainder as a task.
 
