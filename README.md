@@ -9,6 +9,7 @@ The apps install without an account, but Claude Code will not work until you sig
 1. Go to [claude.ai](https://claude.ai) and create an account, or sign in.
 2. Subscribe to **Pro** or **Max** (or ask your company for a seat on its Team or Enterprise plan). The free plan does not include Claude Code.
 3. Remember which email you used. You sign in with it in Step 2.
+4. Connect your work tools to Claude: open [claude.ai/settings/connectors](https://claude.ai/settings/connectors) and click **Connect** on **Slack**, **Notion**, **Gmail** and **Google Drive**. Log in to each with your PPG account. This is what lets Claude fill your vault with your real clients. (The installer opens this page for you at the end, and Claude checks them again and tells you which one is missing.)
 
 Obsidian and VS Code are free and need no account.
 
@@ -55,13 +56,16 @@ Download `install.bat` and double-click it. It runs the same line as above.
 2. Click the Claude icon in the sidebar and sign in with the account from "Before you start".
 3. Type `/model` and check it says **Opus 5.5** with **high** effort. The installer sets this for you. If it shows something else, pick Opus 5.5 and high there.
 4. Type `/setup-vault` and press Enter. If the command does not show up, close and reopen VS Code, or type "run the setup-vault skill".
-5. Claude asks one question: your name. Everything else is already set for a PPC manager at PPG Digital (work domain only, replies in Hebrew, short).
-6. Claude builds everything and explains each part as it goes.
-7. At the end Claude re-reads the skill, compares it to what it built, and fixes any gap. Everyone ends with the same structure.
+5. Claude checks that Slack, Notion, Gmail and Google Drive are connected. If one is missing it tells you which, you connect it, reload VS Code and type `/setup-vault` again. It continues where it stopped.
+6. Claude asks one question: your name. Everything else is already set for a PPC manager at PPG Digital (work domain only, replies in Hebrew, short).
+7. Claude builds the structure, explains each part as it goes, then re-reads the skill and fixes any gap. Everyone ends with the same structure.
+8. Claude explores the company Notion and the client config sheet with YOUR access and fills the vault: a page for each of your clients, a page for each teammate, your open tasks, and the working processes it finds. No company data is stored in this repo, it is read live from your own accounts and stays on your computer.
+9. Claude gives you the list of Toffu connectors to add, one per client. You can do this later.
+10. A 10-minute guided tour on your own data: you tell Claude a fact, ask it a question, add a task, drop a file, and close the day.
 
 ## Step 3. The vault opens in Obsidian
 
-Claude's last action is to open the new vault in Obsidian, already configured. It may ask you to close Obsidian first.
+Claude opens the new vault in Obsidian, already configured and already filled, at the start of the tour. It may ask you to close Obsidian first.
 
 If it does not open by itself:
 

@@ -1,19 +1,19 @@
 ---
 name: setup-vault
-description: Builds a complete "second brain" for a PPC manager at PPG Digital from scratch in the current VS Code project, an Obsidian vault with Claude Code as its main writer (folder structure, CLAUDE.md router, _rules.md rulebook, templates, five core skills, agent specs, vault-first hook), and teaches the system while building it. Run ONCE in a fresh, empty project folder. Triggers on "/setup-vault", "set up my vault", "build my second brain", "build the vault", "start the vault setup".
+description: Builds a complete "second brain" for a PPC manager at PPG Digital from scratch in the current VS Code project, an Obsidian vault with Claude Code as its main writer (folder structure, CLAUDE.md router, _rules.md rulebook, templates, five core skills, agent specs, vault-first hook), then connects Slack, Notion, Gmail, Google Drive and Toffu, explores the company's Notion and config sheet by itself and fills the vault with the person's real clients, tasks, meetings and team, and teaches the system on that real data. Run in a fresh project folder. Safe to run again: it resumes and only does what is missing. Triggers on "/setup-vault", "set up my vault", "build my second brain", "build the vault", "start the vault setup".
 ---
 
 # /setup-vault
 
 Run this once, in a new empty project folder opened in VS Code. It asks the user one question (their name), then builds the whole vault system. It is made for PPC managers at PPG Digital. Everything below is written in the user's voice: "I" and "me" mean the user, "you" means Claude.
 
-If the folder already holds a vault (a CLAUDE.md at the root plus a folder containing _rules.md and wiki/), stop and say so. Do not rebuild over an existing vault.
+This skill is resumable. If the folder already holds a vault (a CLAUDE.md at the root plus a folder containing _rules.md and wiki/), do NOT rebuild it and do not ask my name again: read <vault>/_active.md, then continue from the first step of sections 12-14 that is not done yet. Never overwrite a vault file that already has content.
 
 You are building my "second brain": an Obsidian vault that lives inside this VS Code project, with you (Claude Code) as its main writer. Build the structure literally. Do not simplify it and do not skip a file because it looks small.
 
 ## 0. How to work on this build
 - Open with a numbered checkbox list of the sections below and tick each one as it completes.
-- First, do the model and effort check from section 10.
+- First, do the model and effort check from section 10. Second, do the connector check from section 13 step 1, before building anything, because a connector added now only shows up after VS Code is reloaded.
 - Talk to me in Hebrew, short and straight to the point. Folder names, file names, frontmatter keys and everything in section 3 stay in English.
 - Ask me the ONE question in section 1 and wait for my answer before creating anything. Ask nothing else up front: everything in section 1 under "Already known" is a fact, not a question.
 - After each section, tell me in 2-3 lines what you built and why it exists. I am learning the system, not only receiving it.
@@ -33,13 +33,7 @@ Already known. Do not ask, do not offer alternatives:
 - Computers: one. No sync setup (section 11).
 - Reply style: Hebrew, short and straight to the point.
 
-Company facts for ppg-digital.md (public information, use as written, add nothing you were not told):
-- PPG Digital is an Israeli performance marketing agency and an authorized partner of Google, Meta and TikTok, specializing in data-driven paid acquisition for e-commerce brands. Website: https://www.ppg-digital.com
-- Founders: Amitay Nechmad (clients, sales, business development) and Idan Raubach (strategy, analytics, technical infrastructure, operations).
-- Over NIS 600M in managed media budgets. 100% results-based model. Pure performance: paid acquisition that moves revenue.
-- Services: e-commerce performance, SaaS growth, lead generation, creative services (AI-based), marketing automation.
-- Podcast: "The Campaigners" (weekly, performance marketing and media buying), hosted by the founders.
-My clients, my team lead and my teammates are NOT known yet. Leave team/ and clients/ with only their _index.md until I tell you, or until a later step connects the company tools.
+Company facts for ppg-digital.md are NOT written in this skill. Read them from the company website (https://www.ppg-digital.com) when you build the page, and add what Notion shows in section 13. My clients, my team lead and my teammates are not known yet either: leave team/ and clients/ with only their _index.md until section 13 fills them.
 
 ## 2. The idea (explain this back to me before building)
 - The project root is the folder open in VS Code. It holds CLAUDE.md, the .claude folder, the vault, and any code folders.
@@ -181,7 +175,7 @@ While I am learning: whenever a subagent is a realistic option, say so before ac
   - app.json: {"showUnsupportedFiles":true}
   - core-plugins.json: {"file-explorer":true,"global-search":true,"switcher":true,"graph":true,"backlink":true,"canvas":true,"outgoing-link":true,"tag-pane":true,"footnotes":false,"properties":true,"page-preview":true,"daily-notes":true,"templates":true,"note-composer":true,"command-palette":true,"slash-command":false,"editor-status":true,"bookmarks":true,"markdown-importer":false,"zk-prefixer":false,"random-note":false,"outline":true,"word-count":true,"slides":false,"audio-recorder":false,"workspaces":false,"file-recovery":true,"publish":false,"sync":false,"bases":true,"webviewer":false}
   No community plugins are needed.
-- Open the vault in Obsidian for me. This is the LAST action of the whole build (section 12, step 7), not now. Obsidian only opens folders it has registered, so:
+- Open the vault in Obsidian for me. This happens in section 14 step 1, after the vault is filled, not now. Obsidian only opens folders it has registered, so:
   1. Find Obsidian's registry file: %APPDATA%\obsidian\obsidian.json on Windows, ~/Library/Application Support/obsidian/obsidian.json on Mac. If it does not exist, Obsidian has never been started: start it once, close it, look again.
   2. If Obsidian is running, ask me to close it and wait for my answer. Never edit the registry while it is running.
   3. Copy the registry file to obsidian.json.bak next to it. Then add one entry under "vaults", keeping every existing entry untouched: key = 16 random lowercase hex characters, value = {"path":"<absolute path of <vault>>","ts":<current time in milliseconds>,"open":true}.
@@ -196,7 +190,95 @@ I work on one computer. Do not set up Obsidian Sync or a GitHub repo, and do not
 1. Run /sync-claude-md and /vault-skills-sync and show me that both copies match.
 2. Structure check. Everyone who runs this skill must end with the exact same structure. Re-read this whole skill from the top, then list what is actually on disk and compare it line by line against the tree in section 3 and the files named in sections 4-10 (every folder, every _index.md and _rules.md, every template, all six skills in BOTH locations, the hook, .gitignore, the two .obsidian files). Create whatever is missing and fix whatever differs. Repeat until a full pass finds nothing. Then print the final tree with a one-line result: "matches the skill" or the list of differences. The only difference allowed between two people's builds is the vault name and the person page.
 3. Write today's calendar note describing the build.
-4. Create my own person page (wiki/work/ppg/team/<me>.md: my name, PPC Manager at PPG Digital) and the company page ppg-digital.md from the facts in section 1. Do not interview me. The rest gets filled as we work.
-5. Add 3 starter tasks to the ### PPG table in _tasks.md: fill the first client page, drop one real file into raw/inbox and run /process-vault, run /end-of-session at the end of today.
-6. Give me a one-screen cheat sheet. Daily loop: tell Claude facts as they happen, drop files into raw/inbox and run /process-vault, type /end-of-session before closing. Plus the five skills and what each one does.
-7. Open the vault in Obsidian (section 10).
+4. Create my own person page (wiki/work/ppg/team/<me>.md: my name, PPC Manager at PPG Digital) and the company page ppg-digital.md from the company website (what the agency does, services, founders, as published there). Do not interview me. The rest gets filled as we work.
+5. Write an "UNFINISHED - RESUME HERE" block in _active.md that says: structure built, next is section 13. Update that block after every step of sections 13 and 14, so a second run of this skill knows where to continue. Delete the block when section 14 is done.
+6. Make a local git commit: "vault structure built".
+
+## 13. Connect the company tools and fill the vault
+Goal: when this section ends, the vault already holds my real work. I should open Obsidian and recognise my own clients, my tasks and my team without having typed any of it.
+
+### Step 1. Connectors (check first, connect what is missing)
+The tools are claude.ai connectors. I add them once in my claude.ai account and they then appear in Claude Code by themselves. You cannot log in for me, and no script can: each one needs my own login. Your job is to make it one short checklist.
+1. Look at your own tool list. A connector is connected when you have tools from it: Slack, Notion, Gmail, Google Drive. (Toffu comes later, in step 6, because it needs my client list.)
+2. If all four are there, say so in one line and continue.
+3. If any is missing, show me ONLY the missing ones as a checklist and stop:
+   - Open https://claude.ai/settings/connectors
+   - For each missing tool: find it in the list, click Connect, log in with my PPG account (my @ppg-digital.com Google account for Gmail and Google Drive, the PPG workspace for Slack and Notion) and approve.
+   - Then in VS Code press Ctrl+Shift+P, run "Developer: Reload Window", open Claude Code and type /setup-vault again. The skill resumes from here.
+4. After they are connected, test each one with a single cheap read (my own Slack profile, my own Notion user, my Gmail profile, a Drive search for one file name). Report a one-line result per tool. A tool that fails its test is treated as missing.
+5. Never ask me for a password, token or code, and never write one into a file.
+
+### Step 2. Find me
+- Notion: get my own user (the "self" user) and my email. Slack: read my own profile (member ID, display name).
+- Search Notion for my name. One of the results is my profile page in the team database. Fetch it. Its properties tell you my role, my manager, and, through its relation fields, which client pages are mine.
+- If I have no profile page, say so and continue: the client database and the config sheet can still identify my clients by my name and email.
+
+### Step 3. Learn the company's Notion yourself
+This skill deliberately contains no description of the company's workspace. Nothing about its databases, columns, clients or people is written here. You discover it, with my access, every time:
+1. Find the root. Search Notion for the agency's operating hub (try "Agency OS", "Clients", "Team", "Tasks"). Fetch the root page and list every database and page under it.
+2. Fetch the schema of every database you find: its name, every property with its type and options, and every relation to another database. Follow the relations until you have the whole map. A property's own description field often explains it: read those.
+3. Fetch one or two real pages from each database, including the page BODY, not only the properties. Templates, checklists and embedded lists live in the body.
+4. Before writing any client data, write what you learned to wiki/work/ppg/software/notion.md (create the software/ folder and its _index.md now): each database, what one row means, the properties that matter, how the databases link, which field means "the campaigner" and which "the team lead", what the status values are, and anything that surprised you. Then tell me in five lines what you found, so I can correct a wrong reading before it spreads.
+5. Things that are true of any workspace like this, so check for them: the campaigner may be stored under another word (Specialist, Owner, Manager). A person field can hold two people. Some rows belong to a group or a freelance bucket, not to a person. There may be an older, legacy client table next to the current one: use the current one and say which you chose.
+
+How to read it without hitting a wall:
+- Database queries (SQL and filtered row queries) can have a usage limit that the WHOLE workspace shares. Do not use queries as the main road. Use search and fetch: fetch my profile, then fetch each client page from its relation link. Fetch has no such limit.
+- Use at most 3 queries in the whole run, only where fetch cannot do the job (for example the full team roster). If a query answers "usage limit reached", do not retry it: switch to search plus fetch, and write what could not be read into _active.md.
+- A client page can link every task and meeting it ever had, often more than a hundred. Do NOT fetch them all. Take the 10 most recent open tasks and the 5 most recent meetings and summaries per client.
+- A database you cannot open (not found, no access) is noted in software/notion.md and skipped.
+
+### Step 4. Find and read the client config sheet (Google Drive)
+- The company keeps a Google Sheet with one row per client: ad account IDs, analytics property, Slack channel ID, report link, targets, budget, team lead and campaigner. Its name is not written here. Find it: search Drive for spreadsheets with names like "config", "main dash", "clients", and check each candidate's header row. If Notion or Slack mentions the sheet, follow that link. If two candidates fit, show me both and ask. If none is found, say so in one line, write it into _active.md, and continue with Notion only.
+- Read the whole file. The result can contain ALL tabs in one large block, and the first table may be a different tab. Identify the right table by its header row. Save the result to a file and parse it with a small script, do not read it by eye.
+- Read the real header and work from it. Expect surprises: a misspelled column name, a campaigner written as a short name in one row and as an email in another, a cell holding several IDs separated by "|" that breaks a naive split. Parse by the header's column count.
+- NEVER copy a password column, or any cell that looks like a password, key or token. Skip it completely.
+- Write what you learned about the sheet (its name, its tabs, its columns, the parsing traps) to wiki/work/ppg/software/config-sheet.md.
+
+### Step 5. Put the two sources together, then write the vault
+Two registries describe the same clients and they will not always agree:
+- Ask yourself which one is the authority for what, from what you saw: usually the task system (Notion) for who owns a client, and the config sheet for account IDs, channels, report links and targets. Write the rule you chose into wiki/work/ppg/_rules.md and tell me, so I can overrule it.
+- Client names differ between the two: one may add a prefix, a hyphen or an extra word that the other drops. Match on a normalised name (lowercase, no spaces or hyphens), and when a match is not certain, list it for me instead of guessing.
+- My clients = every client where I am the campaigner in Notion, plus every config row where I am the campaigner. A client found in only one of the two is still mine: mark which source it came from.
+
+Write, each from its template, each with frontmatter and wiki-links, each added to its folder's _index.md:
+1. wiki/work/ppg/clients/<client>.md for each of MY clients: everything the two sources hold about it (status, type of business, services, website, start date, team lead, campaigner(s), contacts, currency, account IDs, Slack channel, report link, targets, budget), the link to its Notion page, then "Open tasks" (the 10 most recent, with status and due date) and "Recent meetings" (the 5 most recent, date plus two lines of what was decided).
+2. wiki/work/ppg/team/<name>.md for every ACTIVE person in the team database: role, email, manager, and the clients they run. My own page gets my clients and my team lead. This is the instruction to create these person pages, do not ask me one by one.
+3. wiki/work/ppg/clients/_index.md gets two tables: "My clients" (with status and team lead), and "Other clients" (name, campaigner, team lead only, one line each, NO page of their own). Other people's clients are for context: so you know who to ask, and so a client name is recognised when it comes up.
+4. wiki/work/ppg/software/: next to notion.md and config-sheet.md, one page each for Slack, Gmail, Google Drive and Toffu, from the ppg-software template: what we use it for and that it is reached through a claude.ai connector. No credentials.
+5. wiki/work/ppg/operations/ (create with _index.md): one page for every working process you found written down in Notion (a recurring checklist, an onboarding checklist, a meeting routine), copied faithfully with its own wording. These are how the company works, so they belong in my vault too.
+6. ppg-digital.md: add what Notion showed about how the company is organised (roles, who reports to whom).
+7. wiki/work/ppg/_rules.md: add every client, every teammate and every tool to the Entity registry, and add my client names to the routing signal words in CLAUDE.md (vault copy, then /sync-claude-md).
+8. _tasks.md, table ### PPG: my open tasks from Notion (not completed, where I am the owner or the client is mine), one row each, with the client linked and the Notion link in Notes. Stuck or escalated ones get Prio 8 or higher.
+9. Today's calendar note: what was pulled, from where, how many clients, people, tasks and meetings, and anything that could not be read.
+Then run the wiki-link pass over every new file and make a local git commit: "vault filled from Notion and the config sheet".
+
+Rules for this step:
+- Write only what the sources say. A missing value stays out. Never fill a field with a guess.
+- Everything pulled here is internal company data. It stays inside this vault on this computer. Never paste it into a public place, and never push this project to a public repository.
+- If a source has more than you can read in one run, read my own clients fully first, the rest second, and write the remainder as a task.
+
+### Step 6. Toffu, one connector per client
+Toffu is PPG's AI marketing agent. Each client has its own Toffu workspace, and one connector reaches one workspace.
+1. For each of my clients build the address: https://mcp.toffu.ai/mcp?client=<workspace name>, with every space written as %20. Start from the client name as it appears in the config sheet.
+2. Give me one table: Client | Connector name ("Toffu <Client>") | Address. Then the steps: open https://claude.ai/settings/connectors, "Add custom connector", paste the name and the address, log in to Toffu when the browser asks. Repeat per client. Then reload the VS Code window and run /setup-vault again.
+3. When Toffu tools appear, call "get account context" on each connector and check that it names the right client. A connector that names another workspace, or none, has a wrong workspace name: tell me which, and that the exact workspace name is the one shown inside Toffu.
+4. Write the result into each client page (Toffu: connected / not yet / wrong name) and into software/toffu.md.
+5. This step is allowed to stay open. If I want to do it later, add one task "connect Toffu for <N> clients" with the table in its Notes, and go on to section 14.
+
+## 14. Teach me the vault
+I learn this by doing it on my own data, not by reading about it. One step at a time, in Hebrew. For each step: say in 1-2 lines what I am about to see and why it matters, tell me exactly what to click or type, WAIT for me to do it, then confirm what happened. Never run two steps in one message. The whole tour takes about 10 minutes.
+1. Open the vault in Obsidian (section 10). Tell me to keep VS Code and Obsidian side by side: you write in one, I read in the other.
+2. My client. Open one of my real client pages in Obsidian. Show me the frontmatter, the facts, the open tasks. Point at one [[link]] and have me click it, then come back.
+3. The graph. Have me open the graph view and find my own name. The lines are the links: this is why every first mention is linked.
+4. Tell me a fact. Ask me to type one true thing about one of my clients, in my own words, in the chat (a decision, a budget change, something the client said). Write it into the client page, show me the "Files changed" link, and have me see it appear in Obsidian. The lesson: I never open a file to save something, I just say it.
+5. Ask the vault. Have me ask a question whose answer is in the vault ("who is the team lead of <client>", "what is open on <client>"). Answer from the files and name the file you read. The lesson: you read before you answer, and you do not ask me what is already written.
+6. A task. Have me say one thing I need to do this week. It goes into _tasks.md. Show me the row.
+7. A file. Have me drop any real file (a brief, a report, a screenshot) into <vault>/raw/inbox and type /process-vault. Show me where the content went.
+8. Correct me. Have me tell you one thing I want you to do differently from now on (shorter, a different format, a term we use). Write it into _rules.md under Response behavior with today's date, and show me. The lesson: a correction is given once.
+9. Close the day. Have me type /end-of-session. Show me the calendar note it wrote.
+10. Give me a one-screen cheat sheet in Hebrew and save it as <vault>/wiki/work/ppg/operations/vault-cheat-sheet.md:
+   - The daily loop: say facts as they happen, drop files into raw/inbox and run /process-vault, type /end-of-session before closing.
+   - The five skills and what each one does, one line each.
+   - The four layers (raw, wiki, calendar, components) and the two files in every folder (_index, _rules).
+   - What to say to refresh my data: "refresh my clients from Notion and the config sheet".
+Then delete the resume block from _active.md, make a local git commit "setup complete", and tell me in one line that the system is ready.

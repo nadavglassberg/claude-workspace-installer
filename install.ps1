@@ -164,6 +164,10 @@ function Install-Starter {
     Write-Host ''
     Write-Host 'Then: open Claude Code in VS Code and type  /setup-vault'
 
+    # Connectors need the person's own login, so the closest thing to automatic is opening the page.
+    Write-Host 'Also opening claude.ai connectors in your browser: click Connect on Slack, Notion, Gmail and Google Drive.' -ForegroundColor Yellow
+    Start-Process 'https://claude.ai/settings/connectors'
+
     if ($CodeCmd) { & $CodeCmd $dir }
 }
 
