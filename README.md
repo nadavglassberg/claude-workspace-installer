@@ -14,6 +14,10 @@ The apps install without an account, but Claude Code only works once you have jo
 
 Obsidian and VS Code are free and need no account.
 
+**Recommended: Wispr Flow.** It is a dictation app: you speak and it types, in any window, including the Claude chat. Sign up and download it through this link (Nadav's referral link): https://wisprflow.ai/r?EDEN815318
+
+The guide's first topic opens with this step too.
+
 ## Step 1. Run the installer (5 minutes)
 
 1. Copy this line (hover over it and click the copy button on the right):
